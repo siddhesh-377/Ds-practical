@@ -1,0 +1,651 @@
+{
+  "filename": "Theory 2.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": "Title: Program to Implement Selection Sort and Bubble Sort."
+    },
+    {
+      "style": "Normal",
+      "text": "Problem Statement:"
+    },
+    {
+      "style": "Normal",
+      "text": "Write a program to store the first-year percentage of students in an array. Write function for sorting array of floating-point numbers in ascending order using-Selection Sort Bubble sort and display top five scores."
+    },
+    {
+      "style": "Normal",
+      "text": "Outcomes"
+    },
+    {
+      "style": "Normal",
+      "text": "Students will be able to write programs for sorting data in arrays."
+    },
+    {
+      "style": "Normal",
+      "text": "Understand the working and efficiency of selection and bubble sort algorithms."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Software & Hardware Requirements"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Theory :"
+    },
+    {
+      "style": "Normal",
+      "text": "Selection Sort"
+    },
+    {
+      "style": "Body Text",
+      "text": "The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array. The subarray which is already sorted. Remaining subarray which is unsorted. In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray."
+    },
+    {
+      "style": "Normal",
+      "text": "Selection Sort Algorithm"
+    },
+    {
+      "style": "Body Text",
+      "text": "Algorithm selectionSort ( low, high )"
+    },
+    {
+      "style": "Body Text",
+      "text": "{ //a[low : high] is an array of size n i=0, j=0, temp=0, ; for i: =low to high do"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Body Text",
+      "text": "minindex = i;"
+    },
+    {
+      "style": "Body Text",
+      "text": "for j: =i+1 to high do"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Body Text",
+      "text": "if( a[j] < a[minindex] ) then minindex := j;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Body Text",
+      "text": "temp := a[i];"
+    },
+    {
+      "style": "Body Text",
+      "text": "a[i] := a[minindex]; a[minindex] := temp;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Body Text",
+      "text": "Example: The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. In every iteration of selection sort, the minimum element from the unsorted sub-array is picked and moved to the sorted sub- array."
+    },
+    {
+      "style": "Body Text",
+      "text": "Consider a list a = [64, 25, 12, 22, 11]"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Flow Chart for Selection Sort:"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Bubble Sort"
+    },
+    {
+      "style": "Body Text",
+      "text": "Bubble sort is a simple sorting algorithm. This sorting algorithm is comparison- based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. This algorithm is not suitable for large data sets as its average and worst case complexity is of Ο(n2) where n is the number of items."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Bubble Sort Algorithm"
+    },
+    {
+      "style": "Body Text",
+      "text": "Algorithm bubblesort ( x[], n)"
+    },
+    {
+      "style": "Body Text",
+      "text": "{ // x[1:n] is an array of n elementsfor i := 0 to n do"
+    },
+    {
+      "style": "Normal",
+      "text": " {"
+    },
+    {
+      "style": "Body Text",
+      "text": "for j := 0 to n–i-1 d0"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Body Text",
+      "text": "if (x[j] > x[j+1])"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Body Text",
+      "text": "temp = x[j]; x[j] = x[j+1]; x[j+1] = temp;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": "Flow Chart for Bubble Sort:"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Conclusion"
+    },
+    {
+      "style": "Body Text",
+      "text": "Successfully sorted first year percentage of students using Selection sort & bubble sort techniques."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    }
+  ],
+  "tables": [
+    [
+      [
+        "Requirement",
+        "Specification"
+      ],
+      [
+        "Programming Language",
+        "C++ / C"
+      ],
+      [
+        "Compiler",
+        "GCC / G++ "
+      ],
+      [
+        "Hardware",
+        "i3 or above, 4 GB RAM or more"
+      ],
+      [
+        "OS",
+        "Windows/Linux"
+      ]
+    ],
+    [
+      [
+        "Index",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "Remarks"
+      ],
+      [
+        "List",
+        "64",
+        "25",
+        "12",
+        "22",
+        "11",
+        "Find the minimum element in a[0 .. 4]\nand place it at beginning."
+      ],
+      [
+        "Iteration 1",
+        "11",
+        "25",
+        "12",
+        "22",
+        "64",
+        "Find the minimum element in a[1 .. 4]\nand place it at beginning of a[1 .. 4]"
+      ],
+      [
+        "Iteration 2",
+        "11",
+        "12",
+        "25",
+        "22",
+        "64",
+        "Find the minimum element in a[2 .. 4]\nand place it at beginning of a[2 .. 4]"
+      ],
+      [
+        "Iteration 3",
+        "11",
+        "12",
+        "22",
+        "25",
+        "64",
+        "Find the minimum element in a[3 .. 4]\nand place it at beginning of a[3 .. 4]"
+      ],
+      [
+        "Iteration 4",
+        "11",
+        "12",
+        "22",
+        "25",
+        "64",
+        "Finally the list is sorted."
+      ]
+    ],
+    [
+      [
+        "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+        "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+        "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+        "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+        "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+        "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass"
+      ],
+      [
+        "\n5",
+        "\n1",
+        "\n4",
+        "\n2",
+        "\n8",
+        "Compare the first two elements, and swaps since 5 > 1"
+      ],
+      [
+        "1",
+        "5",
+        "4",
+        "2",
+        "8",
+        "Compare 5 and 4 and swap since 5 > 4"
+      ],
+      [
+        "1",
+        "4",
+        "5",
+        "2",
+        "8",
+        "Compare 5 and 2 and swap since 5 > 2"
+      ],
+      [
+        "1",
+        "4",
+        "2",
+        "5",
+        "8",
+        "Compare 5 and 8 and since 5 < 8, noswap."
+      ],
+      [
+        "Second Pass",
+        "Second Pass",
+        "Second Pass",
+        "Second Pass",
+        "Second Pass",
+        "Second Pass"
+      ],
+      [
+        "1",
+        "4",
+        "2",
+        "5",
+        "8",
+        "Compare the first two elements, and as 1\n< 4, no swap."
+      ],
+      [
+        "1",
+        "4",
+        "2",
+        "5",
+        "8",
+        "Compare 4 and 2, swap since 4 > 2"
+      ],
+      [
+        "1",
+        "2",
+        "4",
+        "5",
+        "8",
+        "Compare 4 and 5, no swap."
+      ],
+      [
+        "1",
+        "2",
+        "4",
+        "5",
+        "8",
+        "Compare 5 and 8 and no swap."
+      ],
+      [
+        "Third Pass",
+        "Third Pass",
+        "Third Pass",
+        "Third Pass",
+        "Third Pass",
+        "Third Pass"
+      ],
+      [
+        "1",
+        "2",
+        "4",
+        "5",
+        "8",
+        "Compare the first two elements and no swap."
+      ],
+      [
+        "1",
+        "2",
+        "4",
+        "5",
+        "8",
+        "Compare 2 and 4, no swap."
+      ],
+      [
+        "1",
+        "2",
+        "4",
+        "5",
+        "8",
+        "Compare 4 and 5, no swap."
+      ],
+      [
+        "1",
+        "2",
+        "4",
+        "5",
+        "8",
+        "Compare 5 and 8, no swap."
+      ]
+    ]
+  ]
+}

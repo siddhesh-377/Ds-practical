@@ -1,0 +1,76 @@
+/* ==========================================================================
+   DSA PRACTICAL REVISION PORTAL - SYNTAX HIGHLIGHTING & CODE THEME
+   High-contrast Developer Dark Editor
+   ========================================================================== */
+
+/* Token Styles */
+.token.preprocessor {
+  color: #c084fc; /* purple-400 for #include, #define */
+  font-weight: 600;
+}
+
+.token.header-file {
+  color: #38bdf8; /* sky-400 for <stdio.h>, <iostream> */
+}
+
+.token.keyword {
+  color: #f43f5e; /* rose-500 for if, else, for, while, return, class, struct */
+  font-weight: 600;
+}
+
+.token.type {
+  color: #38bdf8; /* sky-400 for int, float, char, void, bool, double */
+  font-weight: 600;
+}
+
+.token.string {
+  color: #34d399; /* emerald-400 for strings "..." */
+}
+
+.token.comment {
+  color: #64748b; /* slate-500 for comments */
+  font-style: italic;
+}
+
+.token.number {
+  color: #fb923c; /* orange-400 for numbers */
+}
+
+.token.function {
+  color: #60a5fa; /* blue-400 for function declarations & calls */
+  font-weight: 500;
+}
+
+.token.operator {
+  color: #f472b6; /* pink-400 for +, -, =, <, >, &, * */
+}
+
+.token.punctuation {
+  color: #94a3b8; /* slate-400 for {}, (), [], ; */
+}
+
+.token.namespace {
+  color: #facc15; /* yellow-400 for std, using, namespace */
+}
+
+.token.stream {
+  color: #fbbf24; /* amber-400 for cout, cin, endl, printf, scanf */
+  font-weight: 600;
+}
+
+/* Code Line Hover & Selection */
+.code-line {
+  display: block;
+  min-height: 1.6em;
+  padding: 0 8px;
+  border-radius: 2px;
+}
+
+.code-line:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.code-line.highlighted {
+  background-color: rgba(59, 130, 246, 0.2);
+  border-left: 2px solid var(--accent-blue);
+}

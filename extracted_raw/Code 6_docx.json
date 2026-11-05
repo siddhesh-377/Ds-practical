@@ -1,0 +1,554 @@
+{
+  "filename": "Code 6.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": "#include <iostream>"
+    },
+    {
+      "style": "Normal",
+      "text": "using namespace std;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "#define size 10"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "class stackexp"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    int top;"
+    },
+    {
+      "style": "Normal",
+      "text": "    char stk[size];"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "public:"
+    },
+    {
+      "style": "Normal",
+      "text": "    stackexp()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        top = -1;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void push(char);"
+    },
+    {
+      "style": "Normal",
+      "text": "    char pop();"
+    },
+    {
+      "style": "Normal",
+      "text": "    int isfull();"
+    },
+    {
+      "style": "Normal",
+      "text": "    int isempty();"
+    },
+    {
+      "style": "Normal",
+      "text": "};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "void stackexp::push(char x)"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    if (!isfull())"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        top = top + 1;"
+    },
+    {
+      "style": "Normal",
+      "text": "        stk[top] = x;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "char stackexp::pop()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    char s;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    if (!isempty())"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        s = stk[top];"
+    },
+    {
+      "style": "Normal",
+      "text": "        top = top - 1;"
+    },
+    {
+      "style": "Normal",
+      "text": "        return s;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    return '\\0';"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "int stackexp::isfull()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    if (top == size - 1)"
+    },
+    {
+      "style": "Normal",
+      "text": "        return 1;"
+    },
+    {
+      "style": "Normal",
+      "text": "    else"
+    },
+    {
+      "style": "Normal",
+      "text": "        return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "int stackexp::isempty()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    if (top == -1)"
+    },
+    {
+      "style": "Normal",
+      "text": "        return 1;"
+    },
+    {
+      "style": "Normal",
+      "text": "    else"
+    },
+    {
+      "style": "Normal",
+      "text": "        return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "int main()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    stackexp s1;"
+    },
+    {
+      "style": "Normal",
+      "text": "    char exp[20], ch, temp;"
+    },
+    {
+      "style": "Normal",
+      "text": "    int i = 0;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n\\t!! Parenthesis Checker..!!!!\" << endl;"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\nEnter the expression to check whether it is in well form or not : \";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cin >> exp;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    if ((exp[0] == ')') || (exp[0] == ']') || (exp[0] == '}'))"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nInvalid Expression.....\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    while (exp[i] != '\\0')"
+    },
+    {
+      "style": "Normal",
+      "text": "    { "
+    },
+    {
+      "style": "Normal",
+      "text": "        ch = exp[i];"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        switch (ch)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "        case '(':"
+    },
+    {
+      "style": "Normal",
+      "text": "            s1.push(ch);"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case '[':"
+    },
+    {
+      "style": "Normal",
+      "text": "            s1.push(ch);"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case '{':"
+    },
+    {
+      "style": "Normal",
+      "text": "            s1.push(ch);"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case ')':"
+    },
+    {
+      "style": "Normal",
+      "text": "            temp = s1.pop();"
+    },
+    {
+      "style": "Normal",
+      "text": "            if (temp != '(')"
+    },
+    {
+      "style": "Normal",
+      "text": "            {"
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << \"\\nInvalid Expression.....\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "                return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "            }"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case ']':"
+    },
+    {
+      "style": "Normal",
+      "text": "            temp = s1.pop();"
+    },
+    {
+      "style": "Normal",
+      "text": "            if (temp != '[')"
+    },
+    {
+      "style": "Normal",
+      "text": "            {"
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << \"\\nInvalid Expression.....\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "                return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "            }"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case '}':"
+    },
+    {
+      "style": "Normal",
+      "text": "            temp = s1.pop();"
+    },
+    {
+      "style": "Normal",
+      "text": "            if (temp != '{')"
+    },
+    {
+      "style": "Normal",
+      "text": "            {"
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << \"\\nInvalid Expression.....\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "                return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "            }"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        i = i + 1;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    if (s1.isempty())"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nExpression is well parenthesised...\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": "    else"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nSorry !!! Invalid Expression or not well parenthesized....\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    }
+  ],
+  "tables": []
+}

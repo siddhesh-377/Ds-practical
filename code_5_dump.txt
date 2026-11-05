@@ -1,0 +1,210 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Node
+{
+    int time;
+    string name;
+    Node *prev, *next;
+};
+
+class DLL
+{
+    Node *head;
+
+public:
+
+    DLL()
+    {
+        head = NULL;
+    }
+
+    // Book appointment
+    void book(int t, string n)
+    {
+        if (t < 9 || t > 17)
+        {
+            cout << "Invalid time!\n";
+            return;
+        }
+
+        Node *newNode = new Node{t, n, NULL, NULL};
+
+        if (head == NULL)
+        {
+            head = newNode;
+        }
+        else
+        {
+            Node *p = head;
+
+            while (p->next != NULL)
+                p = p->next;
+
+            p->next = newNode;
+            newNode->prev = p;
+        }
+
+        cout << "Appointment booked.\n";
+    }
+
+    // Display appointments
+    void display()
+    {
+        Node *p = head;
+
+        if (p == NULL)
+        {
+            cout << "No appointments.\n";
+            return;
+        }
+
+        while (p != NULL)
+        {
+            cout << p->time << ":00 - " << p->name << endl;
+            p = p->next;
+        }
+    }
+
+    // Display free slots
+    void freeSlots()
+    {
+        cout << "Free slots:\n";
+
+        for (int t = 9; t <= 17; t++)
+        {
+            Node *p = head;
+            bool booked = false;
+
+            while (p != NULL)
+            {
+                if (p->time == t)
+                {
+                    booked = true;
+                    break;
+                }
+
+                p = p->next;
+            }
+
+            if (!booked)
+                cout << t << ":00\n";
+        }
+    }
+
+    // Cancel appointment
+    void cancel(int t)
+    {
+        if (t < 9 || t > 17)
+        {
+            cout << "Invalid time!\n";
+            return;
+        }
+
+        Node *p = head;
+
+        while (p != NULL && p->time != t)
+            p = p->next;
+
+        if (p == NULL)
+        {
+            cout << "Appointment not found.\n";
+            return;
+        }
+
+        if (p->prev != NULL)
+            p->prev->next = p->next;
+        else
+            head = p->next;
+
+        if (p->next != NULL)
+            p->next->prev = p->prev;
+
+        delete p;
+
+        cout << "Appointment cancelled.\n";
+    }
+
+    // Sort appointments according to time
+    void sort()
+    {
+        Node *i, *j;
+
+        for (i = head; i != NULL; i = i->next)
+        {
+            for (j = i->next; j != NULL; j = j->next)
+            {
+                if (i->time > j->time)
+                {
+                    swap(i->time, j->time);
+                    swap(i->name, j->name);
+                }
+            }
+        }
+
+        cout << "Appointments sorted.\n";
+    }
+};
+
+int main()
+{
+    DLL d;
+    int choice, t;
+    string name;
+
+    do
+    {
+        cout << "\n1. Free Slots";
+        cout << "\n2. Book Appointment";
+        cout << "\n3. Display Appointments";
+        cout << "\n4. Cancel Appointment";
+        cout << "\n5. Sort by Time";
+        cout << "\n6. Exit";
+
+        cout << "\nEnter choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                d.freeSlots();
+                break;
+
+            case 2:
+                cout << "Enter time (9-17): ";
+                cin >> t;
+
+                cout << "Enter name: ";
+                cin >> name;
+
+                d.book(t, name);
+                break;
+
+            case 3:
+                d.display();
+                break;
+
+            case 4:
+                cout << "Enter time: ";
+                cin >> t;
+
+                d.cancel(t);
+                break;
+
+            case 5:
+                d.sort();
+                break;
+
+            case 6:
+                cout << "Exit.";
+                break;
+
+            default:
+                cout << "Invalid choice!";
+        }
+
+    } while (choice != 6);
+
+    return 0;
+}

@@ -1,0 +1,922 @@
+{
+  "filename": "Code 8.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": "#include <iostream>"
+    },
+    {
+      "style": "Normal",
+      "text": "using namespace std;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "struct Node"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    int data;"
+    },
+    {
+      "style": "Normal",
+      "text": "    Node *left, *right;"
+    },
+    {
+      "style": "Normal",
+      "text": "};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "class BST"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    Node *root;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    Node* createNode(int value)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        Node *p = new Node;"
+    },
+    {
+      "style": "Normal",
+      "text": "        p->data = value;"
+    },
+    {
+      "style": "Normal",
+      "text": "        p->left = p->right = NULL;"
+    },
+    {
+      "style": "Normal",
+      "text": "        return p;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    Node* insert(Node *p, int value)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            return createNode(value);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (value < p->data)"
+    },
+    {
+      "style": "Normal",
+      "text": "            p->left = insert(p->left, value);"
+    },
+    {
+      "style": "Normal",
+      "text": "        else"
+    },
+    {
+      "style": "Normal",
+      "text": "            p->right = insert(p->right, value);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        return p;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    int longestPath(Node *p)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        int left = longestPath(p->left);"
+    },
+    {
+      "style": "Normal",
+      "text": "        int right = longestPath(p->right);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        return (left > right ? left : right) + 1;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    int minimum(Node *p)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        while (p->left != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            p = p->left;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        return p->data;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void mirror(Node *p)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            return;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        Node *temp = p->left;"
+    },
+    {
+      "style": "Normal",
+      "text": "        p->left = p->right;"
+    },
+    {
+      "style": "Normal",
+      "text": "        p->right = temp;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        mirror(p->left);"
+    },
+    {
+      "style": "Normal",
+      "text": "        mirror(p->right);"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    bool search(Node *p, int value)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            return false;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p->data == value)"
+    },
+    {
+      "style": "Normal",
+      "text": "            return true;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (value < p->data)"
+    },
+    {
+      "style": "Normal",
+      "text": "            return search(p->left, value);"
+    },
+    {
+      "style": "Normal",
+      "text": "        else"
+    },
+    {
+      "style": "Normal",
+      "text": "            return search(p->right, value);"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void inorder(Node *p)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            inorder(p->left);"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << p->data << \" \";"
+    },
+    {
+      "style": "Normal",
+      "text": "            inorder(p->right);"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "public:"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    BST()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        root = NULL;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void insertValue(int value)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        root = insert(root, value);"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void insertNewNode()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        int value;"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Enter value: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cin >> value;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        root = insert(root, value);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Node inserted successfully.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void findLongestPath()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (root == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Tree is empty.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        else"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Number of nodes in longest path = \""
+    },
+    {
+      "style": "Normal",
+      "text": "                 << longestPath(root) << endl;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void findMinimum()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (root == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Tree is empty.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        else"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Minimum data value = \""
+    },
+    {
+      "style": "Normal",
+      "text": "                 << minimum(root) << endl;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void swapPointers()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (root == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Tree is empty.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        else"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            mirror(root);"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Tree has been mirrored successfully.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void searchValue()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        int value;"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Enter value to search: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cin >> value;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (search(root, value))"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Value found in tree.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        else"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Value not found in tree.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void display()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Inorder Traversal: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "        inorder(root);"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << endl;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": "};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "int main()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    BST T;"
+    },
+    {
+      "style": "Normal",
+      "text": "    int n, value, choice;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"Enter number of nodes: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cin >> n;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"Enter values in insertion order:\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    for (int i = 0; i < n; i++)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cin >> value;"
+    },
+    {
+      "style": "Normal",
+      "text": "        T.insertValue(value);"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    do"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n===== BINARY SEARCH TREE =====\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"1. Insert New Node\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"2. Find Longest Path from Root\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"3. Find Minimum Data Value\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"4. Swap Left and Right Pointers\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"5. Search a Value\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"6. Display Inorder\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"7. Exit\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Enter your choice: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cin >> choice;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        switch (choice)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "        case 1:"
+    },
+    {
+      "style": "Normal",
+      "text": "            T.insertNewNode();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 2:"
+    },
+    {
+      "style": "Normal",
+      "text": "            T.findLongestPath();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 3:"
+    },
+    {
+      "style": "Normal",
+      "text": "            T.findMinimum();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 4:"
+    },
+    {
+      "style": "Normal",
+      "text": "            T.swapPointers();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 5:"
+    },
+    {
+      "style": "Normal",
+      "text": "            T.searchValue();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 6:"
+    },
+    {
+      "style": "Normal",
+      "text": "            T.display();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 7:"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Program terminated.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        default:"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Invalid choice!\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    } while (choice != 7);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    }
+  ],
+  "tables": []
+}

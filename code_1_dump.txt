@@ -1,0 +1,160 @@
+
+/* --- PAGE 1 --- */
+ Practical Assignment 1 
+Problem Statement :  Write menu based program- 
+a) Write a program to store roll numbers of student in array who attended a training 
+program in random order. Write a function for searching whether a particular student 
+attended a training program or not, using Linear search. 
+b) Write a program to store roll numbers of student array who attended training 
+programs in sorted order. Write a function for searching whether a particular student 
+attended a training program or not, using Binary search. 
+ 
+Input code: 
+#include <stdio.h> 
+void linearSearch(int a[], int n, int key); 
+void binarySearch(int a[], int n, int key); 
+void sortArray(int a[], int n); 
+ 
+int main() 
+ { 
+    int a[50], n = 0, ch, i, key; 
+ 
+    do 
+    { 
+ 
+        printf("\nMenu:\n1. Linear search\n2. Binary search\n3. Exit\n"); 
+        printf("Enter your choice: "); 
+        if (scanf("%d" , &ch) != 1) 
+            break; 
+ 
+        if (ch == 1 || ch == 2) 
+        { 
+/* --- PAGE 2 --- */
+            printf("Enter no of students: "); 
+            scanf("%d" , &n); 
+ 
+            printf("Enter roll numbers:\n" , n); 
+            for (i = 0; i < n; i++) 
+            { 
+                scanf("%d" , &a[i]); 
+            } 
+ 
+            printf("Enter rollno to be searched :"); 
+            scanf("%d" , &key); 
+        } 
+ 
+        switch (ch) 
+        { 
+            case 1: 
+                linearSearch(a, n, key); 
+                break; 
+ 
+            case 2: 
+ 
+                sortArray(a, n); 
+                for (i = 0; i < n; i++) printf("%d " , a[i]); 
+                printf("\n"); 
+ 
+                binarySearch(a, n, key); 
+                break; 
+ 
+/* --- PAGE 3 --- */
+            case 3: 
+                printf("Exiting program.\n"); 
+                break; 
+ 
+            default: 
+                printf("Invalid choice! Please try again.\n"); 
+                break; 
+        } 
+    } while (ch != 3); 
+ 
+    return 0; 
+} 
+ 
+void linearSearch(int a[], int n, int key) 
+{ 
+    int i, found = 0; 
+ 
+    for (i = 0; i < n; i++)  
+{ 
+        if (a[i] == key)  
+       { 
+            printf("Element found at index %d (position %d)\n" , i, i + 1); 
+            found = 1; 
+            break; 
+        } 
+    } 
+ if (!found) 
+     { 
+/* --- PAGE 4 --- */
+        printf("Element not found in the array!\n"); 
+    } 
+} 
+void binarySearch(int a[], int n, int key) 
+ { 
+    int low = 0, high = n - 1, mid; 
+    int found = 0; 
+ 
+    while (low <= high) 
+    { 
+        mid = low + (high - low) / 2; 
+ 
+        if (a[mid] == key) 
+        { 
+            printf("Element found at index %d (position %d)\n" , mid, mid + 1); 
+            found = 1; 
+            break; 
+        } else if (a[mid] < key) 
+         { 
+            low = mid + 1; 
+        } else { 
+            high = mid - 1; 
+        } 
+    } 
+ 
+    if (!found) { 
+        printf("Element not found in the array!\n"); 
+    } 
+/* --- PAGE 5 --- */
+} 
+void sortArray(int a[], int n)  
+{ 
+    int i, j, temp; 
+    for (i = 0; i < n - 1; i++) { 
+        for (j = 0; j < n - i - 1; j++) 
+       { 
+            if (a[j] > a[j + 1]) { 
+                temp = a[j]; 
+                a[j] = a[j + 1]; 
+                a[j + 1] = temp; 
+            } 
+        } 
+    } 
+} 
+ 
+ 
+Output: 
+Menu: 
+1. Linear search 
+2. Binary search 
+3. Exit 
+Enter your choice: 1 
+Enter no of students: 6 
+Enter roll numbers: 
+53 24 34 12 2 6 
+Enter rollno to be searched: 12 
+Element found at index 3 (position 4) 
+/* --- PAGE 6 --- */
+ 
+Menu: 
+1. Linear search 
+2. Binary search 
+3. Exit 
+Enter your choice: 2 
+Enter no of students: 5 
+Enter roll numbers: 
+8 64 75 46 51 
+Enter rollno to be searched :40 
+8 46 51 64 75 
+Element not found in the array! 

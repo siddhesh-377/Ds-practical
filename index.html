@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprehensive DSA Practical Revision Portal. Direct authoritative revision for Data Structures Laboratory Practicals 1 through 9 with Theory, Algorithms, C/C++ Code, and Execution Outputs.">
+  <meta name="keywords" content="Data Structures, DSA Practicals, C Programming, C++, Algorithms, SPPU Computer Engineering">
+  <meta name="author" content="Data Structures & Algorithms Academic Portal">
+  <title>DSA Practical Revision Portal &mdash; Practicals 1 to 9</title>
+
+  <!-- Google Fonts Preconnect & Inter / JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/code.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Bar -->
+    <header class="header-bar" role="banner">
+      <div class="brand-section">
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="brand-badge">DS</div>
+        <div class="brand-info">
+          <h1>DSA Practical Revision Portal</h1>
+          <div class="brand-subtitle">Data Structures Laboratory &bull; Practicals 1 to 9</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Quick Search Box -->
+        <div class="quick-search-box">
+          <span class="search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="text" id="quickSearchInput" placeholder="Search theory, code, algorithms..." aria-label="Search practical content" autocomplete="off" />
+        </div>
+
+        <div class="header-status-badge">
+          <span class="status-dot"></span>
+          <span>18 Verified Sources Loaded</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+      <!-- Mobile Backdrop -->
+      <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+      <!-- Navigation Sidebar -->
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Practical Selection">
+        <div class="sidebar-header">
+          <div class="sidebar-title">
+            <span>Laboratory Practicals</span>
+            <span class="sidebar-count" id="pCountBadge">9 Practicals</span>
+          </div>
+        </div>
+
+        <!-- Practical Selection Buttons -->
+        <nav class="practical-list" id="practicalList" aria-label="Practicals List">
+          <!-- Dynamically populated from data.js -->
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="shortcuts-hint">
+            <span>Keys:</span>
+            <span class="kbd">&larr;</span>
+            <span class="kbd">&rarr;</span>
+            <span class="kbd">1-9</span>
+            <span class="kbd">T</span>
+            <span class="kbd">C</span>
+            <span class="kbd">O</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Stage (Content Display) -->
+      <main class="main-stage" id="mainStage" role="main">
+        <!-- Stage Top Bar -->
+        <div class="stage-header" id="stageHeader">
+          <div class="stage-top-meta">
+            <div class="practical-meta-heading">
+              <span class="p-number-large" id="headerPNumber">Practical 1</span>
+              <h2 class="p-title-large" id="headerPTitle">Linear and Binary Search</h2>
+            </div>
+            <div class="p-source-badge" id="headerSourceInfo">
+              Source: Theory 1.docx &amp; Code 1.pdf
+            </div>
+          </div>
+
+          <!-- Tabs Navigation -->
+          <nav class="tabs-nav" role="tablist">
+            <button class="tab-btn active" id="tabTheoryBtn" role="tab" aria-selected="true" aria-controls="tabTheoryContent">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              <span>Theory &amp; Algorithm</span>
+            </button>
+            <button class="tab-btn" id="tabCodeBtn" role="tab" aria-selected="false" aria-controls="tabCodeContent">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span>Source Code</span>
+            </button>
+            <button class="tab-btn" id="tabOutputBtn" role="tab" aria-selected="false" aria-controls="tabOutputContent">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              <span>Execution Output</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Scrollable Stage Body -->
+        <div class="stage-body">
+          <div id="tabTheoryContent" role="tabpanel" aria-labelledby="tabTheoryBtn"></div>
+          <div id="tabCodeContent" role="tabpanel" aria-labelledby="tabCodeBtn" style="display: none; height: 100%;"></div>
+          <div id="tabOutputContent" role="tabpanel" aria-labelledby="tabOutputBtn" style="display: none;"></div>
+        </div>
+
+        <!-- Footer Stepper Navigation -->
+        <footer class="footer-nav">
+          <div class="portal-credits">
+            Authoritative Laboratory Syllabus Revision &bull; 100% Exact Source Documents
+          </div>
+          <div class="nav-controls">
+            <button class="p-stepper-btn" id="prevPracticalBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span>Previous Practical</span>
+            </button>
+            <button class="p-stepper-btn" id="nextPracticalBtn">
+              <span>Next Practical</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/highlight.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

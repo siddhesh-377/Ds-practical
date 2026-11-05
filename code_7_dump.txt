@@ -1,0 +1,204 @@
+#include <iostream>
+using namespace std;
+
+struct piz
+{
+    int ono, ot;
+};
+
+class PizzaParlor
+{
+    piz p[10];
+    int count, c, rear, front;
+
+public:
+    PizzaParlor()
+    {
+        c = 0;
+        count = 0;
+        front = 0;
+        rear = -1;
+    }
+
+    void insert();
+    void display();
+    void del();
+};
+
+void PizzaParlor::insert()
+{
+    int i, n;
+
+    cout << "\n_________________________";
+    cout << "\n| 1. Corn Pizza         |";
+    cout << "\n| 2. Pizza              |";
+    cout << "\n| 3. Chicken Pizza      |";
+    cout << "\n|_______________________|";
+
+    cout << "\n---------------------------------------------";
+    cout << "\nHow many orders you want to place: ";
+    cin >> n;
+
+    for (i = 0; i < n; i++)
+    {
+        if (count >= 10)
+        {
+            cout << "\n____________";
+            cout << "\n| OVERFLOW |";
+            cout << "\n|__________|";
+            break;
+        }
+
+        cout << "\nEnter your order (1/2/3): ";
+        cin >> p[(rear + 1) % 10].ot;
+
+        if (p[(rear + 1) % 10].ot < 1 ||
+            p[(rear + 1) % 10].ot > 3)
+        {
+            cout << "\nInvalid pizza choice.";
+            continue;
+        }
+
+        rear = (rear + 1) % 10;
+
+        c++;
+        p[rear].ono = c;
+        count++;
+
+        cout << "Order placed successfully.";
+        cout << "\nOrder Number: " << p[rear].ono;
+    }
+
+    cout << "\n---------------------------------------------";
+}
+
+void PizzaParlor::display()
+{
+    int i, n, f;
+
+    if (count == 0)
+    {
+        cout << "\nQueue is empty. No pending orders.";
+        return;
+    }
+
+    cout << "\n---------------------------------------------";
+    cout << "\nHow many orders you want to display: ";
+    cin >> n;
+    cout << "---------------------------------------------";
+
+    f = front;
+
+    for (i = 0; i < n; i++)
+    {
+        if (i >= count)
+        {
+            cout << "\nAll pending orders displayed.";
+            break;
+        }
+
+        cout << "\n____________________________________________";
+        cout << "\nOrder Number : " << p[f].ono;
+        cout << "\nPizza        : ";
+
+        if (p[f].ot == 1)
+            cout << "Corn Pizza";
+        else if (p[f].ot == 2)
+            cout << "Pizza";
+        else if (p[f].ot == 3)
+            cout << "Chicken Pizza";
+
+        cout << "\n____________________________________________";
+
+        f = (f + 1) % 10;
+    }
+
+    cout << "\n---------------------------------------------";
+}
+
+void PizzaParlor::del()
+{
+    int i, n;
+
+    cout << "\n---------------------------------------------";
+    cout << "\nHow many orders you want to serve: ";
+    cin >> n;
+    cout << "---------------------------------------------";
+
+    for (i = 0; i < n; i++)
+    {
+        if (count == 0)
+        {
+            cout << "\nUNDERFLOW";
+            cout << "\nNo orders available to serve.";
+            break;
+        }
+
+        cout << "\n____________________________________________";
+        cout << "\nServed Order Number : " << p[front].ono;
+        cout << "\nPizza               : ";
+
+        if (p[front].ot == 1)
+            cout << "Corn Pizza";
+        else if (p[front].ot == 2)
+            cout << "Pizza";
+        else if (p[front].ot == 3)
+            cout << "Chicken Pizza";
+
+        cout << "\n____________________________________________";
+
+        p[front].ono = 0;
+        p[front].ot = 0;
+
+        front = (front + 1) % 10;
+        count--;
+    }
+
+    cout << "\n---------------------------------------------";
+}
+
+int main()
+{
+    PizzaParlor q;
+    int choice;
+
+    do
+    {
+        cout << "\n\n____________________________";
+        cout << "\n|       PIZZA PARLOR       |";
+        cout << "\n|__________________________|";
+        cout << "\n| 1. Place Order           |";
+        cout << "\n| 2. Display Orders        |";
+        cout << "\n| 3. Serve Order           |";
+        cout << "\n| 4. Exit                  |";
+        cout << "\n|__________________________|";
+
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            q.insert();
+            break;
+
+        case 2:
+            q.display();
+            break;
+
+        case 3:
+            q.del();
+            break;
+
+        case 4:
+            cout << "\nThank you!";
+            break;
+
+        default:
+            cout << "\nInvalid choice.";
+        }
+
+    } while (choice != 4);
+
+    return 0;
+}

@@ -1,0 +1,29 @@
+{
+  "filename": "Code 1.pdf",
+  "pages": [
+    {
+      "page": 1,
+      "text": " Practical Assignment 1 \nProblem Statement :  Write menu based program- \na) Write a program to store roll numbers of student in array who attended a training \nprogram in random order. Write a function for searching whether a particular student \nattended a training program or not, using Linear search. \nb) Write a program to store roll numbers of student array who attended training \nprograms in sorted order. Write a function for searching whether a particular student \nattended a training program or not, using Binary search. \n \nInput code: \n#include <stdio.h> \nvoid linearSearch(int a[], int n, int key); \nvoid binarySearch(int a[], int n, int key); \nvoid sortArray(int a[], int n); \n \nint main() \n { \n    int a[50], n = 0, ch, i, key; \n \n    do \n    { \n \n        printf(\"\\nMenu:\\n1. Linear search\\n2. Binary search\\n3. Exit\\n\"); \n        printf(\"Enter your choice: \"); \n        if (scanf(\"%d\" , &ch) != 1) \n            break; \n \n        if (ch == 1 || ch == 2) \n        { "
+    },
+    {
+      "page": 2,
+      "text": "            printf(\"Enter no of students: \"); \n            scanf(\"%d\" , &n); \n \n            printf(\"Enter roll numbers:\\n\" , n); \n            for (i = 0; i < n; i++) \n            { \n                scanf(\"%d\" , &a[i]); \n            } \n \n            printf(\"Enter rollno to be searched :\"); \n            scanf(\"%d\" , &key); \n        } \n \n        switch (ch) \n        { \n            case 1: \n                linearSearch(a, n, key); \n                break; \n \n            case 2: \n \n                sortArray(a, n); \n                for (i = 0; i < n; i++) printf(\"%d \" , a[i]); \n                printf(\"\\n\"); \n \n                binarySearch(a, n, key); \n                break; \n "
+    },
+    {
+      "page": 3,
+      "text": "            case 3: \n                printf(\"Exiting program.\\n\"); \n                break; \n \n            default: \n                printf(\"Invalid choice! Please try again.\\n\"); \n                break; \n        } \n    } while (ch != 3); \n \n    return 0; \n} \n \nvoid linearSearch(int a[], int n, int key) \n{ \n    int i, found = 0; \n \n    for (i = 0; i < n; i++)  \n{ \n        if (a[i] == key)  \n       { \n            printf(\"Element found at index %d (position %d)\\n\" , i, i + 1); \n            found = 1; \n            break; \n        } \n    } \n if (!found) \n     { "
+    },
+    {
+      "page": 4,
+      "text": "        printf(\"Element not found in the array!\\n\"); \n    } \n} \nvoid binarySearch(int a[], int n, int key) \n { \n    int low = 0, high = n - 1, mid; \n    int found = 0; \n \n    while (low <= high) \n    { \n        mid = low + (high - low) / 2; \n \n        if (a[mid] == key) \n        { \n            printf(\"Element found at index %d (position %d)\\n\" , mid, mid + 1); \n            found = 1; \n            break; \n        } else if (a[mid] < key) \n         { \n            low = mid + 1; \n        } else { \n            high = mid - 1; \n        } \n    } \n \n    if (!found) { \n        printf(\"Element not found in the array!\\n\"); \n    } "
+    },
+    {
+      "page": 5,
+      "text": "} \nvoid sortArray(int a[], int n)  \n{ \n    int i, j, temp; \n    for (i = 0; i < n - 1; i++) { \n        for (j = 0; j < n - i - 1; j++) \n       { \n            if (a[j] > a[j + 1]) { \n                temp = a[j]; \n                a[j] = a[j + 1]; \n                a[j + 1] = temp; \n            } \n        } \n    } \n} \n \n \nOutput: \nMenu: \n1. Linear search \n2. Binary search \n3. Exit \nEnter your choice: 1 \nEnter no of students: 6 \nEnter roll numbers: \n53 24 34 12 2 6 \nEnter rollno to be searched: 12 \nElement found at index 3 (position 4) "
+    },
+    {
+      "page": 6,
+      "text": " \nMenu: \n1. Linear search \n2. Binary search \n3. Exit \nEnter your choice: 2 \nEnter no of students: 5 \nEnter roll numbers: \n8 64 75 46 51 \nEnter rollno to be searched :40 \n8 46 51 64 75 \nElement not found in the array! "
+    }
+  ]
+}

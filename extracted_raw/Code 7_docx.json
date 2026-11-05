@@ -1,0 +1,826 @@
+{
+  "filename": "Code 7.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": "#include <iostream>"
+    },
+    {
+      "style": "Normal",
+      "text": "using namespace std;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "struct piz"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    int ono, ot;"
+    },
+    {
+      "style": "Normal",
+      "text": "};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "class PizzaParlor"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    piz p[10];"
+    },
+    {
+      "style": "Normal",
+      "text": "    int count, c, rear, front;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "public:"
+    },
+    {
+      "style": "Normal",
+      "text": "    PizzaParlor()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        c = 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "        count = 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "        front = 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "        rear = -1;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    void insert();"
+    },
+    {
+      "style": "Normal",
+      "text": "    void display();"
+    },
+    {
+      "style": "Normal",
+      "text": "    void del();"
+    },
+    {
+      "style": "Normal",
+      "text": "};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "void PizzaParlor::insert()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    int i, n;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n_________________________\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n| 1. Corn Pizza         |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n| 2. Pizza              |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n| 3. Chicken Pizza      |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n|_______________________|\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n---------------------------------------------\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\nHow many orders you want to place: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cin >> n;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    for (i = 0; i < n; i++)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (count >= 10)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\n____________\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\n| OVERFLOW |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\n|__________|\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nEnter your order (1/2/3): \";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cin >> p[(rear + 1) % 10].ot;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p[(rear + 1) % 10].ot < 1 ||"
+    },
+    {
+      "style": "Normal",
+      "text": "            p[(rear + 1) % 10].ot > 3)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\nInvalid pizza choice.\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            continue;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        rear = (rear + 1) % 10;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        c++;"
+    },
+    {
+      "style": "Normal",
+      "text": "        p[rear].ono = c;"
+    },
+    {
+      "style": "Normal",
+      "text": "        count++;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Order placed successfully.\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nOrder Number: \" << p[rear].ono;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n---------------------------------------------\";"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "void PizzaParlor::display()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    int i, n, f;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    if (count == 0)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nQueue is empty. No pending orders.\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        return;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n---------------------------------------------\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\nHow many orders you want to display: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cin >> n;"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"---------------------------------------------\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    f = front;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    for (i = 0; i < n; i++)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (i >= count)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\nAll pending orders displayed.\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n____________________________________________\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nOrder Number : \" << p[f].ono;"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nPizza        : \";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p[f].ot == 1)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Corn Pizza\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        else if (p[f].ot == 2)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Pizza\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        else if (p[f].ot == 3)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Chicken Pizza\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n____________________________________________\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        f = (f + 1) % 10;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n---------------------------------------------\";"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "void PizzaParlor::del()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    int i, n;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n---------------------------------------------\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\nHow many orders you want to serve: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "    cin >> n;"
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"---------------------------------------------\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    for (i = 0; i < n; i++)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (count == 0)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\nUNDERFLOW\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\nNo orders available to serve.\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n____________________________________________\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nServed Order Number : \" << p[front].ono;"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nPizza               : \";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p[front].ot == 1)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Corn Pizza\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        else if (p[front].ot == 2)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Pizza\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        else if (p[front].ot == 3)"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Chicken Pizza\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n____________________________________________\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        p[front].ono = 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "        p[front].ot = 0;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        front = (front + 1) % 10;"
+    },
+    {
+      "style": "Normal",
+      "text": "        count--;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    cout << \"\\n---------------------------------------------\";"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "int main()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    PizzaParlor q;"
+    },
+    {
+      "style": "Normal",
+      "text": "    int choice;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    do"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n\\n____________________________\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n|       PIZZA PARLOR       |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n|__________________________|\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n| 1. Place Order           |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n| 2. Display Orders        |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n| 3. Serve Order           |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n| 4. Exit                  |\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n|__________________________|\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nEnter your choice: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cin >> choice;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        switch (choice)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "        case 1:"
+    },
+    {
+      "style": "Normal",
+      "text": "            q.insert();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 2:"
+    },
+    {
+      "style": "Normal",
+      "text": "            q.display();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 3:"
+    },
+    {
+      "style": "Normal",
+      "text": "            q.del();"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        case 4:"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\nThank you!\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        default:"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"\\nInvalid choice.\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    } while (choice != 4);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    }
+  ],
+  "tables": []
+}

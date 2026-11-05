@@ -1,0 +1,261 @@
+
+/* --- PAGE 1 --- */
+ Practical Assignment 2 
+Problem Statement :   
+Write a program to store the first-year percentage of students in an array. Write function for 
+sorting array of floating-point numbers in ascending order using-Selection Sort Bubble sort 
+and display top five scores. 
+ 
+Input code: 
+#include <stdio.h> 
+#include <stdlib.h> 
+#define MAX_STUD 100 
+ 
+int main() 
+{ 
+    float percentage[MAX_STUD]; 
+    int num = 0, ch, i, j; 
+    float temp; 
+ 
+    do 
+    { 
+        printf("__Student percentage management system__\n"); 
+        printf("1.Enter student percentage\n2.Selection sort\n3.Bubble sort\n4.Top 5\n5.Display 
+all student percentage\n6.exit\n"); 
+        printf("Enter your choice:"); 
+        scanf("%d",&ch); 
+        switch(ch) 
+        { 
+            case 1: 
+                printf("Enter number of students (max %d): ", MAX_STUD); 
+                scanf("%d", &num); 
+                if(num > MAX_STUD || num <= 0) 
+/* --- PAGE 2 --- */
+                { 
+                    printf("Insert a valid count!\n"); 
+                    num = 0; 
+                } 
+                else 
+                { 
+                    printf("Enter percentages of students:\n"); 
+                    for(i = 0; i < num; i++) 
+                    { 
+                        printf("Percentage of student %d: ", i + 1); 
+                        scanf("%f", &percentage[i]); 
+                    } 
+                } 
+                break; 
+ 
+            case 2: 
+                if(num == 0) 
+                { 
+                    printf("No student data available! Please enter data first.\n"); 
+                    break; 
+                } 
+                for(i = 0; i < num - 1; i++) 
+                { 
+                    int min = i; 
+                    for(j = i + 1; j < num; j++) 
+                    { 
+                        if(percentage[j] < percentage[min]) 
+                        { 
+                            min = j; 
+/* --- PAGE 3 --- */
+                        } 
+                    } 
+                    if(min != i) 
+                    { 
+                        temp = percentage[i]; 
+                        percentage[i] = percentage[min]; 
+                        percentage[min] = temp; 
+                    } 
+                } 
+                printf("\nPercentages sorted (Ascending) using Selection Sort:\n"); 
+                for(i = 0; i < num; i++) 
+                { 
+                    printf("%.2f%%\n", percentage[i]); 
+                } 
+                break; 
+ 
+            case 3: 
+                if(num == 0) 
+                { 
+                    printf("No student data available! Please enter data first.\n"); 
+                    break; 
+                } 
+                for(i = 0; i < num - 1; i++) 
+                { 
+                    for(j = 0; j < num - 1 - i; j++) 
+                    { 
+                        if(percentage[j] > percentage[j + 1]) 
+                        { 
+                            temp = percentage[j]; 
+/* --- PAGE 4 --- */
+                            percentage[j] = percentage[j + 1]; 
+                            percentage[j + 1] = temp; 
+                        } 
+                    } 
+                } 
+                printf("\nPercentages sorted (Ascending) using Bubble Sort:\n"); 
+                for(i = 0; i < num; i++) 
+                { 
+                    printf("%.2f%%\n", percentage[i]); 
+                } 
+                break; 
+ 
+            case 4: 
+                if(num == 0) 
+                { 
+                    printf("No student data available! Please enter data first.\n"); 
+                    break; 
+                } 
+ 
+                for(i = 0; i < num - 1; i++) 
+                { 
+                    int min = i; 
+                    for(j = i + 1; j < num; j++) 
+                    { 
+                        if(percentage[j] < percentage[min]) 
+                        { 
+                            min = j; 
+                        } 
+                    } 
+/* --- PAGE 5 --- */
+                    if(min != i) 
+                    { 
+                        temp = percentage[i]; 
+                        percentage[i] = percentage[min]; 
+                        percentage[min] = temp; 
+                    } 
+                } 
+ 
+                printf("\nTop Percentages:\n"); 
+                int count = 0; 
+                for(i = num - 1; i >= 0 && count < 5; i--) 
+                { 
+                    printf("Rank %d: %.2f%%\n", count + 1, percentage[i]); 
+                    count++; 
+                } 
+                break; 
+ 
+            case 5: 
+                if(num == 0) 
+                { 
+                    printf("No student data available! Please enter data first.\n"); 
+                } 
+                else 
+                { 
+                    printf("\nAll Student Percentages:\n"); 
+                    for(i = 0; i < num; i++) 
+                    { 
+                        printf("Student %d: %.2f%%\n", i + 1, percentage[i]); 
+                    } 
+/* --- PAGE 6 --- */
+                } 
+                break; 
+ 
+            case 6: 
+                printf("Exiting program...\n"); 
+                break; 
+ 
+            default: 
+                printf("Invalid choice! Please enter a option between 1 and 6.\n"); 
+                break; 
+        } 
+    } while(ch != 6); 
+ 
+    return 0; 
+} 
+ 
+Output: 
+__Student percentage management system__ 
+1.Enter student percentage 
+2.Selection sort 
+3.Bubble sort 
+4.Top 5 
+5.Display all student percentage 
+6.exit 
+Enter your choice:1 
+Enter number of students (max 100): 5 
+Enter percentages of students: 
+Percentage of student 1: 98.6 
+Percentage of student 2: 56.7 
+/* --- PAGE 7 --- */
+Percentage of student 3: 86.9 
+Percentage of student 4: 82.1 
+Percentage of student 5: 70.0 
+ 
+__Student percentage management system__ 
+1.Enter student percentage 
+2.Selection sort 
+3.Bubble sort 
+4.Top 5 
+5.Display all student percentage 
+6.exit 
+Enter your choice:2 
+Percentages sorted (Ascending) using Selection Sort: 
+56.70% 
+70.00% 
+82.10% 
+86.90% 
+98.60% 
+ 
+__Student percentage management system__ 
+1.Enter student percentage 
+2.Selection sort 
+3.Bubble sort 
+4.Top 5 
+5.Display all student percentage 
+6.exit 
+Enter your choice:3 
+Percentages sorted (Ascending) using Bubble Sort: 
+56.70% 
+/* --- PAGE 8 --- */
+70.00% 
+82.10% 
+86.90% 
+98.60% 
+ 
+__Student percentage management system__ 
+1.Enter student percentage 
+2.Selection sort 
+3.Bubble sort 
+4.Top 5 
+5.Display all student percentage 
+6.exit 
+Enter your choice:4 
+Top Percentages: 
+Rank 1: 98.60% 
+Rank 2: 86.90% 
+Rank 3: 82.10% 
+Rank 4: 70.00% 
+Rank 5: 56.70% 
+ 
+__Student percentage management system__ 
+1.Enter student percentage 
+2.Selection sort 
+3.Bubble sort 
+4.Top 5 
+5.Display all student percentage 
+6.exit 
+Enter your choice:5 
+All Student Percentages: 
+/* --- PAGE 9 --- */
+Student 1: 56.70% 
+Student 2: 70.00% 
+Student 3: 82.10% 
+Student 4: 86.90% 
+Student 5: 98.60% 
+ 
+__Student percentage management system__ 
+1.Enter student percentage 
+2.Selection sort 
+3.Bubble sort 
+4.Top 5 
+5.Display all student percentage 
+6.exit 
+Enter your choice:6 
+Exiting program... 
+ 
+Process returned 0 (0x0)   execution time : 51.723 s 
+Press any key to continue. 

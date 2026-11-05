@@ -1,0 +1,322 @@
+{
+  "filename": "Theory 6.docx",
+  "paragraphs": [
+    {
+      "style": "Body Text",
+      "text": "Title: Program to check well formedness of parenthesis."
+    },
+    {
+      "style": "Body Text",
+      "text": "Objectives: Understand the concept and basic operations of Stack in Data structure."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Problem Statement:"
+    },
+    {
+      "style": "Body Text",
+      "text": "In any language program mostly syntax error occurs due to unbalancing delimiter such as (),{},[]. Write C++ program using stack to check whether given expression is well parenthesized or not."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Outcomes:"
+    },
+    {
+      "style": "Body Text",
+      "text": "Will be able to perform the basic operations of Stack in Data Structure."
+    },
+    {
+      "style": "Normal",
+      "text": "Software & Hardware requirements:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "64-bit Open source Linux or its derivative"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Open Source C++ Programming tool like G++/GCC"
+    },
+    {
+      "style": "Heading 2",
+      "text": "Theory- Concept in brief:"
+    },
+    {
+      "style": "Body Text",
+      "text": "Stack is abstract data type and linear data structure."
+    },
+    {
+      "style": "Body Text",
+      "text": "A Stack is data structure in which addition of new element or deletion of existing element always takes place at a same end. This end is known as the top of the stack. That means that it is possible to remove elements from a stack in reverse order from the insertion of elements into the stack."
+    },
+    {
+      "style": "Body Text",
+      "text": "One other way of describing the stack is as a last in, first out (LIFO) abstract data type and linear data structure."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Operations on Stack"
+    },
+    {
+      "style": "Body Text",
+      "text": "The stack is basically performed two operations PUSH and POP. Push and pop are the operations that are provided for insertion of an element into the stack and the removal of an element from the stack, respectively."
+    },
+    {
+      "style": "Body Text",
+      "text": "PUSH:- PUSH operation performed for the adding item to the stack."
+    },
+    {
+      "style": "Body Text",
+      "text": "POP:- POP operation performed for removing an item from a stack."
+    },
+    {
+      "style": "Body Text",
+      "text": "ISEMPTY : which returns true if Stack is empty else false; "
+    },
+    {
+      "style": "Body Text",
+      "text": "ISFULL : which returns true is Stack is full else false;"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": " "
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Application of Stack:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Expression Evolution Expression Conversion Infix to Postfix"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Infix to Prefix Postfix to Infix Prefix to Infix Parsing"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Simulation of recursion Function call"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Algorithms:"
+    },
+    {
+      "style": "Normal",
+      "text": "Algorithm to check well formedness of parenthesis"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Declare a character stack S."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Now traverse the expression string exp."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "If the current character is a starting bracket („(„ or „{„ or „[„) then push it to stack."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "If the current character is a closing bracket („)‟ or „}‟ or „]‟) then pop from stack and if the popped character is the matching starting bracket then fine else parenthesis are not balanced."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "After complete traversal, if there is some starting bracket left in stack then “not balanced”"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 1",
+      "text": "Algorithm push(char item) Precondition:"
+    },
+    {
+      "style": "Normal",
+      "text": "Accept a character variable"
+    },
+    {
+      "style": "Normal",
+      "text": "Postcondition: Stack with newly inserted element"
+    },
+    {
+      "style": "Normal",
+      "text": "Return: Nil"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "if(st.top==(max-1))"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Display message \"Stack Overflow\""
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Go to step 4"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Increment top by 1"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "st.stack[st.top]=item"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Stop"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Algorithm pop()"
+    },
+    {
+      "style": "Normal",
+      "text": "Precondition : An already created stack"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Postcondition : Element at the top of the stack"
+    },
+    {
+      "style": "Normal",
+      "text": "Return : char"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "if(st.top==-1)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Display message ―Stack underflow.\""
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Go to step 3"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Return (st.stack[st.top--])"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Stop"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Flowchart: Draw Flowchart Test cases:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "(A+(B*C)"
+    },
+    {
+      "style": "Body Text",
+      "text": "Expression is invalid"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "(A+(B*C))"
+    },
+    {
+      "style": "Body Text",
+      "text": "Expression is valid"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Conclusion/analysis:"
+    },
+    {
+      "style": "Body Text",
+      "text": "Understood the basic concepts of Stack operation Push and Pop and able to check whether an expression is well parenthesized or not."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    }
+  ],
+  "tables": []
+}

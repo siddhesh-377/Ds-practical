@@ -1,0 +1,846 @@
+{
+  "filename": "Code 5.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": "#include <iostream>"
+    },
+    {
+      "style": "Normal",
+      "text": "#include <string>"
+    },
+    {
+      "style": "Normal",
+      "text": "using namespace std;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "struct Node"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    int time;"
+    },
+    {
+      "style": "Normal",
+      "text": "    string name;"
+    },
+    {
+      "style": "Normal",
+      "text": "    Node *prev, *next;"
+    },
+    {
+      "style": "Normal",
+      "text": "};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "class DLL"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    Node *head;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "public:"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    DLL()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        head = NULL;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Book appointment"
+    },
+    {
+      "style": "Normal",
+      "text": "    void book(int t, string n)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (t < 9 || t > 17)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Invalid time!\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            return;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        Node *newNode = new Node{t, n, NULL, NULL};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (head == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            head = newNode;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": "        else"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            Node *p = head;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            while (p->next != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "                p = p->next;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            p->next = newNode;"
+    },
+    {
+      "style": "Normal",
+      "text": "            newNode->prev = p;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Appointment booked.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Display appointments"
+    },
+    {
+      "style": "Normal",
+      "text": "    void display()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        Node *p = head;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"No appointments.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            return;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        while (p != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << p->time << \":00 - \" << p->name << endl;"
+    },
+    {
+      "style": "Normal",
+      "text": "            p = p->next;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Display free slots"
+    },
+    {
+      "style": "Normal",
+      "text": "    void freeSlots()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Free slots:\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        for (int t = 9; t <= 17; t++)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            Node *p = head;"
+    },
+    {
+      "style": "Normal",
+      "text": "            bool booked = false;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            while (p != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            {"
+    },
+    {
+      "style": "Normal",
+      "text": "                if (p->time == t)"
+    },
+    {
+      "style": "Normal",
+      "text": "                {"
+    },
+    {
+      "style": "Normal",
+      "text": "                    booked = true;"
+    },
+    {
+      "style": "Normal",
+      "text": "                    break;"
+    },
+    {
+      "style": "Normal",
+      "text": "                }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "                p = p->next;"
+    },
+    {
+      "style": "Normal",
+      "text": "            }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            if (!booked)"
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << t << \":00\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Cancel appointment"
+    },
+    {
+      "style": "Normal",
+      "text": "    void cancel(int t)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (t < 9 || t > 17)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Invalid time!\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            return;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        Node *p = head;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        while (p != NULL && p->time != t)"
+    },
+    {
+      "style": "Normal",
+      "text": "            p = p->next;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            cout << \"Appointment not found.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "            return;"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p->prev != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            p->prev->next = p->next;"
+    },
+    {
+      "style": "Normal",
+      "text": "        else"
+    },
+    {
+      "style": "Normal",
+      "text": "            head = p->next;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        if (p->next != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "            p->next->prev = p->prev;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        delete p;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Appointment cancelled.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Sort appointments according to time"
+    },
+    {
+      "style": "Normal",
+      "text": "    void sort()"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        Node *i, *j;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        for (i = head; i != NULL; i = i->next)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            for (j = i->next; j != NULL; j = j->next)"
+    },
+    {
+      "style": "Normal",
+      "text": "            {"
+    },
+    {
+      "style": "Normal",
+      "text": "                if (i->time > j->time)"
+    },
+    {
+      "style": "Normal",
+      "text": "                {"
+    },
+    {
+      "style": "Normal",
+      "text": "                    swap(i->time, j->time);"
+    },
+    {
+      "style": "Normal",
+      "text": "                    swap(i->name, j->name);"
+    },
+    {
+      "style": "Normal",
+      "text": "                }"
+    },
+    {
+      "style": "Normal",
+      "text": "            }"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"Appointments sorted.\\n\";"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": "};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "int main()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    DLL d;"
+    },
+    {
+      "style": "Normal",
+      "text": "    int choice, t;"
+    },
+    {
+      "style": "Normal",
+      "text": "    string name;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    do"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n1. Free Slots\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n2. Book Appointment\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n3. Display Appointments\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n4. Cancel Appointment\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n5. Sort by Time\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\n6. Exit\";"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        cout << \"\\nEnter choice: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "        cin >> choice;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        switch (choice)"
+    },
+    {
+      "style": "Normal",
+      "text": "        {"
+    },
+    {
+      "style": "Normal",
+      "text": "            case 1:"
+    },
+    {
+      "style": "Normal",
+      "text": "                d.freeSlots();"
+    },
+    {
+      "style": "Normal",
+      "text": "                break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            case 2:"
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << \"Enter time (9-17): \";"
+    },
+    {
+      "style": "Normal",
+      "text": "                cin >> t;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << \"Enter name: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "                cin >> name;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "                d.book(t, name);"
+    },
+    {
+      "style": "Normal",
+      "text": "                break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            case 3:"
+    },
+    {
+      "style": "Normal",
+      "text": "                d.display();"
+    },
+    {
+      "style": "Normal",
+      "text": "                break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            case 4:"
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << \"Enter time: \";"
+    },
+    {
+      "style": "Normal",
+      "text": "                cin >> t;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "                d.cancel(t);"
+    },
+    {
+      "style": "Normal",
+      "text": "                break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            case 5:"
+    },
+    {
+      "style": "Normal",
+      "text": "                d.sort();"
+    },
+    {
+      "style": "Normal",
+      "text": "                break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            case 6:"
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << \"Exit.\";"
+    },
+    {
+      "style": "Normal",
+      "text": "                break;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "            default:"
+    },
+    {
+      "style": "Normal",
+      "text": "                cout << \"Invalid choice!\";"
+    },
+    {
+      "style": "Normal",
+      "text": "        }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    } while (choice != 6);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    }
+  ],
+  "tables": []
+}

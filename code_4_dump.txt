@@ -1,0 +1,156 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node
+{
+    int roll;
+    struct Node *next;
+};
+
+// Create a new node
+struct Node* createNode(int roll)
+{
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->roll = roll;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Insert at end
+void insert(struct Node **head, int roll)
+{
+    struct Node *newNode = createNode(roll);
+
+    if (*head == NULL)
+    {
+        *head = newNode;
+        return;
+    }
+
+    struct Node *temp = *head;
+
+    while (temp->next != NULL)
+        temp = temp->next;
+
+    temp->next = newNode;
+}
+
+// Check whether roll number exists in a set
+int search(struct Node *head, int roll)
+{
+    while (head != NULL)
+    {
+        if (head->roll == roll)
+            return 1;
+
+        head = head->next;
+    }
+
+    return 0;
+}
+
+// Display linked list
+void display(struct Node *head)
+{
+    if (head == NULL)
+    {
+        printf("No students\n");
+        return;
+    }
+
+    while (head != NULL)
+    {
+        printf("%d ", head->roll);
+        head = head->next;
+    }
+
+    printf("\n");
+}
+
+int main()
+{
+    struct Node *A = NULL;
+    struct Node *B = NULL;
+
+    int nA, nB, roll, i;
+    int neither = 0;
+
+    // Input Set A
+    printf("Enter number of students who like Vanilla: ");
+    scanf("%d", &nA);
+
+    printf("Enter roll numbers:\n");
+    for (i = 0; i < nA; i++)
+    {
+        scanf("%d", &roll);
+        insert(&A, roll);
+    }
+
+    // Input Set B
+    printf("\nEnter number of students who like Butterscotch: ");
+    scanf("%d", &nB);
+
+    printf("Enter roll numbers:\n");
+    for (i = 0; i < nB; i++)
+    {
+        scanf("%d", &roll);
+        insert(&B, roll);
+    }
+
+    // a) Students who like both
+    printf("\n(a) Students who like both Vanilla and Butterscotch:\n");
+
+    struct Node *temp = A;
+
+    while (temp != NULL)
+    {
+        if (search(B, temp->roll))
+            printf("%d ", temp->roll);
+
+        temp = temp->next;
+    }
+
+    // b) Students who like either but not both
+    printf("\n\n(b) Students who like either Vanilla or Butterscotch, but not both:\n");
+
+    temp = A;
+
+    // Students in A but not in B
+    while (temp != NULL)
+    {
+        if (!search(B, temp->roll))
+            printf("%d ", temp->roll);
+
+        temp = temp->next;
+    }
+
+    // Students in B but not in A
+    temp = B;
+
+    while (temp != NULL)
+    {
+        if (!search(A, temp->roll))
+            printf("%d ", temp->roll);
+
+        temp = temp->next;
+    }
+
+    // c) Students who like neither
+    // Assuming total students are numbered from 1 to total_students
+
+    int total_students;
+
+    printf("\n\nEnter total number of students in the class: ");
+    scanf("%d", &total_students);
+
+    for (roll = 1; roll <= total_students; roll++)
+    {
+        if (!search(A, roll) && !search(B, roll))
+            neither++;
+    }
+
+    printf("\n(c) Number of students who like neither Vanilla nor Butterscotch: %d\n",
+           neither);
+
+    return 0;
+}

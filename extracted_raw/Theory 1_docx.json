@@ -1,0 +1,301 @@
+{
+  "filename": "Theory 1.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": "Title: Program to Implement Linear and Binary Search."
+    },
+    {
+      "style": "Normal",
+      "text": "Problem Statement:"
+    },
+    {
+      "style": "Default",
+      "text": "Write menu based program "
+    },
+    {
+      "style": "Default",
+      "text": "a) Write a program to store roll numbers of student in array who attended a training program in random order. Write a function for searching whether a particular student attended a training program or not, using Linear search."
+    },
+    {
+      "style": "Normal",
+      "text": " b) Write a program to store roll numbers of student array who attended training programs in sorted order. Write a function for searching whether a particular student attended a training program or not, using Binary search."
+    },
+    {
+      "style": "Normal",
+      "text": "Outcomes"
+    },
+    {
+      "style": "Normal",
+      "text": "Students will be able to write programs for searching data in arrays."
+    },
+    {
+      "style": "Normal",
+      "text": "Understand the working and efficiency of linear and binary search algorithms."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Software & Hardware Requirements"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Theory :"
+    },
+    {
+      "style": "Normal",
+      "text": "Linear Search: A sequential search where each element is checked one by one until the desired element is found."
+    },
+    {
+      "style": "Normal",
+      "text": "Linear Search Algorithm"
+    },
+    {
+      "style": "Normal",
+      "text": "Start"
+    },
+    {
+      "style": "Normal",
+      "text": "Input array elements and target value"
+    },
+    {
+      "style": "Normal",
+      "text": "Traverse the array from index 0 to n-1"
+    },
+    {
+      "style": "Normal",
+      "text": "If element matches target, return FOUND"
+    },
+    {
+      "style": "Normal",
+      "text": "Else continue"
+    },
+    {
+      "style": "Normal",
+      "text": "If not found, return NOT FOUND"
+    },
+    {
+      "style": "Normal",
+      "text": "Stop"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Flow Chart for Linear Search:"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Binary Search: A divide-and-conquer approach which requires the data to be sorted. It reduces the search space in half each time."
+    },
+    {
+      "style": "Normal",
+      "text": "Binary Search Algorithm"
+    },
+    {
+      "style": "Normal",
+      "text": "Start"
+    },
+    {
+      "style": "Normal",
+      "text": "Input sorted array and key value"
+    },
+    {
+      "style": "Normal",
+      "text": "Set low = 0 and high = n - 1"
+    },
+    {
+      "style": "Normal",
+      "text": "While low ≤ high:"
+    },
+    {
+      "style": "Normal",
+      "text": "Compute mid = (low + high) / 2"
+    },
+    {
+      "style": "Normal",
+      "text": "If array[mid] == key, return FOUND"
+    },
+    {
+      "style": "Normal",
+      "text": "Else if key < array[mid], set high = mid - 1"
+    },
+    {
+      "style": "Normal",
+      "text": "Else set low = mid + 1"
+    },
+    {
+      "style": "Normal",
+      "text": "If loop exits, return NOT FOUND"
+    },
+    {
+      "style": "Normal",
+      "text": "Stop"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Flow Chart for Binary Search:"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Mathematical Model (If applicable)"
+    },
+    {
+      "style": "Normal",
+      "text": "Let:"
+    },
+    {
+      "style": "Normal",
+      "text": "S = {s1, s2, s3, ..., sn} be the set of roll numbers"
+    },
+    {
+      "style": "Normal",
+      "text": "P = search(S, key) is the process of checking membership"
+    },
+    {
+      "style": "Normal",
+      "text": "f(P) = {found, not found}"
+    },
+    {
+      "style": "Normal",
+      "text": "Input: Roll numbers S, Search key\nOutput: f(P) indicates presence or absence of roll number"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Conclusion"
+    },
+    {
+      "style": "Normal",
+      "text": "Linear search is simple but inefficient for large datasets (Time Complexity: O(n))."
+    },
+    {
+      "style": "Normal",
+      "text": "Binary search is faster (Time Complexity: O(log n)) but requires sorted input."
+    },
+    {
+      "style": "Normal",
+      "text": "Both techniques are foundational for understanding advanced searching and sorting algorithms."
+    }
+  ],
+  "tables": [
+    [
+      [
+        "Requirement",
+        "Specification"
+      ],
+      [
+        "Programming Language",
+        "C++ / C"
+      ],
+      [
+        "Compiler",
+        "GCC / G++ "
+      ],
+      [
+        "Hardware",
+        "i3 or above, 4 GB RAM or more"
+      ],
+      [
+        "OS",
+        "Windows/Linux"
+      ]
+    ]
+  ]
+}

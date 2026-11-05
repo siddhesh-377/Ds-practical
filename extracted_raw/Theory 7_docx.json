@@ -1,0 +1,257 @@
+{
+  "filename": "Theory 7.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Assignment 7"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Title: Program to Implement Pizza Parlor Order System using Circular Queue"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Problem Statement:"
+    },
+    {
+      "style": "Normal",
+      "text": "Write a C++ program to simulate a Pizza Parlor that accepts a maximum of M orders. Orders are served in First Come First Served (FCFS) basis. Once an order is placed, it cannot be canceled. The program should be implemented using Circular Queue with array."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Objectives:"
+    },
+    {
+      "style": "Normal",
+      "text": "To understand the working of a Circular Queue using an array."
+    },
+    {
+      "style": "Normal",
+      "text": "To simulate real-world applications (Pizza Parlor order system)."
+    },
+    {
+      "style": "Normal",
+      "text": "To implement insertion (enqueue) and deletion (dequeue) operations."
+    },
+    {
+      "style": "Normal",
+      "text": "To understand queue overflow and underflow conditions."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Outcomes:"
+    },
+    {
+      "style": "Normal",
+      "text": "Students will be able to implement a queue system using arrays."
+    },
+    {
+      "style": "Normal",
+      "text": "Students will learn how circular queues help in efficient memory utilization."
+    },
+    {
+      "style": "Normal",
+      "text": "Students will understand real-time simulation of FCFS scheduling."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Software & Hardware Requirements:"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Theory Concept:"
+    },
+    {
+      "style": "Normal",
+      "text": "A Queue is a linear data structure that follows FIFO (First In, First Out) principle. The first element inserted is the first one to be removed."
+    },
+    {
+      "style": "Normal",
+      "text": "In a Circular Queue, the last position is connected back to the first position to make a circle. This avoids the problem of wasted memory space that occurs in a linear queue when elements are deleted."
+    },
+    {
+      "style": "Normal",
+      "text": "Enqueue → Add an order at the rear end."
+    },
+    {
+      "style": "Normal",
+      "text": "Dequeue → Serve an order from the front end."
+    },
+    {
+      "style": "Normal",
+      "text": "Overflow → If the queue is full, no more orders can be placed."
+    },
+    {
+      "style": "Normal",
+      "text": "Underflow → If the queue is empty, no orders can be served."
+    },
+    {
+      "style": "Normal",
+      "text": "In this program, the Pizza Parlor accepts maximum M orders. Orders are served in FCFS manner. Once an order is placed, it cannot be canceled."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Algorithm:"
+    },
+    {
+      "style": "Normal",
+      "text": "1. Enqueue (Place Order)"
+    },
+    {
+      "style": "Normal",
+      "text": "Check if (rear + 1) % M == front."
+    },
+    {
+      "style": "Normal",
+      "text": "If true → Queue is full (Overflow)."
+    },
+    {
+      "style": "Normal",
+      "text": "Else, insert order at rear."
+    },
+    {
+      "style": "Normal",
+      "text": "Update rear = (rear + 1) % M."
+    },
+    {
+      "style": "Normal",
+      "text": "2. Dequeue (Serve Order)"
+    },
+    {
+      "style": "Normal",
+      "text": "Check if front == rear."
+    },
+    {
+      "style": "Normal",
+      "text": "If true → Queue is empty (Underflow)."
+    },
+    {
+      "style": "Normal",
+      "text": "Else, remove order from front."
+    },
+    {
+      "style": "Normal",
+      "text": "Update front = (front + 1) % M."
+    },
+    {
+      "style": "Normal",
+      "text": "3. Display Orders"
+    },
+    {
+      "style": "Normal",
+      "text": "Traverse from front to rear using modulo % M."
+    },
+    {
+      "style": "Normal",
+      "text": "Display all active orders."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Mathematical Model:"
+    },
+    {
+      "style": "Normal",
+      "text": "System S can be defined as:\nS = {I, O, F}"
+    },
+    {
+      "style": "Normal",
+      "text": "I (Input) = Order request, choice of operation"
+    },
+    {
+      "style": "Normal",
+      "text": "O (Output) = Updated queue status (Order Placed / Served / Overflow / Underflow)"
+    },
+    {
+      "style": "Normal",
+      "text": "F (Functions) = {Enqueue(), Dequeue(), Display()}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Conclusion / Analysis:"
+    },
+    {
+      "style": "Normal",
+      "text": "Successfully implemented Circular Queue using an array for Pizza Parlor simulation."
+    },
+    {
+      "style": "Normal",
+      "text": "Understood how circular queues prevent memory wastage compared to linear queues."
+    },
+    {
+      "style": "Normal",
+      "text": "Verified working of Enqueue (order placement), Dequeue (order serving), and Queue Overflow/Underflow conditions."
+    },
+    {
+      "style": "Normal",
+      "text": "This model can be extended to real-world applications like restaurant management, ticket booking systems, and scheduling tasks."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    }
+  ],
+  "tables": [
+    [
+      [
+        "Requirement",
+        "Specification"
+      ],
+      [
+        "Programming Language",
+        "C++"
+      ],
+      [
+        "Compiler",
+        "GCC / G++"
+      ],
+      [
+        "Hardware",
+        "i3 or above, 4 GB RAM"
+      ],
+      [
+        "Operating System",
+        "Windows / Linux"
+      ]
+    ]
+  ]
+}

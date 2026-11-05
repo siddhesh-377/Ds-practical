@@ -1,0 +1,630 @@
+{
+  "filename": "Code 4.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": "#include <stdio.h>"
+    },
+    {
+      "style": "Normal",
+      "text": "#include <stdlib.h>"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "struct Node"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    int roll;"
+    },
+    {
+      "style": "Normal",
+      "text": "    struct Node *next;"
+    },
+    {
+      "style": "Normal",
+      "text": "};"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "// Create a new node"
+    },
+    {
+      "style": "Normal",
+      "text": "struct Node* createNode(int roll)"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));"
+    },
+    {
+      "style": "Normal",
+      "text": "    newNode->roll = roll;"
+    },
+    {
+      "style": "Normal",
+      "text": "    newNode->next = NULL;"
+    },
+    {
+      "style": "Normal",
+      "text": "    return newNode;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "// Insert at end"
+    },
+    {
+      "style": "Normal",
+      "text": "void insert(struct Node **head, int roll)"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    struct Node *newNode = createNode(roll);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    if (*head == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        *head = newNode;"
+    },
+    {
+      "style": "Normal",
+      "text": "        return;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    struct Node *temp = *head;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    while (temp->next != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "        temp = temp->next;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    temp->next = newNode;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "// Check whether roll number exists in a set"
+    },
+    {
+      "style": "Normal",
+      "text": "int search(struct Node *head, int roll)"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    while (head != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (head->roll == roll)"
+    },
+    {
+      "style": "Normal",
+      "text": "            return 1;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        head = head->next;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "// Display linked list"
+    },
+    {
+      "style": "Normal",
+      "text": "void display(struct Node *head)"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    if (head == NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        printf(\"No students\\n\");"
+    },
+    {
+      "style": "Normal",
+      "text": "        return;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    while (head != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        printf(\"%d \", head->roll);"
+    },
+    {
+      "style": "Normal",
+      "text": "        head = head->next;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"\\n\");"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "int main()"
+    },
+    {
+      "style": "Normal",
+      "text": "{"
+    },
+    {
+      "style": "Normal",
+      "text": "    struct Node *A = NULL;"
+    },
+    {
+      "style": "Normal",
+      "text": "    struct Node *B = NULL;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    int nA, nB, roll, i;"
+    },
+    {
+      "style": "Normal",
+      "text": "    int neither = 0;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Input Set A"
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"Enter number of students who like Vanilla: \");"
+    },
+    {
+      "style": "Normal",
+      "text": "    scanf(\"%d\", &nA);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"Enter roll numbers:\\n\");"
+    },
+    {
+      "style": "Normal",
+      "text": "    for (i = 0; i < nA; i++)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        scanf(\"%d\", &roll);"
+    },
+    {
+      "style": "Normal",
+      "text": "        insert(&A, roll);"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Input Set B"
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"\\nEnter number of students who like Butterscotch: \");"
+    },
+    {
+      "style": "Normal",
+      "text": "    scanf(\"%d\", &nB);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"Enter roll numbers:\\n\");"
+    },
+    {
+      "style": "Normal",
+      "text": "    for (i = 0; i < nB; i++)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        scanf(\"%d\", &roll);"
+    },
+    {
+      "style": "Normal",
+      "text": "        insert(&B, roll);"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // a) Students who like both"
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"\\n(a) Students who like both Vanilla and Butterscotch:\\n\");"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    struct Node *temp = A;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    while (temp != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (search(B, temp->roll))"
+    },
+    {
+      "style": "Normal",
+      "text": "            printf(\"%d \", temp->roll);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        temp = temp->next;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // b) Students who like either but not both"
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"\\n\\n(b) Students who like either Vanilla or Butterscotch, but not both:\\n\");"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    temp = A;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Students in A but not in B"
+    },
+    {
+      "style": "Normal",
+      "text": "    while (temp != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (!search(B, temp->roll))"
+    },
+    {
+      "style": "Normal",
+      "text": "            printf(\"%d \", temp->roll);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        temp = temp->next;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // Students in B but not in A"
+    },
+    {
+      "style": "Normal",
+      "text": "    temp = B;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    while (temp != NULL)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (!search(A, temp->roll))"
+    },
+    {
+      "style": "Normal",
+      "text": "            printf(\"%d \", temp->roll);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "        temp = temp->next;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    // c) Students who like neither"
+    },
+    {
+      "style": "Normal",
+      "text": "    // Assuming total students are numbered from 1 to total_students"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    int total_students;"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"\\n\\nEnter total number of students in the class: \");"
+    },
+    {
+      "style": "Normal",
+      "text": "    scanf(\"%d\", &total_students);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    for (roll = 1; roll <= total_students; roll++)"
+    },
+    {
+      "style": "Normal",
+      "text": "    {"
+    },
+    {
+      "style": "Normal",
+      "text": "        if (!search(A, roll) && !search(B, roll))"
+    },
+    {
+      "style": "Normal",
+      "text": "            neither++;"
+    },
+    {
+      "style": "Normal",
+      "text": "    }"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    printf(\"\\n(c) Number of students who like neither Vanilla nor Butterscotch: %d\\n\","
+    },
+    {
+      "style": "Normal",
+      "text": "           neither);"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "    return 0;"
+    },
+    {
+      "style": "Normal",
+      "text": "}"
+    }
+  ],
+  "tables": []
+}

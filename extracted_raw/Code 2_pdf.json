@@ -1,0 +1,41 @@
+{
+  "filename": "Code 2.pdf",
+  "pages": [
+    {
+      "page": 1,
+      "text": " Practical Assignment 2 \nProblem Statement :   \nWrite a program to store the first-year percentage of students in an array. Write function for \nsorting array of floating-point numbers in ascending order using-Selection Sort Bubble sort \nand display top five scores. \n \nInput code: \n#include <stdio.h> \n#include <stdlib.h> \n#define MAX_STUD 100 \n \nint main() \n{ \n    float percentage[MAX_STUD]; \n    int num = 0, ch, i, j; \n    float temp; \n \n    do \n    { \n        printf(\"__Student percentage management system__\\n\"); \n        printf(\"1.Enter student percentage\\n2.Selection sort\\n3.Bubble sort\\n4.Top 5\\n5.Display \nall student percentage\\n6.exit\\n\"); \n        printf(\"Enter your choice:\"); \n        scanf(\"%d\",&ch); \n        switch(ch) \n        { \n            case 1: \n                printf(\"Enter number of students (max %d): \", MAX_STUD); \n                scanf(\"%d\", &num); \n                if(num > MAX_STUD || num <= 0) "
+    },
+    {
+      "page": 2,
+      "text": "                { \n                    printf(\"Insert a valid count!\\n\"); \n                    num = 0; \n                } \n                else \n                { \n                    printf(\"Enter percentages of students:\\n\"); \n                    for(i = 0; i < num; i++) \n                    { \n                        printf(\"Percentage of student %d: \", i + 1); \n                        scanf(\"%f\", &percentage[i]); \n                    } \n                } \n                break; \n \n            case 2: \n                if(num == 0) \n                { \n                    printf(\"No student data available! Please enter data first.\\n\"); \n                    break; \n                } \n                for(i = 0; i < num - 1; i++) \n                { \n                    int min = i; \n                    for(j = i + 1; j < num; j++) \n                    { \n                        if(percentage[j] < percentage[min]) \n                        { \n                            min = j; "
+    },
+    {
+      "page": 3,
+      "text": "                        } \n                    } \n                    if(min != i) \n                    { \n                        temp = percentage[i]; \n                        percentage[i] = percentage[min]; \n                        percentage[min] = temp; \n                    } \n                } \n                printf(\"\\nPercentages sorted (Ascending) using Selection Sort:\\n\"); \n                for(i = 0; i < num; i++) \n                { \n                    printf(\"%.2f%%\\n\", percentage[i]); \n                } \n                break; \n \n            case 3: \n                if(num == 0) \n                { \n                    printf(\"No student data available! Please enter data first.\\n\"); \n                    break; \n                } \n                for(i = 0; i < num - 1; i++) \n                { \n                    for(j = 0; j < num - 1 - i; j++) \n                    { \n                        if(percentage[j] > percentage[j + 1]) \n                        { \n                            temp = percentage[j]; "
+    },
+    {
+      "page": 4,
+      "text": "                            percentage[j] = percentage[j + 1]; \n                            percentage[j + 1] = temp; \n                        } \n                    } \n                } \n                printf(\"\\nPercentages sorted (Ascending) using Bubble Sort:\\n\"); \n                for(i = 0; i < num; i++) \n                { \n                    printf(\"%.2f%%\\n\", percentage[i]); \n                } \n                break; \n \n            case 4: \n                if(num == 0) \n                { \n                    printf(\"No student data available! Please enter data first.\\n\"); \n                    break; \n                } \n \n                for(i = 0; i < num - 1; i++) \n                { \n                    int min = i; \n                    for(j = i + 1; j < num; j++) \n                    { \n                        if(percentage[j] < percentage[min]) \n                        { \n                            min = j; \n                        } \n                    } "
+    },
+    {
+      "page": 5,
+      "text": "                    if(min != i) \n                    { \n                        temp = percentage[i]; \n                        percentage[i] = percentage[min]; \n                        percentage[min] = temp; \n                    } \n                } \n \n                printf(\"\\nTop Percentages:\\n\"); \n                int count = 0; \n                for(i = num - 1; i >= 0 && count < 5; i--) \n                { \n                    printf(\"Rank %d: %.2f%%\\n\", count + 1, percentage[i]); \n                    count++; \n                } \n                break; \n \n            case 5: \n                if(num == 0) \n                { \n                    printf(\"No student data available! Please enter data first.\\n\"); \n                } \n                else \n                { \n                    printf(\"\\nAll Student Percentages:\\n\"); \n                    for(i = 0; i < num; i++) \n                    { \n                        printf(\"Student %d: %.2f%%\\n\", i + 1, percentage[i]); \n                    } "
+    },
+    {
+      "page": 6,
+      "text": "                } \n                break; \n \n            case 6: \n                printf(\"Exiting program...\\n\"); \n                break; \n \n            default: \n                printf(\"Invalid choice! Please enter a option between 1 and 6.\\n\"); \n                break; \n        } \n    } while(ch != 6); \n \n    return 0; \n} \n \nOutput: \n__Student percentage management system__ \n1.Enter student percentage \n2.Selection sort \n3.Bubble sort \n4.Top 5 \n5.Display all student percentage \n6.exit \nEnter your choice:1 \nEnter number of students (max 100): 5 \nEnter percentages of students: \nPercentage of student 1: 98.6 \nPercentage of student 2: 56.7 "
+    },
+    {
+      "page": 7,
+      "text": "Percentage of student 3: 86.9 \nPercentage of student 4: 82.1 \nPercentage of student 5: 70.0 \n \n__Student percentage management system__ \n1.Enter student percentage \n2.Selection sort \n3.Bubble sort \n4.Top 5 \n5.Display all student percentage \n6.exit \nEnter your choice:2 \nPercentages sorted (Ascending) using Selection Sort: \n56.70% \n70.00% \n82.10% \n86.90% \n98.60% \n \n__Student percentage management system__ \n1.Enter student percentage \n2.Selection sort \n3.Bubble sort \n4.Top 5 \n5.Display all student percentage \n6.exit \nEnter your choice:3 \nPercentages sorted (Ascending) using Bubble Sort: \n56.70% "
+    },
+    {
+      "page": 8,
+      "text": "70.00% \n82.10% \n86.90% \n98.60% \n \n__Student percentage management system__ \n1.Enter student percentage \n2.Selection sort \n3.Bubble sort \n4.Top 5 \n5.Display all student percentage \n6.exit \nEnter your choice:4 \nTop Percentages: \nRank 1: 98.60% \nRank 2: 86.90% \nRank 3: 82.10% \nRank 4: 70.00% \nRank 5: 56.70% \n \n__Student percentage management system__ \n1.Enter student percentage \n2.Selection sort \n3.Bubble sort \n4.Top 5 \n5.Display all student percentage \n6.exit \nEnter your choice:5 \nAll Student Percentages: "
+    },
+    {
+      "page": 9,
+      "text": "Student 1: 56.70% \nStudent 2: 70.00% \nStudent 3: 82.10% \nStudent 4: 86.90% \nStudent 5: 98.60% \n \n__Student percentage management system__ \n1.Enter student percentage \n2.Selection sort \n3.Bubble sort \n4.Top 5 \n5.Display all student percentage \n6.exit \nEnter your choice:6 \nExiting program... \n \nProcess returned 0 (0x0)   execution time : 51.723 s \nPress any key to continue. "
+    }
+  ]
+}

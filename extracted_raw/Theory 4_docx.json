@@ -1,0 +1,486 @@
+{
+  "filename": "Theory 4.docx",
+  "paragraphs": [
+    {
+      "style": "Heading 1",
+      "text": "Assignment No 4"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": "Title: set operations using linked list."
+    },
+    {
+      "style": "Body Text",
+      "text": "Objectives: To understand set operation. Representation and implementation of operation of sets using linked list"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Problem Statement:"
+    },
+    {
+      "style": "Body Text",
+      "text": "Second year Computer Engineering class, set A of students like Vanilla Ice- cream and set B of students like butterscotch ice-cream. Write C++ program to store two sets using linked list. compute and display-"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set of students who like both vanilla and butterscotch"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set of students who like either vanilla or butterscotch or not both"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Number of students who like neither vanilla nor butterscotch"
+    },
+    {
+      "style": "List Paragraph",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Outcomes:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "List of students who like either vanilla or butterscotch or both"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "List of students who like both vanilla and butterscotch"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "List of students who like only vanilla not butterscotch"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "List of students who like only butterscotch not vanilla"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Number of students who like neither vanilla nor butterscotch"
+    },
+    {
+      "style": "List Paragraph",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Software & Hardware requirements:"
+    },
+    {
+      "style": "Body Text",
+      "text": "Linux operating system Eclipse IDE with g++ compiler"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Theory- Concept in brief:"
+    },
+    {
+      "style": "Body Text",
+      "text": "Set:"
+    },
+    {
+      "style": "Body Text",
+      "text": "a set is a collection of objects which are called the members or elements of that set. If we have a set we say that some objects belong (or do not belong) to this set, are (or are not) in the set."
+    },
+    {
+      "style": "Body Text",
+      "text": "Examples: the set of students in this room; the English alphabet may be viewed as the set of letters of the English language; the set of natural numbers Operations on sets:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Union: The union of A and B, written A 𝖴 B , is the set whose elements are just the elements of A or B or of both."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Intersection: The intersection of A and B , written A ∩ B , is the set whose elements are just the elements of both A and B."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Difference: Another binary operation on arbitrary sets is the difference ― A minus B‖ , written A – B, which ‗subtracts„ from A all elements which are in"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": "B. [Also called relative complement: the complement of B relative to A.]"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Complement: This operation is creating a set A, which is the set consisting of everything not in A"
+    },
+    {
+      "style": "Heading 2",
+      "text": "Algorithm:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Algorithm difference(struct node *head1, struct node *head2) Precondition: Accept the two sets of name in the form of linked list. Post condition: Difference of two sets"
+    },
+    {
+      "style": "Body Text",
+      "text": "Return:head node of the resultant linked list(Difference)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set p=head1, i.e. head of 1st linked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Initialize the 3rd linked list as empty i.e. head3=NULL"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "while(p!=NULL)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set flag=0"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set q=head2, i.e. head of 2ndlinked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "while(q!=NULL)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "if(strcmp(p->name,q->name)==0)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set flag to 1 and go to step d"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "else"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Move q to the next node, q=q->next"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "if(flag!=1)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "if(head3==NULL)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Allocate memory for New node"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "strcpy(New->name,p->name)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set r=New and r->next=NULL"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Make New node as head node of resultant linked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "else"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Allocate memory for New node"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "r->next=New"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "strcpy(New->name,p->name)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set r=r->next and r->next=NULL"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Move p to the next node, p=p->next"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "return head3 i.e. head of resultant linked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Stop"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Algorithm Intersection(struct node *head1, struct node *head2) Precondition: Accept the two sets of name in the form of linked list. Post condition: Intersection of two sets"
+    },
+    {
+      "style": "Normal",
+      "text": "Return:Nil"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set p=head1, i.e. head of 1st linked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Initialize the 3rd linked list as empty i.e. head3=NULL"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "while(p!=NULL)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set q=head2, i.e. head of 2nd linked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "while(q!=NULL)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "f(strcmp(p->name,q->name)==0)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "if(head3==NULL)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Allocate memory for New node"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "strcpy(New->name,p->name)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set r=New and r->next=NULL;"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Make new node as head of linked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "else"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Allocate memory for New node"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "r->next=New"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "strcpy(New->name,p->name)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set r=r->next and r->next=NULL"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Go to step c"
+    },
+    {
+      "style": "Body Text",
+      "text": "ii. Move q to the next node, q=q->next"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Move p to the next node, p=p->next"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Call display(head3) function to display resultant linked list containing intersection"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Stop"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Algorithm Union(struct node *head1,struct node *head2) Precondition: Accept the two sets of name in the form of linked list. Post condition: Union of two sets"
+    },
+    {
+      "style": "Body Text",
+      "text": "Return: head node of the resultant linked list(Union)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set q=head2, i.e. head of 2nd linked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Copy all contents of first linked list in third, head3=head1"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set r=head3, i.e. head of 3rd linked list"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "List Paragraph",
+      "text": "while(r->next!=NULL) Move r to the next node, r=r->next"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "while(q!=NULL)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set p=head1, i.e. head of 1st linked list"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Initialize flag to 0"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "while(p!=NULL)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "if(strcmp(p->name,q->name)==0) Set flag to 1 and go to step d"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "else Move p to the next node, p=p->next"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "if(flag==0)"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Allocate memory for New node"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "r->next=New"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "strcpy(New->name,q->name);"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Set r=r->next and r->next=NULL"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Move q to the next node, q=q->next"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "return head3, i.e. head of resultant linked list containing union"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Stop"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Flowchart: Draw Flowchart"
+    },
+    {
+      "style": "Normal",
+      "text": "Test cases: Note: Add input and output here Conclusion/analysis:"
+    },
+    {
+      "style": "Body Text",
+      "text": "Thus I have studied concept of set and its representation using array. I havealso implemented all the operations of set."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    }
+  ],
+  "tables": []
+}

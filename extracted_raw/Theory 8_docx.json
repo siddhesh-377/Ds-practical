@@ -1,0 +1,277 @@
+{
+  "filename": "Theory 8.docx",
+  "paragraphs": [
+    {
+      "style": "Heading 1",
+      "text": " Assignment - 8"
+    },
+    {
+      "style": "Body Text",
+      "text": "Problem Statement: Beginning with an empty binary search tree, Construct binary search tree by inserting the values in the order given. After constructing a binary tree -Insert new node, ii. Find number of nodes in longest path from root, iii. Minimum data value found in the tree, iv. Change a tree so that the roles of the left and right pointers are swapped at every node, v. Search a value"
+    },
+    {
+      "style": "Body Text",
+      "text": "Objective: To understand the basic concept of Binary Search Tree and its use in Data structure."
+    },
+    {
+      "style": "Body Text",
+      "text": "Outcome: To construct the Binary Search Tree by given sequence and traverse and perform operations on it."
+    },
+    {
+      "style": "Body Text",
+      "text": "Software & Hardware Requirements:"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "List Paragraph",
+      "text": "64-bit Open source Linux or its derivative"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Open Source C++ Programming tool like G++/GCC"
+    },
+    {
+      "style": "Heading 2",
+      "text": "Theory –"
+    },
+    {
+      "style": "Normal",
+      "text": "Binary Search Tree"
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": "A Binary Search Tree (BST) is a data structure in computer science that organizes data in a hierarchical manner, where each node holds a value and has at most two child nodes: a left child with values smaller than the parent node and a right child with values larger than the parent node, allowing for efficient searching, insertion, and deletion operations, particularly when the tree is balanced, with an average time complexity of O(log n)."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Advantages of Binary search tree"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Searching an element in the Binary search tree is easy as we always have a hint that which subtree has the desired element."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "As compared to array and linked lists, insertion and deletion operations are faster in BST."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Example of creating a binary search tree :"
+    },
+    {
+      "style": "Body Text",
+      "text": "Now, let's see the creation of binary search tree using an example."
+    },
+    {
+      "style": "Normal",
+      "text": "Suppose the data elements are - 45, 15, 79, 90, 10, 55, 12, 20, 50"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "First, we have to insert 45 into the tree as the root of the tree."
+    },
+    {
+      "style": "List Paragraph",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Then, read the next element; if it is smaller than the root node, insert it as the root of the left subtree, and move to the next element."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Otherwise, if the element is larger than the root node, then insert it as the root of the right subtree."
+    },
+    {
+      "style": "Body Text",
+      "text": "Now, let's see the process of creating the Binary search tree using the given data element. The process of creating the BST is shown below -"
+    },
+    {
+      "style": "Heading 2",
+      "text": "Step 1 - Insert 45."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Step 2 - Insert 15."
+    },
+    {
+      "style": "Body Text",
+      "text": "As 15 is smaller than 45, so insert it as the root node of the left subtree."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Step 3 - Insert 79."
+    },
+    {
+      "style": "Body Text",
+      "text": "As 79 is greater than 45, so insert it as the root node of the right subtree."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Step 4 - Insert 90."
+    },
+    {
+      "style": "Body Text",
+      "text": "90 is greater than 45 and 79, so it will be inserted as the right subtree of 79."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Step 5 - Insert 10."
+    },
+    {
+      "style": "Body Text",
+      "text": "10 is smaller than 45 and 15, so it will be inserted as a left subtree of 15."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Step 6 - Insert 55."
+    },
+    {
+      "style": "Body Text",
+      "text": "55 is larger than 45 and smaller than 79, so it will be inserted as the left subtree of 79."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Step 7 - Insert 12."
+    },
+    {
+      "style": "Body Text",
+      "text": "12 is smaller than 45 and 15 but greater than 10, so it will be inserted as the right subtree of 10."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Step 8 - Insert 20."
+    },
+    {
+      "style": "Body Text",
+      "text": "20 is smaller than 45 but greater than 15, so it will be inserted as the right subtree of 15."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Step 9 - Insert 50."
+    },
+    {
+      "style": "Body Text",
+      "text": "50 is greater than 45 but smaller than 79 and 55. So, it will be inserted as a left subtree of 55."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": "Now, the creation of binary search tree is completed. After that, let's move towards the operations that can be performed on Binary search tree."
+    },
+    {
+      "style": "Body Text",
+      "text": "We can perform insert, delete and search operations on the binary search tree."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Time Complexity"
+    },
+    {
+      "style": "Body Text",
+      "text": "The space complexity of all operations of Binary search tree is O(n)."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": "Conclusion: We are able to construct the Binary Search Tree by given in order sequence and perform different operations on Binary Search Tree."
+    }
+  ],
+  "tables": [
+    [
+      [
+        "\nOperations\n\nInsertion Deletion",
+        "\nBest case time complexity\nO(log n) O(log n)\n\n",
+        "\nAverage case time complexity\nO(log n) O(log n)",
+        "\nWorst case time complexity\n\n\nO(n)\n\n\nO(n)\n\n"
+      ],
+      [
+        "Search",
+        "O(log n)",
+        "O(log n)",
+        "O(n)"
+      ]
+    ]
+  ]
+}

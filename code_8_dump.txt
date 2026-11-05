@@ -1,0 +1,229 @@
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node *left, *right;
+};
+
+class BST
+{
+    Node *root;
+
+    Node* createNode(int value)
+    {
+        Node *p = new Node;
+        p->data = value;
+        p->left = p->right = NULL;
+        return p;
+    }
+
+    Node* insert(Node *p, int value)
+    {
+        if (p == NULL)
+            return createNode(value);
+
+        if (value < p->data)
+            p->left = insert(p->left, value);
+        else
+            p->right = insert(p->right, value);
+
+        return p;
+    }
+
+    int longestPath(Node *p)
+    {
+        if (p == NULL)
+            return 0;
+
+        int left = longestPath(p->left);
+        int right = longestPath(p->right);
+
+        return (left > right ? left : right) + 1;
+    }
+
+    int minimum(Node *p)
+    {
+        while (p->left != NULL)
+            p = p->left;
+
+        return p->data;
+    }
+
+    void mirror(Node *p)
+    {
+        if (p == NULL)
+            return;
+
+        Node *temp = p->left;
+        p->left = p->right;
+        p->right = temp;
+
+        mirror(p->left);
+        mirror(p->right);
+    }
+
+    bool search(Node *p, int value)
+    {
+        if (p == NULL)
+            return false;
+
+        if (p->data == value)
+            return true;
+
+        if (value < p->data)
+            return search(p->left, value);
+        else
+            return search(p->right, value);
+    }
+
+    void inorder(Node *p)
+    {
+        if (p != NULL)
+        {
+            inorder(p->left);
+            cout << p->data << " ";
+            inorder(p->right);
+        }
+    }
+
+public:
+
+    BST()
+    {
+        root = NULL;
+    }
+
+    void insertValue(int value)
+    {
+        root = insert(root, value);
+    }
+
+    void insertNewNode()
+    {
+        int value;
+        cout << "Enter value: ";
+        cin >> value;
+
+        root = insert(root, value);
+
+        cout << "Node inserted successfully.\n";
+    }
+
+    void findLongestPath()
+    {
+        if (root == NULL)
+            cout << "Tree is empty.\n";
+        else
+            cout << "Number of nodes in longest path = "
+                 << longestPath(root) << endl;
+    }
+
+    void findMinimum()
+    {
+        if (root == NULL)
+            cout << "Tree is empty.\n";
+        else
+            cout << "Minimum data value = "
+                 << minimum(root) << endl;
+    }
+
+    void swapPointers()
+    {
+        if (root == NULL)
+            cout << "Tree is empty.\n";
+        else
+        {
+            mirror(root);
+            cout << "Tree has been mirrored successfully.\n";
+        }
+    }
+
+    void searchValue()
+    {
+        int value;
+        cout << "Enter value to search: ";
+        cin >> value;
+
+        if (search(root, value))
+            cout << "Value found in tree.\n";
+        else
+            cout << "Value not found in tree.\n";
+    }
+
+    void display()
+    {
+        cout << "Inorder Traversal: ";
+        inorder(root);
+        cout << endl;
+    }
+};
+
+int main()
+{
+    BST T;
+    int n, value, choice;
+
+    cout << "Enter number of nodes: ";
+    cin >> n;
+
+    cout << "Enter values in insertion order:\n";
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> value;
+        T.insertValue(value);
+    }
+
+    do
+    {
+        cout << "\n===== BINARY SEARCH TREE =====\n";
+        cout << "1. Insert New Node\n";
+        cout << "2. Find Longest Path from Root\n";
+        cout << "3. Find Minimum Data Value\n";
+        cout << "4. Swap Left and Right Pointers\n";
+        cout << "5. Search a Value\n";
+        cout << "6. Display Inorder\n";
+        cout << "7. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            T.insertNewNode();
+            break;
+
+        case 2:
+            T.findLongestPath();
+            break;
+
+        case 3:
+            T.findMinimum();
+            break;
+
+        case 4:
+            T.swapPointers();
+            break;
+
+        case 5:
+            T.searchValue();
+            break;
+
+        case 6:
+            T.display();
+            break;
+
+        case 7:
+            cout << "Program terminated.\n";
+            break;
+
+        default:
+            cout << "Invalid choice!\n";
+        }
+
+    } while (choice != 7);
+
+    return 0;
+}

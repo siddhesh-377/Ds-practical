@@ -1,0 +1,289 @@
+{
+  "filename": "Theory 5.docx",
+  "paragraphs": [
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Assignment No: 5"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Title: Program to Implement Doubly Linked List for Appointment System"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Problem Statement:"
+    },
+    {
+      "style": "Normal",
+      "text": "Write a program to implement Doubly Linked List with the following operations:\na) Display free slots\nb) Book appointment\nc) Sort list based on time\nd) Cancel appointment\ne) Sort list based on time using pointer manipulation"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Objectives:"
+    },
+    {
+      "style": "Normal",
+      "text": "To understand the concept and working of a Doubly Linked List."
+    },
+    {
+      "style": "Normal",
+      "text": "To apply linked list operations for real-life applications like appointment scheduling."
+    },
+    {
+      "style": "Normal",
+      "text": "To perform insertion, deletion, and sorting in a doubly linked list."
+    },
+    {
+      "style": "Normal",
+      "text": "To practice pointer manipulation techniques in linked list implementation."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Outcomes:"
+    },
+    {
+      "style": "Normal",
+      "text": "Students will be able to implement and manipulate a doubly linked list."
+    },
+    {
+      "style": "Normal",
+      "text": "Students will learn how to use linked lists for managing appointment booking systems."
+    },
+    {
+      "style": "Normal",
+      "text": "Students will be able to sort data dynamically using pointer manipulation instead of array-based methods."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Software & Hardware Requirements:"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Theory Concept:"
+    },
+    {
+      "style": "Normal",
+      "text": "A Doubly Linked List (DLL) is a type of linked list where each node contains three parts:"
+    },
+    {
+      "style": "Normal",
+      "text": "Data field – stores the actual information."
+    },
+    {
+      "style": "Normal",
+      "text": "Pointer to previous node – points to the previous node in the list."
+    },
+    {
+      "style": "Normal",
+      "text": "Pointer to next node – points to the next node in the list."
+    },
+    {
+      "style": "Normal",
+      "text": "Unlike singly linked lists, DLL allows traversal in both forward and backward directions. This makes insertion, deletion, and sorting operations more efficient in certain scenarios."
+    },
+    {
+      "style": "Normal",
+      "text": "In this problem, DLL is used to implement an appointment booking system where each node represents a time slot. Using pointer manipulation, appointments can be booked, canceled, displayed, and sorted based on time."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Algorithm:"
+    },
+    {
+      "style": "Normal",
+      "text": "1. Display Free Slots"
+    },
+    {
+      "style": "Normal",
+      "text": "Start from the head node."
+    },
+    {
+      "style": "Normal",
+      "text": "Traverse the list and display only nodes marked as \"Free\"."
+    },
+    {
+      "style": "Normal",
+      "text": "2. Book Appointment"
+    },
+    {
+      "style": "Normal",
+      "text": "Input the desired time slot."
+    },
+    {
+      "style": "Normal",
+      "text": "Traverse the list to find the slot."
+    },
+    {
+      "style": "Normal",
+      "text": "If found and marked free → mark as booked."
+    },
+    {
+      "style": "Normal",
+      "text": "Else → display \"Slot not available\"."
+    },
+    {
+      "style": "Normal",
+      "text": "3. Sort List Based on Time (Normal Method)"
+    },
+    {
+      "style": "Normal",
+      "text": "Use a bubble sort or selection sort logic."
+    },
+    {
+      "style": "Normal",
+      "text": "Compare adjacent nodes’ data (time)."
+    },
+    {
+      "style": "Normal",
+      "text": "Swap data fields accordingly."
+    },
+    {
+      "style": "Normal",
+      "text": "4. Cancel Appointment"
+    },
+    {
+      "style": "Normal",
+      "text": "Input the time slot to cancel."
+    },
+    {
+      "style": "Normal",
+      "text": "Traverse the list."
+    },
+    {
+      "style": "Normal",
+      "text": "If found and booked → mark as free."
+    },
+    {
+      "style": "Normal",
+      "text": "Else → display \"Appointment not found\"."
+    },
+    {
+      "style": "Normal",
+      "text": "5. Sort Using Pointer Manipulation"
+    },
+    {
+      "style": "Normal",
+      "text": "Traverse list to compare adjacent nodes."
+    },
+    {
+      "style": "Normal",
+      "text": "Instead of swapping data, adjust node links (prev and next)."
+    },
+    {
+      "style": "Normal",
+      "text": "Update head pointer if needed."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Mathematical Model (if applicable):"
+    },
+    {
+      "style": "Normal",
+      "text": "System S can be defined as:\nS = {I, O, F}"
+    },
+    {
+      "style": "Normal",
+      "text": "I = Input (Time slot, operation choice)"
+    },
+    {
+      "style": "Normal",
+      "text": "O = Output (Slot booked/canceled/free, updated list)"
+    },
+    {
+      "style": "Normal",
+      "text": "F = Functions {Display(), Book(), Cancel(), SortData(), SortPointer()}"
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    },
+    {
+      "style": "Normal",
+      "text": "Conclusion / Analysis:"
+    },
+    {
+      "style": "Normal",
+      "text": "Successfully implemented a Doubly Linked List for appointment scheduling."
+    },
+    {
+      "style": "Normal",
+      "text": "Performed basic operations: Display, Book, Cancel, Sort."
+    },
+    {
+      "style": "Normal",
+      "text": "Understood how pointer manipulation makes sorting more efficient than swapping only data values."
+    },
+    {
+      "style": "Normal",
+      "text": "The program demonstrates how data structures can be applied in real-world applications like appointment booking systems."
+    },
+    {
+      "style": "Normal",
+      "text": ""
+    }
+  ],
+  "tables": [
+    [
+      [
+        "Requirement",
+        "Specification"
+      ],
+      [
+        "Programming Language",
+        "C++"
+      ],
+      [
+        "Compiler",
+        "GCC / G++"
+      ],
+      [
+        "Hardware",
+        "i3 or above, 4 GB RAM"
+      ],
+      [
+        "Operating System",
+        "Windows / Linux"
+      ]
+    ]
+  ]
+}

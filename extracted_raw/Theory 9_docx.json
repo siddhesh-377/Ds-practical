@@ -1,0 +1,114 @@
+{
+  "filename": "Theory 9.docx",
+  "paragraphs": [
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 1",
+      "text": "           Assignment -9"
+    },
+    {
+      "style": "Body Text",
+      "text": "Problem Statement: You have a business with several offices; you want to lease phone lines to connect them up with each other; and the phone company charges different amounts of money to connect different pairs of cities. You want a set of lines that connects all your offices with a minimum total cost. Solve the problem by suggesting appropriate data structures."
+    },
+    {
+      "style": "Body Text",
+      "text": "Objective: To understand the concept and basic of spanning and to find the minimum distance between the vertices of Graph in Data structure."
+    },
+    {
+      "style": "Body Text",
+      "text": "Outcome: To implement the concept and basic of spanning and to find the minimum distance between the vertices of Graph in Data structure."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Software & Hardware Requirements:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "64-bit Open source Linux or its derivative"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Open Source C++ Programming tool like G++/GCC"
+    },
+    {
+      "style": "Heading 2",
+      "text": "Theory Concepts:"
+    },
+    {
+      "style": "Normal",
+      "text": "Properties of a Greedy Algorithm:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "At each step, the best possible choice is taken and after that only the sub-problem is solved."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Greedy algorithm might be depending on many choices. But, it cannot ever be depending upon any choices of future and neither on sub-problems solutions."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "The method of greedy algorithm starts with a top and goes down, creating greedy choices in a series and then reduces each of the given problem to even smaller ones."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Minimum Spanning Tree:"
+    },
+    {
+      "style": "Body Text",
+      "text": "A Minimum Spanning Tree (MST) is a kind of a sub graph of an undirected graph in which, the sub graph spans or includes all the nodes has a minimum total edge weight. To solve the problemby a prim's algorithm, all we need is to find a spanning tree of minimum length, where a spanning tree is a tree that connects all the vertices together and a minimum spanning tree is a spanning tree of minimum length."
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Body Text",
+      "text": ""
+    },
+    {
+      "style": "Heading 2",
+      "text": "Properties of Prim's Algorithm:"
+    },
+    {
+      "style": "Body Text",
+      "text": "Prim's Algorithm has the following properties:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "The edges in the subset of some minimum spanning tree always form a single tree."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "It grows the tree until it spans all the vertices of the graph."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "An edge is added to the tree, at every step, that crosses a cut if its weight is the minimum of any edge crossing the cut, connecting it to a vertex of the graph."
+    },
+    {
+      "style": "Heading 2",
+      "text": "Algorithm:"
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Begin with any vertex which you think would be suitable and add it to the tree."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Find an edge that connects any vertex in the tree to any vertex that is not in the tree. Note that,we don't have to form cycles."
+    },
+    {
+      "style": "List Paragraph",
+      "text": "Stop when n - 1 edge have been added to the tree"
+    },
+    {
+      "style": "Body Text",
+      "text": "Conclusion: Understood the concept and basic of spanning and to find the minimum distance between the vertices of Graph in Data structure."
+    }
+  ],
+  "tables": []
+}

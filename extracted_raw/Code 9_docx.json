@@ -1,0 +1,494 @@
+{
+  "filename": "Code 9.docx",
+  "paragraphs": [
+    {
+      "style": "No Spacing",
+      "text": "Assignment 9:"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "You have a business with several offices; you want to lease phone lines to connect them up with each other; and the phone company charges different amounts of money to connect different pairs of cities. You want a set of lines that connects all your offices with minimum total cost."
+    },
+    {
+      "style": "No Spacing",
+      "text": "Solve the problem by suggesting appropriate data structures."
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "#include<iostream>"
+    },
+    {
+      "style": "No Spacing",
+      "text": "using namespace std;"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "class tree"
+    },
+    {
+      "style": "No Spacing",
+      "text": "{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tint a[20][20],l,u,w,i,j,v,e,visited[20];"
+    },
+    {
+      "style": "No Spacing",
+      "text": "public:"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tvoid input();"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tvoid display();"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tvoid minimum();"
+    },
+    {
+      "style": "No Spacing",
+      "text": "};"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "void tree::input()"
+    },
+    {
+      "style": "No Spacing",
+      "text": "{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcout<<\"Enter the no. of branches: \";"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcin>>v;"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tfor(i=0;i<v;i++)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tvisited[i]=0;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tfor(j=0;j<v;j++)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\ta[i][j]=999;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcout<<\"\\nEnter the no. of connections: \";"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcin>>e;"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tfor(i=0;i<e;i++)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcout<<\"Enter the end branches of connections:  \"<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcin>>l>>u;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcout<<\"Enter the phone company charges for this connection:  \";"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcin>>w;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\ta[l-1][u-1]=a[u-1][l-1]=w;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "}"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "void tree::display()"
+    },
+    {
+      "style": "No Spacing",
+      "text": "{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcout<<\"\\nAdjacency matrix:\";"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tfor(i=0;i<v;i++)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcout<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tfor(j=0;j<v;j++)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\tcout<<a[i][j]<<\"   \";"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcout<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "}"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "void tree::minimum()"
+    },
+    {
+      "style": "No Spacing",
+      "text": "{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tint p=0,q=0,total=0,min;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tvisited[0]=1;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tfor(int count=0;count<(v-1);count++)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tmin=999;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tfor(i=0;i<v;i++)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\tif(visited[i]==1)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\tfor(j=0;j<v;j++)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\tif(visited[j]!=1)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\t\tif(min > a[i][j])"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\t\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\t\t\tmin=a[i][j];"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\t\t\tp=i;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\t\t\tq=j;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\t\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tvisited[p]=1;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tvisited[q]=1;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\ttotal=total+min;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcout<<\"Minimum cost connection is\"<<(p+1)<<\" -> \"<<(q+1)<<\"  with charge : \"<<min<< endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\t"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcout<<\"The minimum total cost of connections of all branches is: \"<<total<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "}"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "int main()"
+    },
+    {
+      "style": "No Spacing",
+      "text": "{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tint ch;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\ttree t;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tdo"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t{"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcout<<\"==========PRIM'S ALGORITHM=================\"<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcout<<\"\\n1.INPUT\\n \\n2.DISPLAY\\n \\n3.MINIMUM\\n\"<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcout<<\"Enter your choice :\"<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tcin>>ch;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tswitch(ch)"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t{\t"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcase 1: cout<<\"*******INPUT YOUR VALUES*******\"<<endl;\t"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tt.input();"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tbreak;"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcase 2: cout<<\"*******DISPLAY THE CONTENTS********\"<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tt.display();"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tbreak;"
+    },
+    {
+      "style": "No Spacing",
+      "text": ""
+    },
+    {
+      "style": "No Spacing",
+      "text": "\tcase 3: cout<<\"*********MINIMUM************\"<<endl;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tt.minimum();"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t\tbreak;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t}"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\t}while(ch!=4);"
+    },
+    {
+      "style": "No Spacing",
+      "text": "\treturn 0;"
+    },
+    {
+      "style": "No Spacing",
+      "text": "}"
+    }
+  ],
+  "tables": []
+}

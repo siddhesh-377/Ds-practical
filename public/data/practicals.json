@@ -1,0 +1,2212 @@
+{
+  "title": "DSA Practical Revision Portal",
+  "practicals": [
+    {
+      "id": 1,
+      "title": "Practical 1",
+      "theory": [
+        {
+          "type": "p",
+          "text": "Title: Program to Implement Linear and Binary Search."
+        },
+        {
+          "type": "p",
+          "text": "Problem Statement:"
+        },
+        {
+          "type": "p",
+          "text": "Write menu based program "
+        },
+        {
+          "type": "p",
+          "text": "a) Write a program to store roll numbers of student in array who attended a training program in random order. Write a function for searching whether a particular student attended a training program or not, using Linear search."
+        },
+        {
+          "type": "p",
+          "text": " b) Write a program to store roll numbers of student array who attended training programs in sorted order. Write a function for searching whether a particular student attended a training program or not, using Binary search."
+        },
+        {
+          "type": "p",
+          "text": "Outcomes"
+        },
+        {
+          "type": "p",
+          "text": "Students will be able to write programs for searching data in arrays."
+        },
+        {
+          "type": "p",
+          "text": "Understand the working and efficiency of linear and binary search algorithms."
+        },
+        {
+          "type": "p",
+          "text": "Software & Hardware Requirements"
+        },
+        {
+          "type": "p",
+          "text": "Theory :"
+        },
+        {
+          "type": "p",
+          "text": "Linear Search: A sequential search where each element is checked one by one until the desired element is found."
+        },
+        {
+          "type": "p",
+          "text": "Linear Search Algorithm"
+        },
+        {
+          "type": "p",
+          "text": "Start"
+        },
+        {
+          "type": "p",
+          "text": "Input array elements and target value"
+        },
+        {
+          "type": "p",
+          "text": "Traverse the array from index 0 to n-1"
+        },
+        {
+          "type": "p",
+          "text": "If element matches target, return FOUND"
+        },
+        {
+          "type": "p",
+          "text": "Else continue"
+        },
+        {
+          "type": "p",
+          "text": "If not found, return NOT FOUND"
+        },
+        {
+          "type": "p",
+          "text": "Stop"
+        },
+        {
+          "type": "p",
+          "text": "Flow Chart for Linear Search:"
+        },
+        {
+          "type": "p",
+          "text": "Binary Search: A divide-and-conquer approach which requires the data to be sorted. It reduces the search space in half each time."
+        },
+        {
+          "type": "p",
+          "text": "Binary Search Algorithm"
+        },
+        {
+          "type": "p",
+          "text": "Start"
+        },
+        {
+          "type": "p",
+          "text": "Input sorted array and key value"
+        },
+        {
+          "type": "p",
+          "text": "Set low = 0 and high = n - 1"
+        },
+        {
+          "type": "p",
+          "text": "While low ≤ high:"
+        },
+        {
+          "type": "p",
+          "text": "Compute mid = (low + high) / 2"
+        },
+        {
+          "type": "p",
+          "text": "If array[mid] == key, return FOUND"
+        },
+        {
+          "type": "p",
+          "text": "Else if key < array[mid], set high = mid - 1"
+        },
+        {
+          "type": "p",
+          "text": "Else set low = mid + 1"
+        },
+        {
+          "type": "p",
+          "text": "If loop exits, return NOT FOUND"
+        },
+        {
+          "type": "p",
+          "text": "Stop"
+        },
+        {
+          "type": "p",
+          "text": "Flow Chart for Binary Search:"
+        },
+        {
+          "type": "p",
+          "text": "Mathematical Model (If applicable)"
+        },
+        {
+          "type": "p",
+          "text": "Let:"
+        },
+        {
+          "type": "p",
+          "text": "S = {s1, s2, s3, ..., sn} be the set of roll numbers"
+        },
+        {
+          "type": "p",
+          "text": "P = search(S, key) is the process of checking membership"
+        },
+        {
+          "type": "p",
+          "text": "f(P) = {found, not found}"
+        },
+        {
+          "type": "p",
+          "text": "Input: Roll numbers S, Search key\nOutput: f(P) indicates presence or absence of roll number"
+        },
+        {
+          "type": "p",
+          "text": "Conclusion"
+        },
+        {
+          "type": "p",
+          "text": "Linear search is simple but inefficient for large datasets (Time Complexity: O(n))."
+        },
+        {
+          "type": "p",
+          "text": "Binary search is faster (Time Complexity: O(log n)) but requires sorted input."
+        },
+        {
+          "type": "p",
+          "text": "Both techniques are foundational for understanding advanced searching and sorting algorithms."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Requirement",
+              "Specification"
+            ],
+            [
+              "Programming Language",
+              "C++ / C"
+            ],
+            [
+              "Compiler",
+              "GCC / G++"
+            ],
+            [
+              "Hardware",
+              "i3 or above, 4 GB RAM or more"
+            ],
+            [
+              "OS",
+              "Windows/Linux"
+            ]
+          ]
+        }
+      ],
+      "images": [
+        "media/theory-1-1.png",
+        "media/theory-1-2.png"
+      ],
+      "code": "#include <stdio.h>\nvoid linearSearch(int a[], int n, int key);\nvoid binarySearch(int a[], int n, int key);\nvoid sortArray(int a[], int n);\n\nint main()\n {\n    int a[50], n = 0, ch, i, key;\n\n    do\n    {\n\n        printf(\"\\nMenu:\\n1. Linear search\\n2. Binary search\\n3. Exit\\n\");\n        printf(\"Enter your choice: \");\n        if (scanf(\"%d\" , &ch) != 1)\n            break;\n\n        if (ch == 1 || ch == 2)\n        {\n            printf(\"Enter no of students: \");\n            scanf(\"%d\" , &n);\n\n            printf(\"Enter roll numbers:\\n\" , n);\n            for (i = 0; i < n; i++)\n            {\n                scanf(\"%d\" , &a[i]);\n            }\n\n            printf(\"Enter rollno to be searched :\");\n            scanf(\"%d\" , &key);\n        }\n\n        switch (ch)\n        {\n            case 1:\n                linearSearch(a, n, key);\n                break;\n\n            case 2:\n\n                sortArray(a, n);\n                for (i = 0; i < n; i++) printf(\"%d \" , a[i]);\n                printf(\"\\n\");\n\n                binarySearch(a, n, key);\n                break;\n\n            case 3:\n                printf(\"Exiting program.\\n\");\n                break;\n\n            default:\n                printf(\"Invalid choice! Please try again.\\n\");\n                break;\n        }\n    } while (ch != 3);\n\n    return 0;\n}\n\nvoid linearSearch(int a[], int n, int key)\n{\n    int i, found = 0;\n\n    for (i = 0; i < n; i++)\n{\n        if (a[i] == key)\n       {\n            printf(\"Element found at index %d (position %d)\\n\" , i, i + 1);\n            found = 1;\n            break;\n        }\n    }\n if (!found)\n     {\n        printf(\"Element not found in the array!\\n\");\n    }\n}\nvoid binarySearch(int a[], int n, int key)\n {\n    int low = 0, high = n - 1, mid;\n    int found = 0;\n\n    while (low <= high)\n    {\n        mid = low + (high - low) / 2;\n\n        if (a[mid] == key)\n        {\n            printf(\"Element found at index %d (position %d)\\n\" , mid, mid + 1);\n            found = 1;\n            break;\n        } else if (a[mid] < key)\n         {\n            low = mid + 1;\n        } else {\n            high = mid - 1;\n        }\n    }\n\n    if (!found) {\n        printf(\"Element not found in the array!\\n\");\n    }\n}\nvoid sortArray(int a[], int n)\n{\n    int i, j, temp;\n    for (i = 0; i < n - 1; i++) {\n        for (j = 0; j < n - i - 1; j++)\n       {\n            if (a[j] > a[j + 1]) {\n                temp = a[j];\n                a[j] = a[j + 1];\n                a[j + 1] = temp;\n            }\n        }\n    }\n}\n",
+      "language": "c",
+      "sources": {
+        "theory": "Theory 1.docx",
+        "code": "Code 1.pdf"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Practical 2",
+      "theory": [
+        {
+          "type": "p",
+          "text": "Title: Program to Implement Selection Sort and Bubble Sort."
+        },
+        {
+          "type": "p",
+          "text": "Problem Statement:"
+        },
+        {
+          "type": "p",
+          "text": "Write a program to store the first-year percentage of students in an array. Write function for sorting array of floating-point numbers in ascending order using-Selection Sort Bubble sort and display top five scores."
+        },
+        {
+          "type": "p",
+          "text": "Outcomes"
+        },
+        {
+          "type": "p",
+          "text": "Students will be able to write programs for sorting data in arrays."
+        },
+        {
+          "type": "p",
+          "text": "Understand the working and efficiency of selection and bubble sort algorithms."
+        },
+        {
+          "type": "p",
+          "text": "Software & Hardware Requirements"
+        },
+        {
+          "type": "p",
+          "text": "Theory :"
+        },
+        {
+          "type": "p",
+          "text": "Selection Sort"
+        },
+        {
+          "type": "p",
+          "text": "The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array. The subarray which is already sorted. Remaining subarray which is unsorted. In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray."
+        },
+        {
+          "type": "p",
+          "text": "Selection Sort Algorithm"
+        },
+        {
+          "type": "p",
+          "text": "Algorithm selectionSort ( low, high )"
+        },
+        {
+          "type": "p",
+          "text": "{ //a[low : high] is an array of size n i=0, j=0, temp=0, ; for i: =low to high do"
+        },
+        {
+          "type": "p",
+          "text": "{"
+        },
+        {
+          "type": "p",
+          "text": "minindex = i;"
+        },
+        {
+          "type": "p",
+          "text": "for j: =i+1 to high do"
+        },
+        {
+          "type": "p",
+          "text": "{"
+        },
+        {
+          "type": "p",
+          "text": "if( a[j] < a[minindex] ) then minindex := j;"
+        },
+        {
+          "type": "p",
+          "text": "}"
+        },
+        {
+          "type": "p",
+          "text": "temp := a[i];"
+        },
+        {
+          "type": "p",
+          "text": "a[i] := a[minindex]; a[minindex] := temp;"
+        },
+        {
+          "type": "p",
+          "text": "}"
+        },
+        {
+          "type": "p",
+          "text": "}"
+        },
+        {
+          "type": "p",
+          "text": "Example: The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. In every iteration of selection sort, the minimum element from the unsorted sub-array is picked and moved to the sorted sub- array."
+        },
+        {
+          "type": "p",
+          "text": "Consider a list a = [64, 25, 12, 22, 11]"
+        },
+        {
+          "type": "p",
+          "text": "Flow Chart for Selection Sort:"
+        },
+        {
+          "type": "h2",
+          "text": "Bubble Sort"
+        },
+        {
+          "type": "p",
+          "text": "Bubble sort is a simple sorting algorithm. This sorting algorithm is comparison- based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. This algorithm is not suitable for large data sets as its average and worst case complexity is of Ο(n2) where n is the number of items."
+        },
+        {
+          "type": "h2",
+          "text": "Bubble Sort Algorithm"
+        },
+        {
+          "type": "p",
+          "text": "Algorithm bubblesort ( x[], n)"
+        },
+        {
+          "type": "p",
+          "text": "{ // x[1:n] is an array of n elementsfor i := 0 to n do"
+        },
+        {
+          "type": "p",
+          "text": " {"
+        },
+        {
+          "type": "p",
+          "text": "for j := 0 to n–i-1 d0"
+        },
+        {
+          "type": "p",
+          "text": "{"
+        },
+        {
+          "type": "p",
+          "text": "if (x[j] > x[j+1])"
+        },
+        {
+          "type": "p",
+          "text": "{"
+        },
+        {
+          "type": "p",
+          "text": "temp = x[j]; x[j] = x[j+1]; x[j+1] = temp;"
+        },
+        {
+          "type": "p",
+          "text": "}"
+        },
+        {
+          "type": "p",
+          "text": "}"
+        },
+        {
+          "type": "p",
+          "text": "}"
+        },
+        {
+          "type": "p",
+          "text": "}"
+        },
+        {
+          "type": "p",
+          "text": "Flow Chart for Bubble Sort:"
+        },
+        {
+          "type": "p",
+          "text": "Conclusion"
+        },
+        {
+          "type": "p",
+          "text": "Successfully sorted first year percentage of students using Selection sort & bubble sort techniques."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Requirement",
+              "Specification"
+            ],
+            [
+              "Programming Language",
+              "C++ / C"
+            ],
+            [
+              "Compiler",
+              "GCC / G++"
+            ],
+            [
+              "Hardware",
+              "i3 or above, 4 GB RAM or more"
+            ],
+            [
+              "OS",
+              "Windows/Linux"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Index",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "Remarks"
+            ],
+            [
+              "List",
+              "64",
+              "25",
+              "12",
+              "22",
+              "11",
+              "Find the minimum element in a[0 .. 4]\nand place it at beginning."
+            ],
+            [
+              "Iteration 1",
+              "11",
+              "25",
+              "12",
+              "22",
+              "64",
+              "Find the minimum element in a[1 .. 4]\nand place it at beginning of a[1 .. 4]"
+            ],
+            [
+              "Iteration 2",
+              "11",
+              "12",
+              "25",
+              "22",
+              "64",
+              "Find the minimum element in a[2 .. 4]\nand place it at beginning of a[2 .. 4]"
+            ],
+            [
+              "Iteration 3",
+              "11",
+              "12",
+              "22",
+              "25",
+              "64",
+              "Find the minimum element in a[3 .. 4]\nand place it at beginning of a[3 .. 4]"
+            ],
+            [
+              "Iteration 4",
+              "11",
+              "12",
+              "22",
+              "25",
+              "64",
+              "Finally the list is sorted."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+              "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+              "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+              "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+              "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass",
+              "Example: Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are not in order.\nFirst Pass"
+            ],
+            [
+              "5",
+              "1",
+              "4",
+              "2",
+              "8",
+              "Compare the first two elements, and swaps since 5 > 1"
+            ],
+            [
+              "1",
+              "5",
+              "4",
+              "2",
+              "8",
+              "Compare 5 and 4 and swap since 5 > 4"
+            ],
+            [
+              "1",
+              "4",
+              "5",
+              "2",
+              "8",
+              "Compare 5 and 2 and swap since 5 > 2"
+            ],
+            [
+              "1",
+              "4",
+              "2",
+              "5",
+              "8",
+              "Compare 5 and 8 and since 5 < 8, noswap."
+            ],
+            [
+              "Second Pass",
+              "Second Pass",
+              "Second Pass",
+              "Second Pass",
+              "Second Pass",
+              "Second Pass"
+            ],
+            [
+              "1",
+              "4",
+              "2",
+              "5",
+              "8",
+              "Compare the first two elements, and as 1\n< 4, no swap."
+            ],
+            [
+              "1",
+              "4",
+              "2",
+              "5",
+              "8",
+              "Compare 4 and 2, swap since 4 > 2"
+            ],
+            [
+              "1",
+              "2",
+              "4",
+              "5",
+              "8",
+              "Compare 4 and 5, no swap."
+            ],
+            [
+              "1",
+              "2",
+              "4",
+              "5",
+              "8",
+              "Compare 5 and 8 and no swap."
+            ],
+            [
+              "Third Pass",
+              "Third Pass",
+              "Third Pass",
+              "Third Pass",
+              "Third Pass",
+              "Third Pass"
+            ],
+            [
+              "1",
+              "2",
+              "4",
+              "5",
+              "8",
+              "Compare the first two elements and no swap."
+            ],
+            [
+              "1",
+              "2",
+              "4",
+              "5",
+              "8",
+              "Compare 2 and 4, no swap."
+            ],
+            [
+              "1",
+              "2",
+              "4",
+              "5",
+              "8",
+              "Compare 4 and 5, no swap."
+            ],
+            [
+              "1",
+              "2",
+              "4",
+              "5",
+              "8",
+              "Compare 5 and 8, no swap."
+            ]
+          ]
+        }
+      ],
+      "images": [
+        "media/theory-2-1.jpeg",
+        "media/theory-2-2.png"
+      ],
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n#define MAX_STUD 100\n\nint main()\n{\n    float percentage[MAX_STUD];\n    int num = 0, ch, i, j;\n    float temp;\n\n    do\n    {\n        printf(\"__Student percentage management system__\\n\");\n        printf(\"1.Enter student percentage\\n2.Selection sort\\n3.Bubble sort\\n4.Top 5\\n5.Display\nall student percentage\\n6.exit\\n\");\n        printf(\"Enter your choice:\");\n        scanf(\"%d\",&ch);\n        switch(ch)\n        {\n            case 1:\n                printf(\"Enter number of students (max %d): \", MAX_STUD);\n                scanf(\"%d\", &num);\n                if(num > MAX_STUD || num <= 0)\n                {\n                    printf(\"Insert a valid count!\\n\");\n                    num = 0;\n                }\n                else\n                {\n                    printf(\"Enter percentages of students:\\n\");\n                    for(i = 0; i < num; i++)\n                    {\n                        printf(\"Percentage of student %d: \", i + 1);\n                        scanf(\"%f\", &percentage[i]);\n                    }\n                }\n                break;\n\n            case 2:\n                if(num == 0)\n                {\n                    printf(\"No student data available! Please enter data first.\\n\");\n                    break;\n                }\n                for(i = 0; i < num - 1; i++)\n                {\n                    int min = i;\n                    for(j = i + 1; j < num; j++)\n                    {\n                        if(percentage[j] < percentage[min])\n                        {\n                            min = j;\n                        }\n                    }\n                    if(min != i)\n                    {\n                        temp = percentage[i];\n                        percentage[i] = percentage[min];\n                        percentage[min] = temp;\n                    }\n                }\n                printf(\"\\nPercentages sorted (Ascending) using Selection Sort:\\n\");\n                for(i = 0; i < num; i++)\n                {\n                    printf(\"%.2f%%\\n\", percentage[i]);\n                }\n                break;\n\n            case 3:\n                if(num == 0)\n                {\n                    printf(\"No student data available! Please enter data first.\\n\");\n                    break;\n                }\n                for(i = 0; i < num - 1; i++)\n                {\n                    for(j = 0; j < num - 1 - i; j++)\n                    {\n                        if(percentage[j] > percentage[j + 1])\n                        {\n                            temp = percentage[j];\n                            percentage[j] = percentage[j + 1];\n                            percentage[j + 1] = temp;\n                        }\n                    }\n                }\n                printf(\"\\nPercentages sorted (Ascending) using Bubble Sort:\\n\");\n                for(i = 0; i < num; i++)\n                {\n                    printf(\"%.2f%%\\n\", percentage[i]);\n                }\n                break;\n\n            case 4:\n                if(num == 0)\n                {\n                    printf(\"No student data available! Please enter data first.\\n\");\n                    break;\n                }\n\n                for(i = 0; i < num - 1; i++)\n                {\n                    int min = i;\n                    for(j = i + 1; j < num; j++)\n                    {\n                        if(percentage[j] < percentage[min])\n                        {\n                            min = j;\n                        }\n                    }\n                    if(min != i)\n                    {\n                        temp = percentage[i];\n                        percentage[i] = percentage[min];\n                        percentage[min] = temp;\n                    }\n                }\n\n                printf(\"\\nTop Percentages:\\n\");\n                int count = 0;\n                for(i = num - 1; i >= 0 && count < 5; i--)\n                {\n                    printf(\"Rank %d: %.2f%%\\n\", count + 1, percentage[i]);\n                    count++;\n                }\n                break;\n\n            case 5:\n                if(num == 0)\n                {\n                    printf(\"No student data available! Please enter data first.\\n\");\n                }\n                else\n                {\n                    printf(\"\\nAll Student Percentages:\\n\");\n                    for(i = 0; i < num; i++)\n                    {\n                        printf(\"Student %d: %.2f%%\\n\", i + 1, percentage[i]);\n                    }\n                }\n                break;\n\n            case 6:\n                printf(\"Exiting program...\\n\");\n                break;\n\n            default:\n                printf(\"Invalid choice! Please enter a option between 1 and 6.\\n\");\n                break;\n        }\n    } while(ch != 6);\n\n    return 0;\n}\n",
+      "language": "c",
+      "sources": {
+        "theory": "Theory 2.docx",
+        "code": "Code 2.pdf"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Assignment - 3",
+      "theory": [
+        {
+          "type": "h1",
+          "text": "Assignment - 3"
+        },
+        {
+          "type": "p",
+          "text": "Problem Statement: Consider telephone book database of N clients. Make use of a hash table implementation to quickly look up client‘s telephone number."
+        },
+        {
+          "type": "p",
+          "text": "Objective: To understand the basic concept of Hashing in Data structure."
+        },
+        {
+          "type": "p",
+          "text": "Outcome: To implement the basic concept of Hashing, to store a set of telephone numbers , use of concept of hashing to quickly look up in N number of Data."
+        },
+        {
+          "type": "h2",
+          "text": "Software & Hardware Requirements:"
+        },
+        {
+          "type": "li",
+          "text": "64-bit Open source Linux or its derivative"
+        },
+        {
+          "type": "li",
+          "text": "Open Source C++ Programming tool like G++/GCC"
+        },
+        {
+          "type": "h2",
+          "text": "Theory Concepts:"
+        },
+        {
+          "type": "p",
+          "text": "Hashing"
+        },
+        {
+          "type": "p",
+          "text": "Suppose we want to design a system for storing employee records keyed using phone numbers. And we want following queries to be performed efficiently:"
+        },
+        {
+          "type": "li",
+          "text": "Insert a phone number and corresponding information."
+        },
+        {
+          "type": "li",
+          "text": "Search a phone number and fetch the information."
+        },
+        {
+          "type": "li",
+          "text": "Delete a phone number and related information."
+        },
+        {
+          "type": "p",
+          "text": "We can think of using the following data structures to maintain information about different phone numbers."
+        },
+        {
+          "type": "li",
+          "text": "Array of phone numbers and records."
+        },
+        {
+          "type": "li",
+          "text": "Linked List of phone numbers and records."
+        },
+        {
+          "type": "li",
+          "text": "Balanced binary search tree with phone numbers as keys."
+        },
+        {
+          "type": "li",
+          "text": "Direct Access Table."
+        },
+        {
+          "type": "p",
+          "text": "For arrays and linked lists, we need to search in a linear fashion, which can be costly in practice. If we use arrays and keep the data sorted, then a phone number can be searched in O(Logn) time using Binary Search, but insert and delete operations become costly as we have to maintain sorted order. With balanced binary search tree, we get moderate search, insert and delete times. All of these operations can be guaranteed to be in O (Logn) time."
+        },
+        {
+          "type": "p",
+          "text": "Hashing is an improvement over Direct Access Table. The idea is to use hash function that converts a given phone number or any other key to a smaller number and uses the small number as index in a table called hash table."
+        },
+        {
+          "type": "h2",
+          "text": "Hash Function:"
+        },
+        {
+          "type": "p",
+          "text": "A function that converts a given big phone number to a small practical integer value. The mapped integer value is used as an index in hash table. In simple terms, a hash function maps a big number or string to a small integer that can be used as index in hash table."
+        },
+        {
+          "type": "p",
+          "text": "A good hash function should have following properties"
+        },
+        {
+          "type": "li",
+          "text": "Efficiently computable."
+        },
+        {
+          "type": "li",
+          "text": "Should uniformly distribute the keys (Each table position equally likely for each key)"
+        },
+        {
+          "type": "p",
+          "text": "For example for phone numbers a bad hash function is to take first three digits. A better function is considering last three digits. Please note that this may not be the best hash function. There may be better ways."
+        },
+        {
+          "type": "h2",
+          "text": "Hash Table:"
+        },
+        {
+          "type": "p",
+          "text": "An array that stores pointers to records corresponding to a given phone number. An entry in hash table is NIL if no existing phone number has hash function value equal to the index for the entry."
+        },
+        {
+          "type": "p",
+          "text": "Collision Handling: Since a hash function gets us a small number for a big key, there is possibility that two keys result in same value. The situation where a newly inserted key maps to an already occupied slot in hash table is called collision and must be handled using some collision handling technique."
+        },
+        {
+          "type": "p",
+          "text": "Following are the ways to handle collisions:"
+        },
+        {
+          "type": "li",
+          "text": "Chaining: The idea is to make each cell of hash table point to a linked list of records that have same hash function value. Chaining is simple, but requires additional memory outside the table."
+        },
+        {
+          "type": "li",
+          "text": "Open Addressing: In open addressing, all elements are stored in the hash table itself. Each table entry contains either a record or NIL. When searching for an element, we one by one examine table slots until the desired element is found or it is clear that the element is not in the table."
+        },
+        {
+          "type": "p",
+          "text": "Conclusion: We are able to implement the concept of Hashing in programming."
+        }
+      ],
+      "images": [],
+      "code": "#include<stdio.h>\n#include<string.h>\n#define size 10\nint i;\ntypedef struct\n{\n     char name[30];\n     long phone;\n     int occupied;\n}client;\nclient hashtable[size];\nvoid insertlinear(char *name, long phone);\nvoid insertquadratic(char *name, long phone);\nvoid insertdouble(char*name, long phone);\nvoid search(char *name);\nvoid display();\nint hashfunction(char name[]);\nint hashfunction(char name[])\n {\n     int hash=0;\n     for(int i=0;name[i];i++)\n     {\n          hash=(hash+name[i]%size);\n     }\n     return hash;\n}\nint secondhash(char*name)\n{\n     int hash=0;\n     for(int i=0;name[i];i++)\n     {\n          hash+=name[i];\n          return 7-(hash%7);\n\n     }\n}\nvoid main()\n{\n     int ch;\n     char name[30];\n     long phone;\n     do\n     {\n           printf(\"\\nMENU\\n1.Linear probing\\n2.Quadratic probing\\n3.Double\nhashing\\n4.Searching\\n5.Display\\n6.Exit\");\n           printf(\"\\nEnter your choice:\");\n           scanf(\"%d\",&ch);\n           switch (ch)\n           {\n           case 1:\n               printf(\"Enter name and phone number:\");\n               scanf(\"%s%ld\",&name,&phone);\n               insertlinear(name,phone);\n               break;\n           case 2:\n                printf(\"enter name and phone\");\n                scanf(\"%s%ld\",&name,&phone);\n                insertquadratic(name,phone);\n               break;\n           case 3:\n                printf(\"Enter name and phone number:\");\n               scanf(\"%s%ld\",&name,&phone);\n               insertdouble(name,phone);\n               break;\n           case 4:\n               printf(\"Enter name to search:\");\n               scanf(\"%s\",&name);\n               search(name);\n               break;\n\n           case 5:\n                display();\n                break;\n\n           default:\n               break;\n               }\n     }while(ch!=5);\n}\n\nvoid insertlinear(char *name,long phone)\n{\n     int index=hashfunction(name);\n     int start=index;\n     while(hashtable[index].occupied)\n     {\n          index=(index+1)%size;\n          if(index==start)\n             {\n                  printf(\"Hash table is full\");\n                    return;\n             }\n     }\n     strcpy(hashtable[index].name,name);\n     hashtable[index].phone=phone;\n     hashtable[index].occupied = 1;\n     printf(\"Inserted using linear probing\\n\");\n\n}\nvoid insertquadratic(char *name, long phone)\n{\n     int index=hashfunction(name);\n     while(hashtable[(index + i*i)%size].occupied&& i<size)\n     {\n          i++;\n     }\n     if(i==size)\n     {\n          printf(\"Hash table is full\");\n          return;\n     }\n     index=(index + i*i)%size;\n     strcpy(hashtable[index].name,name);\n     hashtable[index].phone=phone;\n     hashtable[index].occupied=1;\n     printf(\"Inserted using quadratic probing\\n\");\n}\nvoid insertdouble(char*name,long phone)\n{\n     int index=hashfunction(name);\n     int step=secondhash(name);\n     int start=index;\n     while(hashtable[index].occupied)\n     {\n          index=(index+step)%size;\n          if (index==start)\n          {\n\n               printf(\"table full\");\n               return;\n          }\n     }\n     index=(index + i*i)%size;\n     strcpy(hashtable[index].name,name);\n     hashtable[index].phone=phone;\n     hashtable[index].occupied=1;\n     printf(\"Inserted using double hashing\\n\");\n}\nvoid search(char *name)\n{\n     int index=hashfunction(name);\n     int start=index;\n     while(hashtable[index].occupied)\n     {\n             if(strcmp(hashtable[index].name,name)==0)\n          {\n               printf(\"phone number of %s is %ld\",name,hashtable[index].phone);\n               return;\n          }\n          index=(index+1)%size;\n          if(index==start)\n               {\n               break;\n               }\n     }\n               printf(\"clinet not found\");\n\n\n}\nvoid display()\n{\n     int i;\n     printf(\"Hash Table\");\n     printf(\"%-5s %-30s %-15s\\n\", \"Index\", \"Name\", \"Phone\");\n     for(i = 0; i < size; i++)\n     {\n          if(hashtable[i].occupied)\n          {\n               printf(\"%-5d %-30s %-15ld\\n\", i, hashtable[i].name, hashtable[i].phone);\n          }\n          else\n          {\n               printf(\"%-5d %-30s %-15s\\n\", i, \"---\", \"---\");\n          }\n     }\n}\n",
+      "language": "c",
+      "sources": {
+        "theory": "Theory 3.docx",
+        "code": "Code 3.pdf"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Assignment No 4",
+      "theory": [
+        {
+          "type": "h1",
+          "text": "Assignment No 4"
+        },
+        {
+          "type": "p",
+          "text": "Title: set operations using linked list."
+        },
+        {
+          "type": "p",
+          "text": "Objectives: To understand set operation. Representation and implementation of operation of sets using linked list"
+        },
+        {
+          "type": "h2",
+          "text": "Problem Statement:"
+        },
+        {
+          "type": "p",
+          "text": "Second year Computer Engineering class, set A of students like Vanilla Ice- cream and set B of students like butterscotch ice-cream. Write C++ program to store two sets using linked list. compute and display-"
+        },
+        {
+          "type": "li",
+          "text": "Set of students who like both vanilla and butterscotch"
+        },
+        {
+          "type": "li",
+          "text": "Set of students who like either vanilla or butterscotch or not both"
+        },
+        {
+          "type": "li",
+          "text": "Number of students who like neither vanilla nor butterscotch"
+        },
+        {
+          "type": "h2",
+          "text": "Outcomes:"
+        },
+        {
+          "type": "li",
+          "text": "List of students who like either vanilla or butterscotch or both"
+        },
+        {
+          "type": "li",
+          "text": "List of students who like both vanilla and butterscotch"
+        },
+        {
+          "type": "li",
+          "text": "List of students who like only vanilla not butterscotch"
+        },
+        {
+          "type": "li",
+          "text": "List of students who like only butterscotch not vanilla"
+        },
+        {
+          "type": "li",
+          "text": "Number of students who like neither vanilla nor butterscotch"
+        },
+        {
+          "type": "h2",
+          "text": "Software & Hardware requirements:"
+        },
+        {
+          "type": "p",
+          "text": "Linux operating system Eclipse IDE with g++ compiler"
+        },
+        {
+          "type": "h2",
+          "text": "Theory- Concept in brief:"
+        },
+        {
+          "type": "p",
+          "text": "Set:"
+        },
+        {
+          "type": "p",
+          "text": "a set is a collection of objects which are called the members or elements of that set. If we have a set we say that some objects belong (or do not belong) to this set, are (or are not) in the set."
+        },
+        {
+          "type": "p",
+          "text": "Examples: the set of students in this room; the English alphabet may be viewed as the set of letters of the English language; the set of natural numbers Operations on sets:"
+        },
+        {
+          "type": "li",
+          "text": "Union: The union of A and B, written A 𝖴 B , is the set whose elements are just the elements of A or B or of both."
+        },
+        {
+          "type": "li",
+          "text": "Intersection: The intersection of A and B , written A ∩ B , is the set whose elements are just the elements of both A and B."
+        },
+        {
+          "type": "li",
+          "text": "Difference: Another binary operation on arbitrary sets is the difference ― A minus B‖ , written A – B, which ‗subtracts„ from A all elements which are in"
+        },
+        {
+          "type": "p",
+          "text": "B. [Also called relative complement: the complement of B relative to A.]"
+        },
+        {
+          "type": "li",
+          "text": "Complement: This operation is creating a set A, which is the set consisting of everything not in A"
+        },
+        {
+          "type": "h2",
+          "text": "Algorithm:"
+        },
+        {
+          "type": "li",
+          "text": "Algorithm difference(struct node *head1, struct node *head2) Precondition: Accept the two sets of name in the form of linked list. Post condition: Difference of two sets"
+        },
+        {
+          "type": "p",
+          "text": "Return:head node of the resultant linked list(Difference)"
+        },
+        {
+          "type": "li",
+          "text": "Set p=head1, i.e. head of 1st linked list"
+        },
+        {
+          "type": "li",
+          "text": "Initialize the 3rd linked list as empty i.e. head3=NULL"
+        },
+        {
+          "type": "li",
+          "text": "while(p!=NULL)"
+        },
+        {
+          "type": "li",
+          "text": "Set flag=0"
+        },
+        {
+          "type": "li",
+          "text": "Set q=head2, i.e. head of 2ndlinked list"
+        },
+        {
+          "type": "li",
+          "text": "while(q!=NULL)"
+        },
+        {
+          "type": "li",
+          "text": "if(strcmp(p->name,q->name)==0)"
+        },
+        {
+          "type": "li",
+          "text": "Set flag to 1 and go to step d"
+        },
+        {
+          "type": "li",
+          "text": "else"
+        },
+        {
+          "type": "li",
+          "text": "Move q to the next node, q=q->next"
+        },
+        {
+          "type": "li",
+          "text": "if(flag!=1)"
+        },
+        {
+          "type": "li",
+          "text": "if(head3==NULL)"
+        },
+        {
+          "type": "li",
+          "text": "Allocate memory for New node"
+        },
+        {
+          "type": "li",
+          "text": "strcpy(New->name,p->name)"
+        },
+        {
+          "type": "li",
+          "text": "Set r=New and r->next=NULL"
+        },
+        {
+          "type": "li",
+          "text": "Make New node as head node of resultant linked list"
+        },
+        {
+          "type": "li",
+          "text": "else"
+        },
+        {
+          "type": "li",
+          "text": "Allocate memory for New node"
+        },
+        {
+          "type": "li",
+          "text": "r->next=New"
+        },
+        {
+          "type": "li",
+          "text": "strcpy(New->name,p->name)"
+        },
+        {
+          "type": "li",
+          "text": "Set r=r->next and r->next=NULL"
+        },
+        {
+          "type": "li",
+          "text": "Move p to the next node, p=p->next"
+        },
+        {
+          "type": "li",
+          "text": "return head3 i.e. head of resultant linked list"
+        },
+        {
+          "type": "li",
+          "text": "Stop"
+        },
+        {
+          "type": "p",
+          "text": "Algorithm Intersection(struct node *head1, struct node *head2) Precondition: Accept the two sets of name in the form of linked list. Post condition: Intersection of two sets"
+        },
+        {
+          "type": "p",
+          "text": "Return:Nil"
+        },
+        {
+          "type": "li",
+          "text": "Set p=head1, i.e. head of 1st linked list"
+        },
+        {
+          "type": "li",
+          "text": "Initialize the 3rd linked list as empty i.e. head3=NULL"
+        },
+        {
+          "type": "li",
+          "text": "while(p!=NULL)"
+        },
+        {
+          "type": "li",
+          "text": "Set q=head2, i.e. head of 2nd linked list"
+        },
+        {
+          "type": "li",
+          "text": "while(q!=NULL)"
+        },
+        {
+          "type": "li",
+          "text": "f(strcmp(p->name,q->name)==0)"
+        },
+        {
+          "type": "li",
+          "text": "if(head3==NULL)"
+        },
+        {
+          "type": "li",
+          "text": "Allocate memory for New node"
+        },
+        {
+          "type": "li",
+          "text": "strcpy(New->name,p->name)"
+        },
+        {
+          "type": "li",
+          "text": "Set r=New and r->next=NULL;"
+        },
+        {
+          "type": "li",
+          "text": "Make new node as head of linked list"
+        },
+        {
+          "type": "li",
+          "text": "else"
+        },
+        {
+          "type": "li",
+          "text": "Allocate memory for New node"
+        },
+        {
+          "type": "li",
+          "text": "r->next=New"
+        },
+        {
+          "type": "li",
+          "text": "strcpy(New->name,p->name)"
+        },
+        {
+          "type": "li",
+          "text": "Set r=r->next and r->next=NULL"
+        },
+        {
+          "type": "li",
+          "text": "Go to step c"
+        },
+        {
+          "type": "p",
+          "text": "ii. Move q to the next node, q=q->next"
+        },
+        {
+          "type": "li",
+          "text": "Move p to the next node, p=p->next"
+        },
+        {
+          "type": "li",
+          "text": "Call display(head3) function to display resultant linked list containing intersection"
+        },
+        {
+          "type": "li",
+          "text": "Stop"
+        },
+        {
+          "type": "li",
+          "text": "Algorithm Union(struct node *head1,struct node *head2) Precondition: Accept the two sets of name in the form of linked list. Post condition: Union of two sets"
+        },
+        {
+          "type": "p",
+          "text": "Return: head node of the resultant linked list(Union)"
+        },
+        {
+          "type": "li",
+          "text": "Set q=head2, i.e. head of 2nd linked list"
+        },
+        {
+          "type": "li",
+          "text": "Copy all contents of first linked list in third, head3=head1"
+        },
+        {
+          "type": "li",
+          "text": "Set r=head3, i.e. head of 3rd linked list"
+        },
+        {
+          "type": "li",
+          "text": "while(r->next!=NULL) Move r to the next node, r=r->next"
+        },
+        {
+          "type": "li",
+          "text": "while(q!=NULL)"
+        },
+        {
+          "type": "li",
+          "text": "Set p=head1, i.e. head of 1st linked list"
+        },
+        {
+          "type": "li",
+          "text": "Initialize flag to 0"
+        },
+        {
+          "type": "li",
+          "text": "while(p!=NULL)"
+        },
+        {
+          "type": "li",
+          "text": "if(strcmp(p->name,q->name)==0) Set flag to 1 and go to step d"
+        },
+        {
+          "type": "li",
+          "text": "else Move p to the next node, p=p->next"
+        },
+        {
+          "type": "li",
+          "text": "if(flag==0)"
+        },
+        {
+          "type": "li",
+          "text": "Allocate memory for New node"
+        },
+        {
+          "type": "li",
+          "text": "r->next=New"
+        },
+        {
+          "type": "li",
+          "text": "strcpy(New->name,q->name);"
+        },
+        {
+          "type": "li",
+          "text": "Set r=r->next and r->next=NULL"
+        },
+        {
+          "type": "li",
+          "text": "Move q to the next node, q=q->next"
+        },
+        {
+          "type": "li",
+          "text": "return head3, i.e. head of resultant linked list containing union"
+        },
+        {
+          "type": "li",
+          "text": "Stop"
+        },
+        {
+          "type": "h2",
+          "text": "Flowchart: Draw Flowchart"
+        },
+        {
+          "type": "p",
+          "text": "Test cases: Note: Add input and output here Conclusion/analysis:"
+        },
+        {
+          "type": "p",
+          "text": "Thus I have studied concept of set and its representation using array. I havealso implemented all the operations of set."
+        }
+      ],
+      "images": [],
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\nstruct Node\n{\n    int roll;\n    struct Node *next;\n};\n\n// Create a new node\nstruct Node* createNode(int roll)\n{\n    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));\n    newNode->roll = roll;\n    newNode->next = NULL;\n    return newNode;\n}\n\n// Insert at end\nvoid insert(struct Node **head, int roll)\n{\n    struct Node *newNode = createNode(roll);\n\n    if (*head == NULL)\n    {\n        *head = newNode;\n        return;\n    }\n\n    struct Node *temp = *head;\n\n    while (temp->next != NULL)\n        temp = temp->next;\n\n    temp->next = newNode;\n}\n\n// Check whether roll number exists in a set\nint search(struct Node *head, int roll)\n{\n    while (head != NULL)\n    {\n        if (head->roll == roll)\n            return 1;\n\n        head = head->next;\n    }\n\n    return 0;\n}\n\n// Display linked list\nvoid display(struct Node *head)\n{\n    if (head == NULL)\n    {\n        printf(\"No students\\n\");\n        return;\n    }\n\n    while (head != NULL)\n    {\n        printf(\"%d \", head->roll);\n        head = head->next;\n    }\n\n    printf(\"\\n\");\n}\n\nint main()\n{\n    struct Node *A = NULL;\n    struct Node *B = NULL;\n\n    int nA, nB, roll, i;\n    int neither = 0;\n\n    // Input Set A\n    printf(\"Enter number of students who like Vanilla: \");\n    scanf(\"%d\", &nA);\n\n    printf(\"Enter roll numbers:\\n\");\n    for (i = 0; i < nA; i++)\n    {\n        scanf(\"%d\", &roll);\n        insert(&A, roll);\n    }\n\n    // Input Set B\n    printf(\"\\nEnter number of students who like Butterscotch: \");\n    scanf(\"%d\", &nB);\n\n    printf(\"Enter roll numbers:\\n\");\n    for (i = 0; i < nB; i++)\n    {\n        scanf(\"%d\", &roll);\n        insert(&B, roll);\n    }\n\n    // a) Students who like both\n    printf(\"\\n(a) Students who like both Vanilla and Butterscotch:\\n\");\n\n    struct Node *temp = A;\n\n    while (temp != NULL)\n    {\n        if (search(B, temp->roll))\n            printf(\"%d \", temp->roll);\n\n        temp = temp->next;\n    }\n\n    // b) Students who like either but not both\n    printf(\"\\n\\n(b) Students who like either Vanilla or Butterscotch, but not both:\\n\");\n\n    temp = A;\n\n    // Students in A but not in B\n    while (temp != NULL)\n    {\n        if (!search(B, temp->roll))\n            printf(\"%d \", temp->roll);\n\n        temp = temp->next;\n    }\n\n    // Students in B but not in A\n    temp = B;\n\n    while (temp != NULL)\n    {\n        if (!search(A, temp->roll))\n            printf(\"%d \", temp->roll);\n\n        temp = temp->next;\n    }\n\n    // c) Students who like neither\n    // Assuming total students are numbered from 1 to total_students\n\n    int total_students;\n\n    printf(\"\\n\\nEnter total number of students in the class: \");\n    scanf(\"%d\", &total_students);\n\n    for (roll = 1; roll <= total_students; roll++)\n    {\n        if (!search(A, roll) && !search(B, roll))\n            neither++;\n    }\n\n    printf(\"\\n(c) Number of students who like neither Vanilla nor Butterscotch: %d\\n\",\n           neither);\n\n    return 0;\n}\n",
+      "language": "c",
+      "sources": {
+        "theory": "Theory 4.docx",
+        "code": "Code 4.docx"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Practical 5",
+      "theory": [
+        {
+          "type": "p",
+          "text": "Assignment No: 5"
+        },
+        {
+          "type": "p",
+          "text": "Title: Program to Implement Doubly Linked List for Appointment System"
+        },
+        {
+          "type": "p",
+          "text": "Problem Statement:"
+        },
+        {
+          "type": "p",
+          "text": "Write a program to implement Doubly Linked List with the following operations:\na) Display free slots\nb) Book appointment\nc) Sort list based on time\nd) Cancel appointment\ne) Sort list based on time using pointer manipulation"
+        },
+        {
+          "type": "p",
+          "text": "Objectives:"
+        },
+        {
+          "type": "p",
+          "text": "To understand the concept and working of a Doubly Linked List."
+        },
+        {
+          "type": "p",
+          "text": "To apply linked list operations for real-life applications like appointment scheduling."
+        },
+        {
+          "type": "p",
+          "text": "To perform insertion, deletion, and sorting in a doubly linked list."
+        },
+        {
+          "type": "p",
+          "text": "To practice pointer manipulation techniques in linked list implementation."
+        },
+        {
+          "type": "p",
+          "text": "Outcomes:"
+        },
+        {
+          "type": "p",
+          "text": "Students will be able to implement and manipulate a doubly linked list."
+        },
+        {
+          "type": "p",
+          "text": "Students will learn how to use linked lists for managing appointment booking systems."
+        },
+        {
+          "type": "p",
+          "text": "Students will be able to sort data dynamically using pointer manipulation instead of array-based methods."
+        },
+        {
+          "type": "p",
+          "text": "Software & Hardware Requirements:"
+        },
+        {
+          "type": "p",
+          "text": "Theory Concept:"
+        },
+        {
+          "type": "p",
+          "text": "A Doubly Linked List (DLL) is a type of linked list where each node contains three parts:"
+        },
+        {
+          "type": "p",
+          "text": "Data field – stores the actual information."
+        },
+        {
+          "type": "p",
+          "text": "Pointer to previous node – points to the previous node in the list."
+        },
+        {
+          "type": "p",
+          "text": "Pointer to next node – points to the next node in the list."
+        },
+        {
+          "type": "p",
+          "text": "Unlike singly linked lists, DLL allows traversal in both forward and backward directions. This makes insertion, deletion, and sorting operations more efficient in certain scenarios."
+        },
+        {
+          "type": "p",
+          "text": "In this problem, DLL is used to implement an appointment booking system where each node represents a time slot. Using pointer manipulation, appointments can be booked, canceled, displayed, and sorted based on time."
+        },
+        {
+          "type": "p",
+          "text": "Algorithm:"
+        },
+        {
+          "type": "p",
+          "text": "1. Display Free Slots"
+        },
+        {
+          "type": "p",
+          "text": "Start from the head node."
+        },
+        {
+          "type": "p",
+          "text": "Traverse the list and display only nodes marked as \"Free\"."
+        },
+        {
+          "type": "p",
+          "text": "2. Book Appointment"
+        },
+        {
+          "type": "p",
+          "text": "Input the desired time slot."
+        },
+        {
+          "type": "p",
+          "text": "Traverse the list to find the slot."
+        },
+        {
+          "type": "p",
+          "text": "If found and marked free → mark as booked."
+        },
+        {
+          "type": "p",
+          "text": "Else → display \"Slot not available\"."
+        },
+        {
+          "type": "p",
+          "text": "3. Sort List Based on Time (Normal Method)"
+        },
+        {
+          "type": "p",
+          "text": "Use a bubble sort or selection sort logic."
+        },
+        {
+          "type": "p",
+          "text": "Compare adjacent nodes’ data (time)."
+        },
+        {
+          "type": "p",
+          "text": "Swap data fields accordingly."
+        },
+        {
+          "type": "p",
+          "text": "4. Cancel Appointment"
+        },
+        {
+          "type": "p",
+          "text": "Input the time slot to cancel."
+        },
+        {
+          "type": "p",
+          "text": "Traverse the list."
+        },
+        {
+          "type": "p",
+          "text": "If found and booked → mark as free."
+        },
+        {
+          "type": "p",
+          "text": "Else → display \"Appointment not found\"."
+        },
+        {
+          "type": "p",
+          "text": "5. Sort Using Pointer Manipulation"
+        },
+        {
+          "type": "p",
+          "text": "Traverse list to compare adjacent nodes."
+        },
+        {
+          "type": "p",
+          "text": "Instead of swapping data, adjust node links (prev and next)."
+        },
+        {
+          "type": "p",
+          "text": "Update head pointer if needed."
+        },
+        {
+          "type": "p",
+          "text": "Mathematical Model (if applicable):"
+        },
+        {
+          "type": "p",
+          "text": "System S can be defined as:\nS = {I, O, F}"
+        },
+        {
+          "type": "p",
+          "text": "I = Input (Time slot, operation choice)"
+        },
+        {
+          "type": "p",
+          "text": "O = Output (Slot booked/canceled/free, updated list)"
+        },
+        {
+          "type": "p",
+          "text": "F = Functions {Display(), Book(), Cancel(), SortData(), SortPointer()}"
+        },
+        {
+          "type": "p",
+          "text": "Conclusion / Analysis:"
+        },
+        {
+          "type": "p",
+          "text": "Successfully implemented a Doubly Linked List for appointment scheduling."
+        },
+        {
+          "type": "p",
+          "text": "Performed basic operations: Display, Book, Cancel, Sort."
+        },
+        {
+          "type": "p",
+          "text": "Understood how pointer manipulation makes sorting more efficient than swapping only data values."
+        },
+        {
+          "type": "p",
+          "text": "The program demonstrates how data structures can be applied in real-world applications like appointment booking systems."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Requirement",
+              "Specification"
+            ],
+            [
+              "Programming Language",
+              "C++"
+            ],
+            [
+              "Compiler",
+              "GCC / G++"
+            ],
+            [
+              "Hardware",
+              "i3 or above, 4 GB RAM"
+            ],
+            [
+              "Operating System",
+              "Windows / Linux"
+            ]
+          ]
+        }
+      ],
+      "images": [],
+      "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nstruct Node\n{\n    int time;\n    string name;\n    Node *prev, *next;\n};\n\nclass DLL\n{\n    Node *head;\n\npublic:\n\n    DLL()\n    {\n        head = NULL;\n    }\n\n    // Book appointment\n    void book(int t, string n)\n    {\n        if (t < 9 || t > 17)\n        {\n            cout << \"Invalid time!\\n\";\n            return;\n        }\n\n        Node *newNode = new Node{t, n, NULL, NULL};\n\n        if (head == NULL)\n        {\n            head = newNode;\n        }\n        else\n        {\n            Node *p = head;\n\n            while (p->next != NULL)\n                p = p->next;\n\n            p->next = newNode;\n            newNode->prev = p;\n        }\n\n        cout << \"Appointment booked.\\n\";\n    }\n\n    // Display appointments\n    void display()\n    {\n        Node *p = head;\n\n        if (p == NULL)\n        {\n            cout << \"No appointments.\\n\";\n            return;\n        }\n\n        while (p != NULL)\n        {\n            cout << p->time << \":00 - \" << p->name << endl;\n            p = p->next;\n        }\n    }\n\n    // Display free slots\n    void freeSlots()\n    {\n        cout << \"Free slots:\\n\";\n\n        for (int t = 9; t <= 17; t++)\n        {\n            Node *p = head;\n            bool booked = false;\n\n            while (p != NULL)\n            {\n                if (p->time == t)\n                {\n                    booked = true;\n                    break;\n                }\n\n                p = p->next;\n            }\n\n            if (!booked)\n                cout << t << \":00\\n\";\n        }\n    }\n\n    // Cancel appointment\n    void cancel(int t)\n    {\n        if (t < 9 || t > 17)\n        {\n            cout << \"Invalid time!\\n\";\n            return;\n        }\n\n        Node *p = head;\n\n        while (p != NULL && p->time != t)\n            p = p->next;\n\n        if (p == NULL)\n        {\n            cout << \"Appointment not found.\\n\";\n            return;\n        }\n\n        if (p->prev != NULL)\n            p->prev->next = p->next;\n        else\n            head = p->next;\n\n        if (p->next != NULL)\n            p->next->prev = p->prev;\n\n        delete p;\n\n        cout << \"Appointment cancelled.\\n\";\n    }\n\n    // Sort appointments according to time\n    void sort()\n    {\n        Node *i, *j;\n\n        for (i = head; i != NULL; i = i->next)\n        {\n            for (j = i->next; j != NULL; j = j->next)\n            {\n                if (i->time > j->time)\n                {\n                    swap(i->time, j->time);\n                    swap(i->name, j->name);\n                }\n            }\n        }\n\n        cout << \"Appointments sorted.\\n\";\n    }\n};\n\nint main()\n{\n    DLL d;\n    int choice, t;\n    string name;\n\n    do\n    {\n        cout << \"\\n1. Free Slots\";\n        cout << \"\\n2. Book Appointment\";\n        cout << \"\\n3. Display Appointments\";\n        cout << \"\\n4. Cancel Appointment\";\n        cout << \"\\n5. Sort by Time\";\n        cout << \"\\n6. Exit\";\n\n        cout << \"\\nEnter choice: \";\n        cin >> choice;\n\n        switch (choice)\n        {\n            case 1:\n                d.freeSlots();\n                break;\n\n            case 2:\n                cout << \"Enter time (9-17): \";\n                cin >> t;\n\n                cout << \"Enter name: \";\n                cin >> name;\n\n                d.book(t, name);\n                break;\n\n            case 3:\n                d.display();\n                break;\n\n            case 4:\n                cout << \"Enter time: \";\n                cin >> t;\n\n                d.cancel(t);\n                break;\n\n            case 5:\n                d.sort();\n                break;\n\n            case 6:\n                cout << \"Exit.\";\n                break;\n\n            default:\n                cout << \"Invalid choice!\";\n        }\n\n    } while (choice != 6);\n\n    return 0;\n}\n",
+      "language": "cpp",
+      "sources": {
+        "theory": "Theory 5.docx",
+        "code": "Code 5.docx"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Algorithm push(char item) Precondition:",
+      "theory": [
+        {
+          "type": "p",
+          "text": "Title: Program to check well formedness of parenthesis."
+        },
+        {
+          "type": "p",
+          "text": "Objectives: Understand the concept and basic operations of Stack in Data structure."
+        },
+        {
+          "type": "h2",
+          "text": "Problem Statement:"
+        },
+        {
+          "type": "p",
+          "text": "In any language program mostly syntax error occurs due to unbalancing delimiter such as (),{},[]. Write C++ program using stack to check whether given expression is well parenthesized or not."
+        },
+        {
+          "type": "h2",
+          "text": "Outcomes:"
+        },
+        {
+          "type": "p",
+          "text": "Will be able to perform the basic operations of Stack in Data Structure."
+        },
+        {
+          "type": "p",
+          "text": "Software & Hardware requirements:"
+        },
+        {
+          "type": "li",
+          "text": "64-bit Open source Linux or its derivative"
+        },
+        {
+          "type": "li",
+          "text": "Open Source C++ Programming tool like G++/GCC"
+        },
+        {
+          "type": "h2",
+          "text": "Theory- Concept in brief:"
+        },
+        {
+          "type": "p",
+          "text": "Stack is abstract data type and linear data structure."
+        },
+        {
+          "type": "p",
+          "text": "A Stack is data structure in which addition of new element or deletion of existing element always takes place at a same end. This end is known as the top of the stack. That means that it is possible to remove elements from a stack in reverse order from the insertion of elements into the stack."
+        },
+        {
+          "type": "p",
+          "text": "One other way of describing the stack is as a last in, first out (LIFO) abstract data type and linear data structure."
+        },
+        {
+          "type": "h2",
+          "text": "Operations on Stack"
+        },
+        {
+          "type": "p",
+          "text": "The stack is basically performed two operations PUSH and POP. Push and pop are the operations that are provided for insertion of an element into the stack and the removal of an element from the stack, respectively."
+        },
+        {
+          "type": "p",
+          "text": "PUSH:- PUSH operation performed for the adding item to the stack."
+        },
+        {
+          "type": "p",
+          "text": "POP:- POP operation performed for removing an item from a stack."
+        },
+        {
+          "type": "p",
+          "text": "ISEMPTY : which returns true if Stack is empty else false; "
+        },
+        {
+          "type": "p",
+          "text": "ISFULL : which returns true is Stack is full else false;"
+        },
+        {
+          "type": "h2",
+          "text": "Application of Stack:"
+        },
+        {
+          "type": "li",
+          "text": "Expression Evolution Expression Conversion Infix to Postfix"
+        },
+        {
+          "type": "li",
+          "text": "Infix to Prefix Postfix to Infix Prefix to Infix Parsing"
+        },
+        {
+          "type": "li",
+          "text": "Simulation of recursion Function call"
+        },
+        {
+          "type": "h2",
+          "text": "Algorithms:"
+        },
+        {
+          "type": "p",
+          "text": "Algorithm to check well formedness of parenthesis"
+        },
+        {
+          "type": "li",
+          "text": "Declare a character stack S."
+        },
+        {
+          "type": "li",
+          "text": "Now traverse the expression string exp."
+        },
+        {
+          "type": "li",
+          "text": "If the current character is a starting bracket („(„ or „{„ or „[„) then push it to stack."
+        },
+        {
+          "type": "li",
+          "text": "If the current character is a closing bracket („)‟ or „}‟ or „]‟) then pop from stack and if the popped character is the matching starting bracket then fine else parenthesis are not balanced."
+        },
+        {
+          "type": "li",
+          "text": "After complete traversal, if there is some starting bracket left in stack then “not balanced”"
+        },
+        {
+          "type": "h1",
+          "text": "Algorithm push(char item) Precondition:"
+        },
+        {
+          "type": "p",
+          "text": "Accept a character variable"
+        },
+        {
+          "type": "p",
+          "text": "Postcondition: Stack with newly inserted element"
+        },
+        {
+          "type": "p",
+          "text": "Return: Nil"
+        },
+        {
+          "type": "li",
+          "text": "if(st.top==(max-1))"
+        },
+        {
+          "type": "li",
+          "text": "Display message \"Stack Overflow\""
+        },
+        {
+          "type": "li",
+          "text": "Go to step 4"
+        },
+        {
+          "type": "li",
+          "text": "Increment top by 1"
+        },
+        {
+          "type": "li",
+          "text": "st.stack[st.top]=item"
+        },
+        {
+          "type": "li",
+          "text": "Stop"
+        },
+        {
+          "type": "h2",
+          "text": "Algorithm pop()"
+        },
+        {
+          "type": "p",
+          "text": "Precondition : An already created stack"
+        },
+        {
+          "type": "p",
+          "text": "Postcondition : Element at the top of the stack"
+        },
+        {
+          "type": "p",
+          "text": "Return : char"
+        },
+        {
+          "type": "li",
+          "text": "if(st.top==-1)"
+        },
+        {
+          "type": "li",
+          "text": "Display message ―Stack underflow.\""
+        },
+        {
+          "type": "li",
+          "text": "Go to step 3"
+        },
+        {
+          "type": "li",
+          "text": "Return (st.stack[st.top--])"
+        },
+        {
+          "type": "li",
+          "text": "Stop"
+        },
+        {
+          "type": "h2",
+          "text": "Flowchart: Draw Flowchart Test cases:"
+        },
+        {
+          "type": "li",
+          "text": "(A+(B*C)"
+        },
+        {
+          "type": "p",
+          "text": "Expression is invalid"
+        },
+        {
+          "type": "li",
+          "text": "(A+(B*C))"
+        },
+        {
+          "type": "p",
+          "text": "Expression is valid"
+        },
+        {
+          "type": "h2",
+          "text": "Conclusion/analysis:"
+        },
+        {
+          "type": "p",
+          "text": "Understood the basic concepts of Stack operation Push and Pop and able to check whether an expression is well parenthesized or not."
+        }
+      ],
+      "images": [],
+      "code": "#include <iostream>\nusing namespace std;\n\n#define size 10\n\nclass stackexp\n{\n    int top;\n    char stk[size];\n\npublic:\n    stackexp()\n    {\n        top = -1;\n    }\n\n    void push(char);\n    char pop();\n    int isfull();\n    int isempty();\n};\n\nvoid stackexp::push(char x)\n{\n    if (!isfull())\n    {\n        top = top + 1;\n        stk[top] = x;\n    }\n}\n\nchar stackexp::pop()\n{\n    char s;\n\n    if (!isempty())\n    {\n        s = stk[top];\n        top = top - 1;\n        return s;\n    }\n\n    return '\\0';\n}\n\nint stackexp::isfull()\n{\n    if (top == size - 1)\n        return 1;\n    else\n        return 0;\n}\n\nint stackexp::isempty()\n{\n    if (top == -1)\n        return 1;\n    else\n        return 0;\n}\n\nint main()\n{\n    stackexp s1;\n    char exp[20], ch, temp;\n    int i = 0;\n\n    cout << \"\\n\\t!! Parenthesis Checker..!!!!\" << endl;\n    cout << \"\\nEnter the expression to check whether it is in well form or not : \";\n    cin >> exp;\n\n    if ((exp[0] == ')') || (exp[0] == ']') || (exp[0] == '}'))\n    {\n        cout << \"\\nInvalid Expression.....\\n\";\n        return 0;\n    }\n\n    while (exp[i] != '\\0')\n    { \n        ch = exp[i];\n\n        switch (ch)\n        {\n        case '(':\n            s1.push(ch);\n            break;\n\n        case '[':\n            s1.push(ch);\n            break;\n\n        case '{':\n            s1.push(ch);\n            break;\n\n        case ')':\n            temp = s1.pop();\n            if (temp != '(')\n            {\n                cout << \"\\nInvalid Expression.....\\n\";\n                return 0;\n            }\n            break;\n\n        case ']':\n            temp = s1.pop();\n            if (temp != '[')\n            {\n                cout << \"\\nInvalid Expression.....\\n\";\n                return 0;\n            }\n            break;\n\n        case '}':\n            temp = s1.pop();\n            if (temp != '{')\n            {\n                cout << \"\\nInvalid Expression.....\\n\";\n                return 0;\n            }\n            break;\n        }\n\n        i = i + 1;\n    }\n\n    if (s1.isempty())\n    {\n        cout << \"\\nExpression is well parenthesised...\\n\";\n    }\n    else\n    {\n        cout << \"\\nSorry !!! Invalid Expression or not well parenthesized....\\n\";\n    }\n\n    return 0;\n}\n",
+      "language": "cpp",
+      "sources": {
+        "theory": "Theory 6.docx",
+        "code": "Code 6.docx"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Practical 7",
+      "theory": [
+        {
+          "type": "p",
+          "text": "Assignment 7"
+        },
+        {
+          "type": "p",
+          "text": "Title: Program to Implement Pizza Parlor Order System using Circular Queue"
+        },
+        {
+          "type": "p",
+          "text": "Problem Statement:"
+        },
+        {
+          "type": "p",
+          "text": "Write a C++ program to simulate a Pizza Parlor that accepts a maximum of M orders. Orders are served in First Come First Served (FCFS) basis. Once an order is placed, it cannot be canceled. The program should be implemented using Circular Queue with array."
+        },
+        {
+          "type": "p",
+          "text": "Objectives:"
+        },
+        {
+          "type": "p",
+          "text": "To understand the working of a Circular Queue using an array."
+        },
+        {
+          "type": "p",
+          "text": "To simulate real-world applications (Pizza Parlor order system)."
+        },
+        {
+          "type": "p",
+          "text": "To implement insertion (enqueue) and deletion (dequeue) operations."
+        },
+        {
+          "type": "p",
+          "text": "To understand queue overflow and underflow conditions."
+        },
+        {
+          "type": "p",
+          "text": "Outcomes:"
+        },
+        {
+          "type": "p",
+          "text": "Students will be able to implement a queue system using arrays."
+        },
+        {
+          "type": "p",
+          "text": "Students will learn how circular queues help in efficient memory utilization."
+        },
+        {
+          "type": "p",
+          "text": "Students will understand real-time simulation of FCFS scheduling."
+        },
+        {
+          "type": "p",
+          "text": "Software & Hardware Requirements:"
+        },
+        {
+          "type": "p",
+          "text": "Theory Concept:"
+        },
+        {
+          "type": "p",
+          "text": "A Queue is a linear data structure that follows FIFO (First In, First Out) principle. The first element inserted is the first one to be removed."
+        },
+        {
+          "type": "p",
+          "text": "In a Circular Queue, the last position is connected back to the first position to make a circle. This avoids the problem of wasted memory space that occurs in a linear queue when elements are deleted."
+        },
+        {
+          "type": "p",
+          "text": "Enqueue → Add an order at the rear end."
+        },
+        {
+          "type": "p",
+          "text": "Dequeue → Serve an order from the front end."
+        },
+        {
+          "type": "p",
+          "text": "Overflow → If the queue is full, no more orders can be placed."
+        },
+        {
+          "type": "p",
+          "text": "Underflow → If the queue is empty, no orders can be served."
+        },
+        {
+          "type": "p",
+          "text": "In this program, the Pizza Parlor accepts maximum M orders. Orders are served in FCFS manner. Once an order is placed, it cannot be canceled."
+        },
+        {
+          "type": "p",
+          "text": "Algorithm:"
+        },
+        {
+          "type": "p",
+          "text": "1. Enqueue (Place Order)"
+        },
+        {
+          "type": "p",
+          "text": "Check if (rear + 1) % M == front."
+        },
+        {
+          "type": "p",
+          "text": "If true → Queue is full (Overflow)."
+        },
+        {
+          "type": "p",
+          "text": "Else, insert order at rear."
+        },
+        {
+          "type": "p",
+          "text": "Update rear = (rear + 1) % M."
+        },
+        {
+          "type": "p",
+          "text": "2. Dequeue (Serve Order)"
+        },
+        {
+          "type": "p",
+          "text": "Check if front == rear."
+        },
+        {
+          "type": "p",
+          "text": "If true → Queue is empty (Underflow)."
+        },
+        {
+          "type": "p",
+          "text": "Else, remove order from front."
+        },
+        {
+          "type": "p",
+          "text": "Update front = (front + 1) % M."
+        },
+        {
+          "type": "p",
+          "text": "3. Display Orders"
+        },
+        {
+          "type": "p",
+          "text": "Traverse from front to rear using modulo % M."
+        },
+        {
+          "type": "p",
+          "text": "Display all active orders."
+        },
+        {
+          "type": "p",
+          "text": "Mathematical Model:"
+        },
+        {
+          "type": "p",
+          "text": "System S can be defined as:\nS = {I, O, F}"
+        },
+        {
+          "type": "p",
+          "text": "I (Input) = Order request, choice of operation"
+        },
+        {
+          "type": "p",
+          "text": "O (Output) = Updated queue status (Order Placed / Served / Overflow / Underflow)"
+        },
+        {
+          "type": "p",
+          "text": "F (Functions) = {Enqueue(), Dequeue(), Display()}"
+        },
+        {
+          "type": "p",
+          "text": "Conclusion / Analysis:"
+        },
+        {
+          "type": "p",
+          "text": "Successfully implemented Circular Queue using an array for Pizza Parlor simulation."
+        },
+        {
+          "type": "p",
+          "text": "Understood how circular queues prevent memory wastage compared to linear queues."
+        },
+        {
+          "type": "p",
+          "text": "Verified working of Enqueue (order placement), Dequeue (order serving), and Queue Overflow/Underflow conditions."
+        },
+        {
+          "type": "p",
+          "text": "This model can be extended to real-world applications like restaurant management, ticket booking systems, and scheduling tasks."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Requirement",
+              "Specification"
+            ],
+            [
+              "Programming Language",
+              "C++"
+            ],
+            [
+              "Compiler",
+              "GCC / G++"
+            ],
+            [
+              "Hardware",
+              "i3 or above, 4 GB RAM"
+            ],
+            [
+              "Operating System",
+              "Windows / Linux"
+            ]
+          ]
+        }
+      ],
+      "images": [],
+      "code": "#include <iostream>\nusing namespace std;\n\nstruct piz\n{\n    int ono, ot;\n};\n\nclass PizzaParlor\n{\n    piz p[10];\n    int count, c, rear, front;\n\npublic:\n    PizzaParlor()\n    {\n        c = 0;\n        count = 0;\n        front = 0;\n        rear = -1;\n    }\n\n    void insert();\n    void display();\n    void del();\n};\n\nvoid PizzaParlor::insert()\n{\n    int i, n;\n\n    cout << \"\\n_________________________\";\n    cout << \"\\n| 1. Corn Pizza         |\";\n    cout << \"\\n| 2. Pizza              |\";\n    cout << \"\\n| 3. Chicken Pizza      |\";\n    cout << \"\\n|_______________________|\";\n\n    cout << \"\\n---------------------------------------------\";\n    cout << \"\\nHow many orders you want to place: \";\n    cin >> n;\n\n    for (i = 0; i < n; i++)\n    {\n        if (count >= 10)\n        {\n            cout << \"\\n____________\";\n            cout << \"\\n| OVERFLOW |\";\n            cout << \"\\n|__________|\";\n            break;\n        }\n\n        cout << \"\\nEnter your order (1/2/3): \";\n        cin >> p[(rear + 1) % 10].ot;\n\n        if (p[(rear + 1) % 10].ot < 1 ||\n            p[(rear + 1) % 10].ot > 3)\n        {\n            cout << \"\\nInvalid pizza choice.\";\n            continue;\n        }\n\n        rear = (rear + 1) % 10;\n\n        c++;\n        p[rear].ono = c;\n        count++;\n\n        cout << \"Order placed successfully.\";\n        cout << \"\\nOrder Number: \" << p[rear].ono;\n    }\n\n    cout << \"\\n---------------------------------------------\";\n}\n\nvoid PizzaParlor::display()\n{\n    int i, n, f;\n\n    if (count == 0)\n    {\n        cout << \"\\nQueue is empty. No pending orders.\";\n        return;\n    }\n\n    cout << \"\\n---------------------------------------------\";\n    cout << \"\\nHow many orders you want to display: \";\n    cin >> n;\n    cout << \"---------------------------------------------\";\n\n    f = front;\n\n    for (i = 0; i < n; i++)\n    {\n        if (i >= count)\n        {\n            cout << \"\\nAll pending orders displayed.\";\n            break;\n        }\n\n        cout << \"\\n____________________________________________\";\n        cout << \"\\nOrder Number : \" << p[f].ono;\n        cout << \"\\nPizza        : \";\n\n        if (p[f].ot == 1)\n            cout << \"Corn Pizza\";\n        else if (p[f].ot == 2)\n            cout << \"Pizza\";\n        else if (p[f].ot == 3)\n            cout << \"Chicken Pizza\";\n\n        cout << \"\\n____________________________________________\";\n\n        f = (f + 1) % 10;\n    }\n\n    cout << \"\\n---------------------------------------------\";\n}\n\nvoid PizzaParlor::del()\n{\n    int i, n;\n\n    cout << \"\\n---------------------------------------------\";\n    cout << \"\\nHow many orders you want to serve: \";\n    cin >> n;\n    cout << \"---------------------------------------------\";\n\n    for (i = 0; i < n; i++)\n    {\n        if (count == 0)\n        {\n            cout << \"\\nUNDERFLOW\";\n            cout << \"\\nNo orders available to serve.\";\n            break;\n        }\n\n        cout << \"\\n____________________________________________\";\n        cout << \"\\nServed Order Number : \" << p[front].ono;\n        cout << \"\\nPizza               : \";\n\n        if (p[front].ot == 1)\n            cout << \"Corn Pizza\";\n        else if (p[front].ot == 2)\n            cout << \"Pizza\";\n        else if (p[front].ot == 3)\n            cout << \"Chicken Pizza\";\n\n        cout << \"\\n____________________________________________\";\n\n        p[front].ono = 0;\n        p[front].ot = 0;\n\n        front = (front + 1) % 10;\n        count--;\n    }\n\n    cout << \"\\n---------------------------------------------\";\n}\n\nint main()\n{\n    PizzaParlor q;\n    int choice;\n\n    do\n    {\n        cout << \"\\n\\n____________________________\";\n        cout << \"\\n|       PIZZA PARLOR       |\";\n        cout << \"\\n|__________________________|\";\n        cout << \"\\n| 1. Place Order           |\";\n        cout << \"\\n| 2. Display Orders        |\";\n        cout << \"\\n| 3. Serve Order           |\";\n        cout << \"\\n| 4. Exit                  |\";\n        cout << \"\\n|__________________________|\";\n\n        cout << \"\\nEnter your choice: \";\n        cin >> choice;\n\n        switch (choice)\n        {\n        case 1:\n            q.insert();\n            break;\n\n        case 2:\n            q.display();\n            break;\n\n        case 3:\n            q.del();\n            break;\n\n        case 4:\n            cout << \"\\nThank you!\";\n            break;\n\n        default:\n            cout << \"\\nInvalid choice.\";\n        }\n\n    } while (choice != 4);\n\n    return 0;\n}\n",
+      "language": "cpp",
+      "sources": {
+        "theory": "Theory 7.docx",
+        "code": "Code 7.docx"
+      }
+    },
+    {
+      "id": 8,
+      "title": " Assignment - 8",
+      "theory": [
+        {
+          "type": "h1",
+          "text": " Assignment - 8"
+        },
+        {
+          "type": "p",
+          "text": "Problem Statement: Beginning with an empty binary search tree, Construct binary search tree by inserting the values in the order given. After constructing a binary tree -Insert new node, ii. Find number of nodes in longest path from root, iii. Minimum data value found in the tree, iv. Change a tree so that the roles of the left and right pointers are swapped at every node, v. Search a value"
+        },
+        {
+          "type": "p",
+          "text": "Objective: To understand the basic concept of Binary Search Tree and its use in Data structure."
+        },
+        {
+          "type": "p",
+          "text": "Outcome: To construct the Binary Search Tree by given sequence and traverse and perform operations on it."
+        },
+        {
+          "type": "p",
+          "text": "Software & Hardware Requirements:"
+        },
+        {
+          "type": "li",
+          "text": "64-bit Open source Linux or its derivative"
+        },
+        {
+          "type": "li",
+          "text": "Open Source C++ Programming tool like G++/GCC"
+        },
+        {
+          "type": "h2",
+          "text": "Theory –"
+        },
+        {
+          "type": "p",
+          "text": "Binary Search Tree"
+        },
+        {
+          "type": "p",
+          "text": "A Binary Search Tree (BST) is a data structure in computer science that organizes data in a hierarchical manner, where each node holds a value and has at most two child nodes: a left child with values smaller than the parent node and a right child with values larger than the parent node, allowing for efficient searching, insertion, and deletion operations, particularly when the tree is balanced, with an average time complexity of O(log n)."
+        },
+        {
+          "type": "h2",
+          "text": "Advantages of Binary search tree"
+        },
+        {
+          "type": "li",
+          "text": "Searching an element in the Binary search tree is easy as we always have a hint that which subtree has the desired element."
+        },
+        {
+          "type": "li",
+          "text": "As compared to array and linked lists, insertion and deletion operations are faster in BST."
+        },
+        {
+          "type": "h2",
+          "text": "Example of creating a binary search tree :"
+        },
+        {
+          "type": "p",
+          "text": "Now, let's see the creation of binary search tree using an example."
+        },
+        {
+          "type": "p",
+          "text": "Suppose the data elements are - 45, 15, 79, 90, 10, 55, 12, 20, 50"
+        },
+        {
+          "type": "li",
+          "text": "First, we have to insert 45 into the tree as the root of the tree."
+        },
+        {
+          "type": "li",
+          "text": "Then, read the next element; if it is smaller than the root node, insert it as the root of the left subtree, and move to the next element."
+        },
+        {
+          "type": "li",
+          "text": "Otherwise, if the element is larger than the root node, then insert it as the root of the right subtree."
+        },
+        {
+          "type": "p",
+          "text": "Now, let's see the process of creating the Binary search tree using the given data element. The process of creating the BST is shown below -"
+        },
+        {
+          "type": "h2",
+          "text": "Step 1 - Insert 45."
+        },
+        {
+          "type": "p",
+          "text": "Step 2 - Insert 15."
+        },
+        {
+          "type": "p",
+          "text": "As 15 is smaller than 45, so insert it as the root node of the left subtree."
+        },
+        {
+          "type": "h2",
+          "text": "Step 3 - Insert 79."
+        },
+        {
+          "type": "p",
+          "text": "As 79 is greater than 45, so insert it as the root node of the right subtree."
+        },
+        {
+          "type": "h2",
+          "text": "Step 4 - Insert 90."
+        },
+        {
+          "type": "p",
+          "text": "90 is greater than 45 and 79, so it will be inserted as the right subtree of 79."
+        },
+        {
+          "type": "h2",
+          "text": "Step 5 - Insert 10."
+        },
+        {
+          "type": "p",
+          "text": "10 is smaller than 45 and 15, so it will be inserted as a left subtree of 15."
+        },
+        {
+          "type": "h2",
+          "text": "Step 6 - Insert 55."
+        },
+        {
+          "type": "p",
+          "text": "55 is larger than 45 and smaller than 79, so it will be inserted as the left subtree of 79."
+        },
+        {
+          "type": "h2",
+          "text": "Step 7 - Insert 12."
+        },
+        {
+          "type": "p",
+          "text": "12 is smaller than 45 and 15 but greater than 10, so it will be inserted as the right subtree of 10."
+        },
+        {
+          "type": "h2",
+          "text": "Step 8 - Insert 20."
+        },
+        {
+          "type": "p",
+          "text": "20 is smaller than 45 but greater than 15, so it will be inserted as the right subtree of 15."
+        },
+        {
+          "type": "h2",
+          "text": "Step 9 - Insert 50."
+        },
+        {
+          "type": "p",
+          "text": "50 is greater than 45 but smaller than 79 and 55. So, it will be inserted as a left subtree of 55."
+        },
+        {
+          "type": "p",
+          "text": "Now, the creation of binary search tree is completed. After that, let's move towards the operations that can be performed on Binary search tree."
+        },
+        {
+          "type": "p",
+          "text": "We can perform insert, delete and search operations on the binary search tree."
+        },
+        {
+          "type": "h2",
+          "text": "Time Complexity"
+        },
+        {
+          "type": "p",
+          "text": "The space complexity of all operations of Binary search tree is O(n)."
+        },
+        {
+          "type": "p",
+          "text": "Conclusion: We are able to construct the Binary Search Tree by given in order sequence and perform different operations on Binary Search Tree."
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Operations\n\nInsertion Deletion",
+              "Best case time complexity\nO(log n) O(log n)",
+              "Average case time complexity\nO(log n) O(log n)",
+              "Worst case time complexity\n\n\nO(n)\n\n\nO(n)"
+            ],
+            [
+              "Search",
+              "O(log n)",
+              "O(log n)",
+              "O(n)"
+            ]
+          ]
+        }
+      ],
+      "images": [
+        "media/theory-8-1.jpeg",
+        "media/theory-8-2.jpeg",
+        "media/theory-8-3.png",
+        "media/theory-8-4.png",
+        "media/theory-8-5.png",
+        "media/theory-8-6.png",
+        "media/theory-8-7.png",
+        "media/theory-8-8.png",
+        "media/theory-8-9.png",
+        "media/theory-8-10.png",
+        "media/theory-8-11.png",
+        "media/theory-8-12.jpeg",
+        "media/theory-8-13.png",
+        "media/theory-8-14.png",
+        "media/theory-8-15.png",
+        "media/theory-8-16.png",
+        "media/theory-8-17.png",
+        "media/theory-8-18.jpeg",
+        "media/theory-8-19.jpeg",
+        "media/theory-8-20.jpeg",
+        "media/theory-8-21.jpeg",
+        "media/theory-8-22.jpeg",
+        "media/theory-8-23.jpeg",
+        "media/theory-8-24.jpeg"
+      ],
+      "code": "#include <iostream>\nusing namespace std;\n\nstruct Node\n{\n    int data;\n    Node *left, *right;\n};\n\nclass BST\n{\n    Node *root;\n\n    Node* createNode(int value)\n    {\n        Node *p = new Node;\n        p->data = value;\n        p->left = p->right = NULL;\n        return p;\n    }\n\n    Node* insert(Node *p, int value)\n    {\n        if (p == NULL)\n            return createNode(value);\n\n        if (value < p->data)\n            p->left = insert(p->left, value);\n        else\n            p->right = insert(p->right, value);\n\n        return p;\n    }\n\n    int longestPath(Node *p)\n    {\n        if (p == NULL)\n            return 0;\n\n        int left = longestPath(p->left);\n        int right = longestPath(p->right);\n\n        return (left > right ? left : right) + 1;\n    }\n\n    int minimum(Node *p)\n    {\n        while (p->left != NULL)\n            p = p->left;\n\n        return p->data;\n    }\n\n    void mirror(Node *p)\n    {\n        if (p == NULL)\n            return;\n\n        Node *temp = p->left;\n        p->left = p->right;\n        p->right = temp;\n\n        mirror(p->left);\n        mirror(p->right);\n    }\n\n    bool search(Node *p, int value)\n    {\n        if (p == NULL)\n            return false;\n\n        if (p->data == value)\n            return true;\n\n        if (value < p->data)\n            return search(p->left, value);\n        else\n            return search(p->right, value);\n    }\n\n    void inorder(Node *p)\n    {\n        if (p != NULL)\n        {\n            inorder(p->left);\n            cout << p->data << \" \";\n            inorder(p->right);\n        }\n    }\n\npublic:\n\n    BST()\n    {\n        root = NULL;\n    }\n\n    void insertValue(int value)\n    {\n        root = insert(root, value);\n    }\n\n    void insertNewNode()\n    {\n        int value;\n        cout << \"Enter value: \";\n        cin >> value;\n\n        root = insert(root, value);\n\n        cout << \"Node inserted successfully.\\n\";\n    }\n\n    void findLongestPath()\n    {\n        if (root == NULL)\n            cout << \"Tree is empty.\\n\";\n        else\n            cout << \"Number of nodes in longest path = \"\n                 << longestPath(root) << endl;\n    }\n\n    void findMinimum()\n    {\n        if (root == NULL)\n            cout << \"Tree is empty.\\n\";\n        else\n            cout << \"Minimum data value = \"\n                 << minimum(root) << endl;\n    }\n\n    void swapPointers()\n    {\n        if (root == NULL)\n            cout << \"Tree is empty.\\n\";\n        else\n        {\n            mirror(root);\n            cout << \"Tree has been mirrored successfully.\\n\";\n        }\n    }\n\n    void searchValue()\n    {\n        int value;\n        cout << \"Enter value to search: \";\n        cin >> value;\n\n        if (search(root, value))\n            cout << \"Value found in tree.\\n\";\n        else\n            cout << \"Value not found in tree.\\n\";\n    }\n\n    void display()\n    {\n        cout << \"Inorder Traversal: \";\n        inorder(root);\n        cout << endl;\n    }\n};\n\nint main()\n{\n    BST T;\n    int n, value, choice;\n\n    cout << \"Enter number of nodes: \";\n    cin >> n;\n\n    cout << \"Enter values in insertion order:\\n\";\n\n    for (int i = 0; i < n; i++)\n    {\n        cin >> value;\n        T.insertValue(value);\n    }\n\n    do\n    {\n        cout << \"\\n===== BINARY SEARCH TREE =====\\n\";\n        cout << \"1. Insert New Node\\n\";\n        cout << \"2. Find Longest Path from Root\\n\";\n        cout << \"3. Find Minimum Data Value\\n\";\n        cout << \"4. Swap Left and Right Pointers\\n\";\n        cout << \"5. Search a Value\\n\";\n        cout << \"6. Display Inorder\\n\";\n        cout << \"7. Exit\\n\";\n        cout << \"Enter your choice: \";\n        cin >> choice;\n\n        switch (choice)\n        {\n        case 1:\n            T.insertNewNode();\n            break;\n\n        case 2:\n            T.findLongestPath();\n            break;\n\n        case 3:\n            T.findMinimum();\n            break;\n\n        case 4:\n            T.swapPointers();\n            break;\n\n        case 5:\n            T.searchValue();\n            break;\n\n        case 6:\n            T.display();\n            break;\n\n        case 7:\n            cout << \"Program terminated.\\n\";\n            break;\n\n        default:\n            cout << \"Invalid choice!\\n\";\n        }\n\n    } while (choice != 7);\n\n    return 0;\n}\n",
+      "language": "cpp",
+      "sources": {
+        "theory": "Theory 8.docx",
+        "code": "Code 8.docx"
+      }
+    },
+    {
+      "id": 9,
+      "title": "           Assignment -9",
+      "theory": [
+        {
+          "type": "h1",
+          "text": "           Assignment -9"
+        },
+        {
+          "type": "p",
+          "text": "Problem Statement: You have a business with several offices; you want to lease phone lines to connect them up with each other; and the phone company charges different amounts of money to connect different pairs of cities. You want a set of lines that connects all your offices with a minimum total cost. Solve the problem by suggesting appropriate data structures."
+        },
+        {
+          "type": "p",
+          "text": "Objective: To understand the concept and basic of spanning and to find the minimum distance between the vertices of Graph in Data structure."
+        },
+        {
+          "type": "p",
+          "text": "Outcome: To implement the concept and basic of spanning and to find the minimum distance between the vertices of Graph in Data structure."
+        },
+        {
+          "type": "h2",
+          "text": "Software & Hardware Requirements:"
+        },
+        {
+          "type": "li",
+          "text": "64-bit Open source Linux or its derivative"
+        },
+        {
+          "type": "li",
+          "text": "Open Source C++ Programming tool like G++/GCC"
+        },
+        {
+          "type": "h2",
+          "text": "Theory Concepts:"
+        },
+        {
+          "type": "p",
+          "text": "Properties of a Greedy Algorithm:"
+        },
+        {
+          "type": "li",
+          "text": "At each step, the best possible choice is taken and after that only the sub-problem is solved."
+        },
+        {
+          "type": "li",
+          "text": "Greedy algorithm might be depending on many choices. But, it cannot ever be depending upon any choices of future and neither on sub-problems solutions."
+        },
+        {
+          "type": "li",
+          "text": "The method of greedy algorithm starts with a top and goes down, creating greedy choices in a series and then reduces each of the given problem to even smaller ones."
+        },
+        {
+          "type": "h2",
+          "text": "Minimum Spanning Tree:"
+        },
+        {
+          "type": "p",
+          "text": "A Minimum Spanning Tree (MST) is a kind of a sub graph of an undirected graph in which, the sub graph spans or includes all the nodes has a minimum total edge weight. To solve the problemby a prim's algorithm, all we need is to find a spanning tree of minimum length, where a spanning tree is a tree that connects all the vertices together and a minimum spanning tree is a spanning tree of minimum length."
+        },
+        {
+          "type": "h2",
+          "text": "Properties of Prim's Algorithm:"
+        },
+        {
+          "type": "p",
+          "text": "Prim's Algorithm has the following properties:"
+        },
+        {
+          "type": "li",
+          "text": "The edges in the subset of some minimum spanning tree always form a single tree."
+        },
+        {
+          "type": "li",
+          "text": "It grows the tree until it spans all the vertices of the graph."
+        },
+        {
+          "type": "li",
+          "text": "An edge is added to the tree, at every step, that crosses a cut if its weight is the minimum of any edge crossing the cut, connecting it to a vertex of the graph."
+        },
+        {
+          "type": "h2",
+          "text": "Algorithm:"
+        },
+        {
+          "type": "li",
+          "text": "Begin with any vertex which you think would be suitable and add it to the tree."
+        },
+        {
+          "type": "li",
+          "text": "Find an edge that connects any vertex in the tree to any vertex that is not in the tree. Note that,we don't have to form cycles."
+        },
+        {
+          "type": "li",
+          "text": "Stop when n - 1 edge have been added to the tree"
+        },
+        {
+          "type": "p",
+          "text": "Conclusion: Understood the concept and basic of spanning and to find the minimum distance between the vertices of Graph in Data structure."
+        }
+      ],
+      "images": [
+        "media/theory-9-1.jpeg"
+      ],
+      "code": "#include<iostream>\nusing namespace std;\n\nclass tree\n{\n\tint a[20][20],l,u,w,i,j,v,e,visited[20];\npublic:\n\tvoid input();\n\tvoid display();\n\tvoid minimum();\n};\n\nvoid tree::input()\n{\n\tcout<<\"Enter the no. of branches: \";\n\tcin>>v;\n\n\tfor(i=0;i<v;i++)\n\t{\n\t\tvisited[i]=0;\n\t\tfor(j=0;j<v;j++)\n\t\t{\n\t\t\ta[i][j]=999;\n\t\t}\n\t}\n\n\tcout<<\"\\nEnter the no. of connections: \";\n\tcin>>e;\n\n\tfor(i=0;i<e;i++)\n\t{\n\t\tcout<<\"Enter the end branches of connections:  \"<<endl;\n\t\tcin>>l>>u;\n\t\tcout<<\"Enter the phone company charges for this connection:  \";\n\t\tcin>>w;\n\t\ta[l-1][u-1]=a[u-1][l-1]=w;\n\t}\n}\n\nvoid tree::display()\n{\n\tcout<<\"\\nAdjacency matrix:\";\n\tfor(i=0;i<v;i++)\n\t{\n\t\tcout<<endl;\n\t\tfor(j=0;j<v;j++)\n\t\t{\n\t\t\tcout<<a[i][j]<<\"   \";\n\t\t}\n\t\tcout<<endl;\n\t}\n}\n\nvoid tree::minimum()\n{\n\tint p=0,q=0,total=0,min;\n\tvisited[0]=1;\n\tfor(int count=0;count<(v-1);count++)\n\t{\n\t\tmin=999;\n\t\tfor(i=0;i<v;i++)\n\t\t{\n\t\t\tif(visited[i]==1)\n\t\t\t{\n\t\t\t\tfor(j=0;j<v;j++)\n\t\t\t\t{\n\t\t\t\t\tif(visited[j]!=1)\n\t\t\t\t\t{\n\t\t\t\t\t\tif(min > a[i][j])\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tmin=a[i][j];\n\t\t\t\t\t\t\tp=i;\n\t\t\t\t\t\t\tq=j;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tvisited[p]=1;\n\t\tvisited[q]=1;\n\t\ttotal=total+min;\n\t\tcout<<\"Minimum cost connection is\"<<(p+1)<<\" -> \"<<(q+1)<<\"  with charge : \"<<min<< endl;\n\t\t\n\t}\n\tcout<<\"The minimum total cost of connections of all branches is: \"<<total<<endl;\n}\n\nint main()\n{\n\tint ch;\n\ttree t;\n\tdo\n\t{\n\t\tcout<<\"==========PRIM'S ALGORITHM=================\"<<endl;\n\t\tcout<<\"\\n1.INPUT\\n \\n2.DISPLAY\\n \\n3.MINIMUM\\n\"<<endl;\n\t\tcout<<\"Enter your choice :\"<<endl;\n\t\tcin>>ch;\n\t\n\tswitch(ch)\n\t{\t\n\tcase 1: cout<<\"*******INPUT YOUR VALUES*******\"<<endl;\t\n\t\tt.input();\n\t\tbreak;\n\n\tcase 2: cout<<\"*******DISPLAY THE CONTENTS********\"<<endl;\n\t\tt.display();\n\t\tbreak;\n\n\tcase 3: cout<<\"*********MINIMUM************\"<<endl;\n\t\tt.minimum();\n\t\tbreak;\n\t}\n\t\n\t}while(ch!=4);\n\treturn 0;\n}\n",
+      "language": "cpp",
+      "sources": {
+        "theory": "Theory 9.docx",
+        "code": "Code 9.docx"
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "filename": "Code 3.pdf",
+  "pages": [
+    {
+      "page": 1,
+      "text": " Practical Assignment 3 \nProblem Statement :   \nConsider the telephone book database of N clients. Make use of a hash table implementation to \nquickly look up a client’s telephone number. Make use of linear probing, double hashing and \nquadratic collision handling techniques. \n \nInput code: \n#include<stdio.h> \n#include<string.h> \n#define size 10 \nint i; \ntypedef struct \n{ \n     char name[30]; \n     long phone; \n     int occupied; \n}client; \nclient hashtable[size]; \nvoid insertlinear(char *name, long phone); \nvoid insertquadratic(char *name, long phone); \nvoid insertdouble(char*name, long phone); \nvoid search(char *name); \nvoid display(); \nint hashfunction(char name[]); \nint hashfunction(char name[]) \n { \n     int hash=0; \n     for(int i=0;name[i];i++) \n     { "
+    },
+    {
+      "page": 2,
+      "text": "          hash=(hash+name[i]%size); \n     } \n     return hash; \n} \nint secondhash(char*name) \n{ \n     int hash=0; \n     for(int i=0;name[i];i++) \n     { \n          hash+=name[i]; \n          return 7-(hash%7); \n \n     } \n} \nvoid main() \n{ \n     int ch; \n     char name[30]; \n     long phone; \n     do \n     { \n           printf(\"\\nMENU\\n1.Linear probing\\n2.Quadratic probing\\n3.Double \nhashing\\n4.Searching\\n5.Display\\n6.Exit\"); \n           printf(\"\\nEnter your choice:\"); \n           scanf(\"%d\",&ch); \n           switch (ch) \n           { \n           case 1: \n               printf(\"Enter name and phone number:\"); "
+    },
+    {
+      "page": 3,
+      "text": "               scanf(\"%s%ld\",&name,&phone); \n               insertlinear(name,phone); \n               break; \n           case 2: \n                printf(\"enter name and phone\"); \n                scanf(\"%s%ld\",&name,&phone); \n                insertquadratic(name,phone); \n               break; \n           case 3: \n                printf(\"Enter name and phone number:\"); \n               scanf(\"%s%ld\",&name,&phone); \n               insertdouble(name,phone); \n               break; \n           case 4: \n               printf(\"Enter name to search:\"); \n               scanf(\"%s\",&name); \n               search(name); \n               break; \n \n           case 5: \n                display(); \n                break; \n \n           default: \n               break; \n               } \n     }while(ch!=5); \n} \n "
+    },
+    {
+      "page": 4,
+      "text": "void insertlinear(char *name,long phone) \n{ \n     int index=hashfunction(name); \n     int start=index; \n     while(hashtable[index].occupied) \n     { \n          index=(index+1)%size; \n          if(index==start) \n             { \n                  printf(\"Hash table is full\"); \n                    return; \n             } \n     } \n     strcpy(hashtable[index].name,name); \n     hashtable[index].phone=phone; \n     hashtable[index].occupied = 1; \n     printf(\"Inserted using linear probing\\n\"); \n \n} \nvoid insertquadratic(char *name, long phone) \n{ \n     int index=hashfunction(name); \n     while(hashtable[(index + i*i)%size].occupied&& i<size) \n     { \n          i++; \n     } \n     if(i==size) \n     { \n          printf(\"Hash table is full\"); "
+    },
+    {
+      "page": 5,
+      "text": "          return; \n     } \n     index=(index + i*i)%size; \n     strcpy(hashtable[index].name,name); \n     hashtable[index].phone=phone; \n     hashtable[index].occupied=1; \n     printf(\"Inserted using quadratic probing\\n\"); \n} \nvoid insertdouble(char*name,long phone) \n{ \n     int index=hashfunction(name); \n     int step=secondhash(name); \n     int start=index; \n     while(hashtable[index].occupied) \n     { \n          index=(index+step)%size; \n          if (index==start) \n          { \n \n               printf(\"table full\"); \n               return; \n          } \n     } \n     index=(index + i*i)%size; \n     strcpy(hashtable[index].name,name); \n     hashtable[index].phone=phone; \n     hashtable[index].occupied=1; \n     printf(\"Inserted using double hashing\\n\"); \n} "
+    },
+    {
+      "page": 6,
+      "text": "void search(char *name) \n{ \n     int index=hashfunction(name); \n     int start=index; \n     while(hashtable[index].occupied) \n     { \n             if(strcmp(hashtable[index].name,name)==0) \n          { \n               printf(\"phone number of %s is %ld\",name,hashtable[index].phone); \n               return; \n          } \n          index=(index+1)%size; \n          if(index==start) \n               { \n               break; \n               } \n     } \n               printf(\"clinet not found\"); \n \n \n} \nvoid display() \n{ \n     int i; \n     printf(\"Hash Table\"); \n     printf(\"%-5s %-30s %-15s\\n\", \"Index\", \"Name\", \"Phone\"); \n     for(i = 0; i < size; i++) \n     { \n          if(hashtable[i].occupied) "
+    },
+    {
+      "page": 7,
+      "text": "          { \n               printf(\"%-5d %-30s %-15ld\\n\", i, hashtable[i].name, hashtable[i].phone); \n          } \n          else \n          { \n               printf(\"%-5d %-30s %-15s\\n\", i, \"---\", \"---\"); \n          } \n     } \n} \n \n \nOutput: \n--- HASH TABLE MENU --- \n1. Linear Probing \n2. Quadratic Probing \n3. Double Hashing \n4. Searching \n5. Display \n6. Exit \nEnter your choice: 1 \nEnter name and phone number: Ankush 9847562103 \nInserted 'Ankush' at index 8 using Linear Probing. \n \n \n--- HASH TABLE MENU --- \n1. Linear Probing \n2. Quadratic Probing \n3. Double Hashing \n4. Searching "
+    },
+    {
+      "page": 8,
+      "text": "5. Display \n6. Exit \nEnter your choice: 2 \nEnter name and phone number: Aradhya 8975641235 \nInserted 'Aradhya' at index 9 using Quadratic Probing. \n \n \n--- HASH TABLE MENU --- \n1. Linear Probing \n2. Quadratic Probing \n3. Double Hashing \n4. Searching \n5. Display \n6. Exit \nEnter your choice: 3 \nEnter name and phone number: Aditi 7985664125 \nInserted 'Aditi' at index 1 using Double Hashing (Step = 6). \n \n \n--- HASH TABLE MENU --- \n1. Linear Probing \n2. Quadratic Probing \n3. Double Hashing \n4. Searching \n5. Display \n6. Exit \nEnter your choice: 4 \nEnter name to search: Aradhya \n "
+    },
+    {
+      "page": 9,
+      "text": "Found! Phone number of Aradhya is 385706643 (Index: 9) \n \n \n--- HASH TABLE MENU --- \n1. Linear Probing \n2. Quadratic Probing \n3. Double Hashing \n4. Searching \n5. Display \n6. Exit \nEnter your choice: 5 \n \nIndex Name                 Phone \n----------------------------------------- \n0     ---                  --- \n1     Aditi                -604270467 \n2     ---                  --- \n3     ---                  --- \n4     ---                  --- \n5     ---                  --- \n6     ---                  --- \n7     ---                  --- \n8     Ankush               1257627511 \n9     Aradhya              385706643 \n \n \n--- HASH TABLE MENU --- \n1. Linear Probing \n2. Quadratic Probing "
+    },
+    {
+      "page": 10,
+      "text": "3. Double Hashing \n4. Searching \n5. Display \n6. Exit \nEnter your choice: 6 \nExiting program... \n \nProcess returned 0 (0x0)   execution time : 1451.468 s \nPress any key to continue. "
+    }
+  ]
+}
