@@ -1,0 +1,17 @@
+{
+  "name": "dsa-practical-revision-portal",
+  "version": "1.0.0",
+  "description": "DSA Practical Revision Portal for Practicals 1 to 9",
+  "main": "tools/server.js",
+  "scripts": {
+    "start": "node tools/server.js"
+  },
+  "keywords": [
+    "dsa",
+    "data-structures",
+    "c",
+    "cpp"
+  ],
+  "author": "",
+  "license": "ISC"
+}
