@@ -1,0 +1,8 @@
+tools/
+extracted_raw/
+*.docx
+*.pdf
+*.txt
+*.py
+*.pyc
+__pycache__/
